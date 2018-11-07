@@ -1,14 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HomePage">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/homePageLogo"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:contentDescription="@string/logoDescription"
+        android:src="@mipmap/test_logo_round" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/bmiButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/bmiButtonDescription"
+                android:elevation="0dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_body_mass_index" />
+
+            <ImageButton
+                android:id="@+id/workoutPlanButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/workoutPlanDescription"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_plan_black_24dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/contactButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/contactPageDescription"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_contact__black_24dp" />
+
+            <ImageButton
+                android:id="@+id/workoutTipsButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/workoutTipsDescription"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_error_outline_black_24dp" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>

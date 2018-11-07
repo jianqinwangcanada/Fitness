@@ -14,4 +14,7 @@
     <string name="nav_menu_title_WorkoutTips">Workout Tips</string>
     <string name="nav_menu_tilte_Contact">Contact</string>
     <string name="nav_menu_title_Credits">Credits</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

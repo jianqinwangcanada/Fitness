@@ -19,15 +19,26 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-         ContactFragment.OnFragmentInteractionListener{
+                 ContactFragment.OnFragmentInteractionListener,
+                 HomePage.OnFragmentInteractionListener {
+
+
     //Declare FragmentManager to manage transaction
-    FragmentManager fm=getSupportFragmentManager();
-    @Override
+    FragmentManager fm = getSupportFragmentManager();
+
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // Launch the Home Page when the app is opened
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.replace(R.id.content, new HomePage(), "Home Page");
+        transaction.addToBackStack(null);
+        transaction.commit();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -86,11 +97,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         //declare TransactionManager
-        FragmentTransaction transaction=fm.beginTransaction();
+        FragmentTransaction transaction = fm.beginTransaction();
         transaction.setCustomAnimations(R.anim.fragment_in,R.anim.fragment_back_out,R.anim.fragment_back_in,R.anim.fragment_back_out);
+        Fragment selectedFragment;
+
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
+            selectedFragment=fm.findFragmentByTag("Home Page");
+            if(selectedFragment == null) {
+                transaction.replace(R.id.content, new HomePage(),"Home Page");
+            }
+            else if(!selectedFragment.isVisible()){
+                transaction.replace(R.id.content, selectedFragment);
+            }
         } else if (id == R.id.nav_bmi) {
 
         } else if (id == R.id.nav_workoutplan) {
@@ -99,20 +118,22 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_contact) {
            //Just whether it is visible or null , if invisilbe or null ,show it
-            Fragment selectFragment=fm.findFragmentByTag("Contact");
-            if(selectFragment==null)
-            {transaction.replace(R.id.content,new ContactFragment(),"Contact");
-                transaction.addToBackStack(null);
+            selectedFragment=fm.findFragmentByTag("Contact");
+            if(selectedFragment == null)
+            {transaction.replace(R.id.content, new ContactFragment(),"Contact");
             }
-            else if(!selectFragment.isVisible()){
-                transaction.replace(R.id.content,selectFragment);
-                transaction.addToBackStack(null);
+            else if(!selectedFragment.isVisible()){
+                transaction.replace(R.id.content, selectedFragment);
             }
 
         } else if (id == R.id.nav_credits) {
 
         }
+
+
+
         //commit the transaction for all navigation drawer item selectd
+        transaction.addToBackStack(null);
         transaction.commit();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

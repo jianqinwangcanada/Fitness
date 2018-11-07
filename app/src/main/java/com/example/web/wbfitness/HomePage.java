@@ -4,9 +4,13 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 
 /**
@@ -26,6 +30,17 @@ public class HomePage extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    // Declare the FragmentManager
+    FragmentManager fm;
+
+    // Declare the buttons that are on the page
+    ImageButton bmiButton;
+    ImageButton planButton;
+    ImageButton contactButton;
+    ImageButton tipsButton;
+
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,7 +79,32 @@ public class HomePage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_page, container, false);
+        View view = inflater.inflate(R.layout.fragment_home_page, container, false);
+
+        fm = getActivity().getSupportFragmentManager();
+
+        // Grab the buttons from the layout
+
+        bmiButton = view.findViewById(R.id.bmiButton);
+        planButton = view.findViewById(R.id.workoutPlanButton);
+        contactButton = view.findViewById(R.id.contactButton);
+        tipsButton = view.findViewById(R.id.workoutTipsButton);
+
+        // Launch the appropriate page when a button is selected
+
+        contactButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
+                transaction.replace(R.id.content, new ContactFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        return view;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

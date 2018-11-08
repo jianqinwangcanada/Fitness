@@ -42,6 +42,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:gravity="center"
+        android:hint="@string/name"
         android:inputType="textPersonName"
         android:text="@string/namePlaceholder" />
 

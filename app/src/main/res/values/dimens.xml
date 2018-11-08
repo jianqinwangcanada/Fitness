@@ -9,4 +9,6 @@
 
     <dimen name="design_navigation_icon_size" tools:override="true">30dp</dimen>
 
+    <dimen name="headerFontSize">25sp</dimen>
+
 </resources>

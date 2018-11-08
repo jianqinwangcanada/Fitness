@@ -76,15 +76,6 @@
         android:inputType="textPersonName"
         android:text="@string/namePlaceholder" />
 
-    <TextView
-        android:id="@+id/genderTV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/gender"
-        android:textStyle="bold" />
-
     <RadioGroup
         android:id="@+id/genderGroup"
         android:layout_width="match_parent"
@@ -113,15 +104,6 @@
             android:text="@string/female" />
 
     </RadioGroup>
-
-    <TextView
-        android:id="@+id/measurementTV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/measurement"
-        android:textStyle="bold" />
 
     <RadioGroup
         android:id="@+id/measurementGroup"

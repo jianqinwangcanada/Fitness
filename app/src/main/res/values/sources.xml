@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="bmiScale">Icon Made by <a href="https://www.flaticon.com/authors/eucalyp">Eucalyp</a> from Flaticon</string>
+    <string name="bmiScaleSource">https://www.flaticon.com/free-icon/body-mass-index_343094#term=body%20mass</string>
+
+    <string name="contactCard"><div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></string>
+    <string name="contactCardSource">https://www.flaticon.com/free-icon/business-card-of-a-man-with-contact-info_47973#term=contact</string>
+
+</resources>

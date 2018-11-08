@@ -15,6 +15,16 @@
     <string name="nav_menu_tilte_Contact">Contact</string>
     <string name="nav_menu_title_Credits">Credits</string>
 
+    <!-- Content Descriptions for the Images in the Application -->
+    <string name="logoDescription">WB Fitness Logo</string>
+
+    <string name="bmiButtonDescription">BMI Calculator Page</string>
+    <string name="workoutPlanDescription">Workout Plan Page</string>
+    <string name="contactPageDescription">Contact Page</string>
+    <string name="workoutTipsDescription">Workout Tips Page</string>
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

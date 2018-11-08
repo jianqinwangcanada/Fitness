@@ -23,6 +23,17 @@
     <string name="contactPageDescription">Contact Page</string>
     <string name="workoutTipsDescription">Workout Tips Page</string>
 
+    <!-- Texts and Placeholders for Initialization Page -->
+    <string name="setupPageTitle">First Time Setup</string>
+    <string name="name">Name</string>
+    <string name="namePlaceholder">Obi-Wan Kenobi</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="age">Age</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->

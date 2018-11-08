@@ -33,6 +33,9 @@
     <string name="age">Age</string>
     <string name="height">Height</string>
     <string name="weight">Weight</string>
+    <string name="measurement">Measurement System</string>
+    <string name="metric">Metric(Meters, Kilograms)</string>
+    <string name="imperial">Imperial(Inches, Pounds)</string>
 
 
 

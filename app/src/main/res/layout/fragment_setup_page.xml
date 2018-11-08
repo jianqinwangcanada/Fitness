@@ -32,7 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="@string/name" />
+        android:text="@string/name"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/nameInput"
@@ -50,14 +51,15 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="@string/gender" />
+        android:text="@string/gender"
+        android:textStyle="bold" />
 
     <RadioGroup
         android:id="@+id/genderGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:checkedButton="@+id/maleRadio"
+        android:checkedButton="@+id/metricRadio"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -81,6 +83,45 @@
 
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/measurementTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/measurement"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/measurementGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:checkedButton="@+id/imperialRadio"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/imperialRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/imperial" />
+
+        <RadioButton
+            android:id="@+id/metricRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/metric" />
+
+    </RadioGroup>
+
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -97,7 +138,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/height" />
+                android:text="@string/height"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/weightTV"
@@ -105,7 +147,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/weight" />
+                android:text="@string/weight"
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow

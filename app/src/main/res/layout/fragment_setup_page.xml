@@ -26,6 +26,36 @@
         android:text="@string/setupPageTitle"
         android:textSize="@dimen/headerFontSize" />
 
+    <RadioGroup
+        android:id="@+id/languageGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:checkedButton="@+id/englishRadio"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/englishRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:text="@string/english" />
+
+        <RadioButton
+            android:id="@+id/mandarinRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:text="@string/mandarin" />
+
+    </RadioGroup>
+
     <TextView
         android:id="@+id/nameTV"
         android:layout_width="match_parent"
@@ -60,7 +90,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:checkedButton="@+id/metricRadio"
+        android:checkedButton="@+id/maleRadio"
         android:gravity="center"
         android:orientation="horizontal">
 

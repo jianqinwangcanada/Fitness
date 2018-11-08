@@ -36,6 +36,8 @@
     <string name="measurement">Measurement System</string>
     <string name="metric">Metric(Meters, Kilograms)</string>
     <string name="imperial">Imperial(Inches, Pounds)</string>
+    <string name="english">English</string>
+    <string name="mandarin">Mandarin</string>
 
 
 

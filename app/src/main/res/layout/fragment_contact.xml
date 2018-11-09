@@ -3,14 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ContactFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/contact_Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+
+        android:text="@string/contact_title"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+
+    <ListView
+        android:id="@+id/contact_listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Just test drawer functionality Animation, I will change the content in next weeks!"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:padding="20dp" />
 
 </LinearLayout>

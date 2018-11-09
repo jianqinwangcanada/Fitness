@@ -3,11 +3,22 @@ package com.example.web.wbfitness;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.example.web.wbfitness.JavaBean.ContactItem;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 
 /**
@@ -27,6 +38,8 @@ public class ContactFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    //Delcare a Listview
+    ListView contactListView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -65,8 +78,49 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+        View view=inflater.inflate(R.layout.fragment_contact, container, false);
+
+        contactListView=(ListView)view.findViewById(R.id.contact_listView);
+        //Declare a arraylist to store the list of the items
+       final ArrayList<ContactItem>  contactItems=new ArrayList<>();
+       contactItems.add(new ContactItem(R.string.contact_tel,R.drawable.call));
+       contactItems.add(new ContactItem(R.string.contact_SMS,R.drawable.sms));
+       contactItems.add(new ContactItem(R.string.contact_email,R.drawable.email));
+       contactItems.add(new ContactItem(R.string.contact_location,R.drawable.map));
+       contactItems.add(new ContactItem(R.string.contact_website,R.drawable.web));
+
+        CustomerAdapter adapter=new CustomerAdapter(getContext(),contactItems);
+        contactListView.setAdapter(adapter);
+
+
+
+
+
+
+        return view;
     }
+    public class CustomerAdapter extends ArrayAdapter<ContactItem> {
+
+        public CustomerAdapter(@NonNull Context context, ArrayList<ContactItem> items) {
+            super(context,0, items);
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            if(convertView==null){
+                convertView=LayoutInflater.from(getContext()).inflate(R.layout.contact_item,parent,false);
+            }
+            TextView itemName=convertView.findViewById(R.id.contact_item_text);
+            ContactItem item=getItem(position);
+            itemName.setText(item.getItemTitle());
+            ImageView imageView=convertView.findViewById(R.id.contact_item_iamge);
+            imageView.setImageResource(item.getImageID());
+
+            return convertView;
+        }
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

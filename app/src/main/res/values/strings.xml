@@ -39,7 +39,15 @@
     <string name="english">English</string>
     <string name="mandarin">Mandarin</string>
 
-
+    <!--Contact fragment information-->
+    <string name="contact_title">You can review our websit, SMS and Tel us, or you can
+         Mail us and see our location
+    </string>
+    <string name="contact_email">Send us email</string>
+    <string name="contact_tel">Tel us</string>
+    <string name="contact_SMS">Send us message</string>
+    <string name="contact_website">View our website</string>
+    <string name="contact_location">View us location</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

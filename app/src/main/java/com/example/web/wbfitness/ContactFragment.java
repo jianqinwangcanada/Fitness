@@ -1,6 +1,7 @@
 package com.example.web.wbfitness;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,10 +11,12 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.web.wbfitness.JavaBean.ContactItem;
 
@@ -88,17 +91,109 @@ public class ContactFragment extends Fragment {
        contactItems.add(new ContactItem(R.string.contact_email,R.drawable.email));
        contactItems.add(new ContactItem(R.string.contact_location,R.drawable.map));
        contactItems.add(new ContactItem(R.string.contact_website,R.drawable.web));
-
+        //Declare a CustomerAdapter adapter
         CustomerAdapter adapter=new CustomerAdapter(getContext(),contactItems);
+       //Bind the adapter to contactView
         contactListView.setAdapter(adapter);
 
+       //Add Listener to contactListView
+        contactListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ContactItem currentItem=(ContactItem)contactListView.getItemAtPosition(position);
+                switch (position){
+                    //Telephone Intent
+                    case 0:{
+                        //declare intent
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        //set intent with telephone number
+                        intent.setData(Uri.parse("tel:5199974000"));
+                        //Decide whether the user's phone has related software to run this functionality
+                        if(intent.resolveActivity(getActivity().getPackageManager()) != null){
+                            startActivity(intent);
+                        }
+                        else{
+                            Toast.makeText(getContext(),"You do not have the correct software",Toast.LENGTH_SHORT).show();
+                        }
+                       break;
+                    }
+                    //SMS
+                    case 1:{
+                        //Declare intent and set data with the telephone number
+                        Intent intent = new Intent(Intent.ACTION_SENDTO);
+                        intent.setData(Uri.parse("smsto:5199974000"));
+                        //Decide whether the user's phone has related software to run this functionality
+                        if(intent.resolveActivity(getActivity().getPackageManager()) != null){
+                            startActivity(intent);
+                        }
+                        else{
+                            Toast.makeText(getContext(),
+                                    "You do not have the correct software",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        break;
+                    }
+                    //send email
+                    case 2:{
+                        //declare a intent bind the email address
+                        Intent intent = new Intent(Intent.ACTION_SENDTO);
+                        intent.setData(Uri.parse("mailto:jianqin.wang01@stclairconnect.ca"));
+                        //intent.putExtra(Intent.EXTRA_EMAIL, "jianqin.wang01@stclairconnect.ca");
+                        // //Decide whether the user's phone has related software to run this functionality
+                        if(intent.resolveActivity(getActivity().getPackageManager()) != null){
+                            startActivity(intent);
 
+                        }
+                        else{
+                            Toast.makeText(getContext(),
+                                    "You do not have the FoxMail software",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        break;
+                    }
+                    //view map
+                    case 3:{
+                        //Declare a Intent and set data with the location data
+                        //"geo:0,0?q=42.2470072,-83.0149074(Tim Hortons)"
+                        Uri geoLocation = Uri.parse("geo:0,0?q=42.2615179,-83.0423989(W and B Fitness)");
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setData(geoLocation);
+                        // //Decide whether the user's phone has related software to run this functionality
+                        if(intent.resolveActivity(getActivity().getPackageManager()) != null){
+                            startActivity(intent);
+                        }
+                        else{
+                            Toast.makeText(getContext(),"You do not have the correct software",Toast.LENGTH_SHORT).show();
+                        }
+                        break;
 
+                    }
+                    //view website
+                    case 4:{
+                        //Declare the intent and set data with website
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setData(Uri.parse("http://www.stclaircollege.ca"));
+                        // //Decide whether the user's phone has related software to run this functionality
+                        if(intent.resolveActivity(getActivity().getPackageManager()) != null){
+                            startActivity(intent);
+                        }
+                        else{
+                            Toast.makeText(getContext(),
+                                    "You do not have the correct software",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        break;
+                    }
+                    default:{Toast.makeText(getContext(),"Please choice one item to contact us!",Toast.LENGTH_LONG).show();}
+                }
+            }
+        });
 
 
 
         return view;
     }
+    //Declare a cumstomerAdapter class
     public class CustomerAdapter extends ArrayAdapter<ContactItem> {
 
         public CustomerAdapter(@NonNull Context context, ArrayList<ContactItem> items) {

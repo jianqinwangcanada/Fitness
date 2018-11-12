@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -208,9 +209,10 @@ public class ContactFragment extends Fragment {
             }
             TextView itemName=convertView.findViewById(R.id.contact_item_text);
             ContactItem item=getItem(position);
-            itemName.setText(item.getItemTitle());
+            itemName.setText(Html.fromHtml( getString(item.getItemTitle())));
             ImageView imageView=convertView.findViewById(R.id.contact_item_iamge);
             imageView.setImageResource(item.getImageID());
+
 
             return convertView;
         }

@@ -43,12 +43,25 @@
     <string name="contact_title">You can review our websit, SMS and Tel us, or you can
          Mail us and see our location
     </string>
-    <string name="contact_email">Send us email</string>
-    <string name="contact_tel">Tel us</string>
-    <string name="contact_SMS">Send us message</string>
-    <string name="contact_website">View our website</string>
-    <string name="contact_location">View us location</string>
-
+    <string name="contact_email">
+        <![CDATA[<b>Send Us Email</b>  <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+    </string>
+    <string name="contact_tel">
+        <![CDATA[<b>Tel Us</b> <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+    </string>
+    <string name="contact_SMS">
+         <![CDATA[<b>Send Message</b> <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+    </string>
+    <string name="contact_website">
+       <![CDATA[<b>View Website</b>  <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+    </string>
+    <string name="contact_location">
+        <![CDATA[<b>View Location</b>  <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+    </string>
+    <!--View Website <![CDATA[<font color=\'#0000FF\'><u>Click!</u></font>]]>-->
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
 </resources>

@@ -15,6 +15,7 @@
     <string name="nav_more_information">更多信息</string>
     <string name="nav_menu_tilte_Contact">联系方式</string>
     <string name="nav_menu_title_Credits">致谢</string>
+    <string name="nav_language_refresh">刷新语言</string>
 
     <!-- Content Descriptions for the Images in the Application -->
     <string name="logoDescription">健身馆商标</string>

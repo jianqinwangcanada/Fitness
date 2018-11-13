@@ -24,7 +24,7 @@
             android:title="@string/nav_menu_title_WorkoutTips" />
     </group>
 
-    <item android:title="More Infomation">
+    <item android:title="@string/nav_more_information">
         <menu>
             <item
                 android:id="@+id/nav_contact"

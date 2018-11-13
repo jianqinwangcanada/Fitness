@@ -129,9 +129,14 @@ public class MainActivity extends AppCompatActivity
                 transaction.replace(R.id.content, selectedFragment);
             }
 
-        } else if (id == R.id.nav_credits) {
+        } else if (id == R.id.nav_credits)
+        {
+
+        }else if(id==R.id.nav_refresh){
+
 
         }
+
 
 
 

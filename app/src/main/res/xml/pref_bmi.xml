@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreference
+        android:id="@+id/save_bmi"
+        android:checked="false"
+        android:clickable="true"
+        android:defaultValue="true"
+        android:enabled="true"
+        android:icon="@drawable/ic_save_black_24dp"
+        android:key="save_bmi"
+        android:padding="5dp"
+        android:persistent="true"
+        android:scrollbarSize="@android:dimen/thumbnail_width"
+        android:summary="@string/bmi_summary"
+        android:textSize="@dimen/setting_title"
+        android:title="@string/bmi_title" />
+</PreferenceScreen>

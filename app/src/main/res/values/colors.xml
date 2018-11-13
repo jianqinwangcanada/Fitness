@@ -3,4 +3,5 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303f9f</color>
     <color name="colorAccent">#ffffff</color>
+    <color name="bmi_language">#D81B60</color>
 </resources>

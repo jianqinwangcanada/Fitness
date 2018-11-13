@@ -1,0 +1,156 @@
+<resources>
+    <string name="app_name">老王健身馆</string>
+    <string name="navigation_drawer_open">打开导航栏</string>
+    <string name="navigation_drawer_close">关闭导航栏</string>
+    <string name="nav_header_title">安卓编译器</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">导航</string>
+    <string name="action_settings">设置</string>
+<!--Content for navigation -->
+    <string name="nav_header_name">老王健身馆</string>
+    <string name="nav_menu_title_home">主页</string>
+    <string name="nav_menu_title_BMI">身体素质指数</string>
+    <string name="nav_menu_title_WorkoutPlan">锻炼计划</string>
+    <string name="nav_menu_title_WorkoutTips">锻炼技巧</string>
+    <string name="nav_more_information">更多信息</string>
+    <string name="nav_menu_tilte_Contact">联系方式</string>
+    <string name="nav_menu_title_Credits">致谢</string>
+
+    <!-- Content Descriptions for the Images in the Application -->
+    <string name="logoDescription">健身馆商标</string>
+
+    <string name="bmiButtonDescription">身体素质指数计算</string>
+    <string name="workoutPlanDescription">锻炼计划</string>
+    <string name="contactPageDescription">联系方式</string>
+<string name="workoutTipsDescription">健身技巧</string>
+
+    <!-- Texts and Placeholders for Initialization Page -->
+<string name="setupPageTitle">首次设置</string>
+<string name="name">姓名</string>
+<string name="namePlaceholder">老王健身馆</string>
+<string name="gender">性别</string>
+<string name="male">男</string>
+<string name="female">女</string>
+<string name="age">年龄</string>
+<string name="height">身高</string>
+<string name="weight">体重</string>
+<string name="measurement">测量系统</string>
+<string name="metric">公制(米, 公斤)</string>
+<string name="imperial">英制(英寸，英镑)</string>
+<string name="english">英语</string>
+<string name="mandarin">汉语</string>
+
+    <!--Contact fragment information-->
+<string name="contact_title">你可以浏览我们网页, 发短信或者打电话，你也可以发电子有点和查看我们位置
+    </string>
+<string name="contact_email">
+        <![CDATA[<b>发送邮件</b>  <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
+    </string>
+<string name="contact_tel">
+        <![CDATA[<b>拨打电话</b> <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
+    </string>
+<string name="contact_SMS">
+         <![CDATA[<b>发送短信</b> <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
+    </string>
+<string name="contact_website">
+       <![CDATA[<b>浏览网站</b>  <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
+    </string>
+<string name="contact_location">
+        <![CDATA[<b>查看位置</b>  <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
+    </string>
+
+<string name="hello_blank_fragment">空白打招呼</string>
+<string name="title_activity_settings">设置</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+<string name="pref_header_general">General</string>
+
+<string name="pref_title_social_recommendations">Enable social recommendations</string>
+<string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+<string name="pref_title_display_name">Display name</string>
+<string name="pref_default_display_name">John Smith</string>
+
+<string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+<string-array name="pref_example_list_titles">
+<item>Always</item>
+<item>When possible</item>
+<item>Never</item>
+</string-array>
+<string-array name="pref_example_list_values">
+<item>1</item>
+<item>0</item>
+<item>-1</item>
+</string-array>
+
+    <!-- Example settings for Data & Sync -->
+<string name="pref_header_data_sync">Data &amp; sync</string>
+
+<string name="pref_title_sync_frequency">Sync frequency</string>
+<string-array name="pref_sync_frequency_titles">
+<item>15 minutes</item>
+<item>30 minutes</item>
+<item>1 hour</item>
+<item>3 hours</item>
+<item>6 hours</item>
+<item>Never</item>
+</string-array>
+<string-array name="pref_sync_frequency_values">
+<item>15</item>
+<item>30</item>
+<item>60</item>
+<item>180</item>
+<item>360</item>
+<item>-1</item>
+</string-array>
+
+<string-array name="list_preference_entries">
+<item>Entry 1</item>
+<item>Entry 2</item>
+<item>Entry 3</item>
+</string-array>
+
+<string-array name="list_preference_entry_values">
+<item>1</item>
+<item>2</item>
+<item>3</item>
+</string-array>
+
+<string-array name="multi_select_list_preference_default_value" />
+
+<string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+<string name="pref_header_notifications">Notifications</string>
+
+<string name="pref_title_new_message_notifications">New message notifications</string>
+
+<string name="pref_title_ringtone">Ringtone</string>
+<string name="pref_ringtone_silent">Silent</string>
+
+<string name="pref_title_vibrate">Vibrate</string>
+
+    <!--String value for BMI Switch Preference-->
+<string name="bmi_menu_title">BMI保存设置</string>
+<string name="bmi_title">是否要保持BMI设置?</string>
+<string name="bmi_summary">设置为开状态保存您的输入</string>
+
+    <!--Stirng value for Language Listpreference-->
+
+<string name="language_menu_title">语言选择设置</string>
+<string name="language_title">请选择您想要的语言</string>
+<string name="language_summary">通过对话框您可以选择英文或者中文</string>
+<string-array name="language_entries">
+<item>加拿大英语</item>
+<item>中国汉语</item>
+</string-array>
+
+<string-array name="language_values">
+<item>1</item>
+<item>0</item>
+</string-array>
+ </resources>

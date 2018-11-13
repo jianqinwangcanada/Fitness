@@ -6,12 +6,13 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
+<!--Content Description for the navigation-->
     <string name="nav_header_name">WB Fitness</string>
     <string name="nav_menu_title_home">Home</string>
     <string name="nav_menu_title_BMI">BMI</string>
     <string name="nav_menu_title_WorkoutPlan">Workout Plan</string>
     <string name="nav_menu_title_WorkoutTips">Workout Tips</string>
+    <string name="nav_more_information">More Information</string>
     <string name="nav_menu_tilte_Contact">Contact</string>
     <string name="nav_menu_title_Credits">Credits</string>
 

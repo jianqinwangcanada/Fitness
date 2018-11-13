@@ -11,4 +11,6 @@
 
     <dimen name="headerFontSize">25sp</dimen>
 
+    <dimen name="setting_title" tools:overrid="true">20sp</dimen>
+
 </resources>

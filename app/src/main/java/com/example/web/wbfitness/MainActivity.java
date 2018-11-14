@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.content, new SetupPage(), "First Time Setup");
             transaction.addToBackStack(null);
             transaction.commit();
-            preferences.edit().putBoolean("initialize", false).apply();
         } else {
             // Launch the Home Page when the app is opened
             FragmentTransaction transaction = fm.beginTransaction();

@@ -1,13 +1,17 @@
 package com.example.web.wbfitness;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +19,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import java.util.Locale;
 
 
 /**
@@ -102,6 +108,7 @@ public class SetupPage extends Fragment {
         fm = getActivity().getSupportFragmentManager();
 
         // Pair all of the elements to their values
+        languageGroup = view.findViewById(R.id.languageGroup);
         english = view.findViewById(R.id.englishRadio);
         mandarin = view.findViewById(R.id.mandarinRadio);
         name = view.findViewById(R.id.nameInput);
@@ -114,8 +121,28 @@ public class SetupPage extends Fragment {
         weight = view.findViewById(R.id.weightInput);
         submit = view.findViewById(R.id.setupSubmitButton);
 
+        // Determine if the device is already set to English or Mandarin and check the right box
+        if(getResources().getConfiguration().locale.toString().contains("en")) {
+            english.setChecked(true);
+        } else if(getResources().getConfiguration().locale.toString().contains("zh_CN")) {
+            mandarin.setChecked(true);
+        }
 
-
+        // Change the locale if the language radiogropu is changed
+        languageGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(english.isChecked()) {
+                    if(getResources().getConfiguration().locale != Locale.ENGLISH || getResources().getConfiguration().locale != Locale.US) {
+                        setLocale(Locale.ENGLISH);
+                    }
+                } else if (mandarin.isChecked()) {
+                    if(getResources().getConfiguration().locale != Locale.SIMPLIFIED_CHINESE) {
+                        setLocale(Locale.SIMPLIFIED_CHINESE);
+                    }
+                }
+            }
+        });
 
         // Get the SharedPreferences file
         preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -164,6 +191,7 @@ public class SetupPage extends Fragment {
                 transaction.replace(R.id.content, new HomePage(), "Home Page");
                 transaction.addToBackStack(null);
                 transaction.commit();
+                preferences.edit().putBoolean("initialize", false).apply();
             }
         });
 
@@ -210,4 +238,25 @@ public class SetupPage extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    // Change the language
+    public void setLocale(Locale myLocal) {
+        //Declare the resource
+        Resources res = getResources();
+        //Declare DisplayMetrics using resources
+        DisplayMetrics dm = res.getDisplayMetrics();
+        //Declare the conf
+        Configuration conf = res.getConfiguration();
+        //set the Configuration with myLocal
+        conf.locale = myLocal;
+        //Update configuration with resource
+        res.updateConfiguration(conf, dm);
+        //Declare the intent
+
+        Intent refresh = new Intent(getContext(), MainActivity.class);
+        //Refresh the mainActivity
+        startActivity(refresh);
+
+    }
+
 }

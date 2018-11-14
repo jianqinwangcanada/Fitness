@@ -1,12 +1,20 @@
 package com.example.web.wbfitness;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 
 /**
@@ -18,6 +26,30 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class SetupPage extends Fragment {
+
+    // FragmentManager
+    FragmentManager fm;
+
+    // Declare all of the elements in the layout
+
+    RadioGroup languageGroup;
+    RadioButton english;
+    RadioButton mandarin;
+    EditText name;
+    RadioGroup gender;
+    RadioButton male;
+    RadioButton female;
+    RadioGroup measurement;
+    RadioButton metric;
+    RadioButton imperial;
+    EditText height;
+    EditText weight;
+    Button submit;
+
+
+    // Declare the SharedPreferences file
+    SharedPreferences preferences;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -64,7 +96,80 @@ public class SetupPage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setup_page, container, false);
+        View view = inflater.inflate(R.layout.fragment_setup_page, container, false);
+
+        // Get the FragmentManager
+        fm = getActivity().getSupportFragmentManager();
+
+        // Pair all of the elements to their values
+        english = view.findViewById(R.id.englishRadio);
+        mandarin = view.findViewById(R.id.mandarinRadio);
+        name = view.findViewById(R.id.nameInput);
+        male = view.findViewById(R.id.maleRadio);
+        female = view.findViewById(R.id.femaleRadio);
+        metric = view.findViewById(R.id.metricRadio);
+        imperial = view.findViewById(R.id.imperialRadio);
+
+        height = view.findViewById(R.id.heightInput);
+        weight = view.findViewById(R.id.weightInput);
+        submit = view.findViewById(R.id.setupSubmitButton);
+
+
+
+
+        // Get the SharedPreferences file
+        preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+
+        // Submit button action handler
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // Write the values to the preferences file
+
+                // Language
+                if(english.isChecked()) {
+                    preferences.edit().putString(getResources().getString(R.string.language), english.getText().toString()).apply();
+                } else if (mandarin.isChecked()) {
+                    preferences.edit().putString(getResources().getString(R.string.language), mandarin.getText().toString()).apply();
+                }
+
+                // Name
+                preferences.edit().putString(getResources().getString(R.string.name), name.getText().toString()).apply();
+
+                // Gender
+                if(male.isChecked()) {
+                    preferences.edit().putString(getResources().getString(R.string.gender), male.getText().toString()).apply();
+                } else if (female.isChecked()) {
+                    preferences.edit().putString(getResources().getString(R.string.gender), female.getText().toString()).apply();
+                }
+
+                // Measurement System
+                if(metric.isChecked()) {
+                    preferences.edit().putString(getResources().getString(R.string.measurement), metric.getText().toString()).apply();
+                } else if (imperial.isChecked()) {
+                    preferences.edit().putString(getResources().getString(R.string.measurement), imperial.getText().toString()).apply();
+                }
+
+                // Height
+                preferences.edit().putString(getResources().getString(R.string.height), height.getText().toString()).apply();
+
+                // Weight
+                preferences.edit().putString(getResources().getString(R.string.weight), weight.getText().toString()).apply();
+
+
+                // Launch the HomePage
+
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.replace(R.id.content, new HomePage(), "Home Page");
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

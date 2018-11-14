@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
+
         // Determine if the app is being launched for the first time and display the appropriate page
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         System.out.println(preferences.getBoolean("initialize",false));

@@ -1,8 +1,10 @@
 package com.example.web.wbfitness;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -21,12 +23,15 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
                  ContactFragment.OnFragmentInteractionListener,
-                 HomePage.OnFragmentInteractionListener {
+                 HomePage.OnFragmentInteractionListener,
+                SetupPage.OnFragmentInteractionListener{
 
 
     //Declare FragmentManager to manage transaction
     FragmentManager fm = getSupportFragmentManager();
 
+    // Declare the SharedPreferences File
+    SharedPreferences preferences = null;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +40,27 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Launch the Home Page when the app is opened
-        FragmentTransaction transaction = fm.beginTransaction();
-        transaction.replace(R.id.content, new HomePage(), "Home Page");
-        transaction.addToBackStack(null);
-        transaction.commit();
+
+        // Determine if the app is being launched for the first time and display the appropriate page
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        System.out.println(preferences.getBoolean("initialize",false));
+        if(preferences.getBoolean("initialize", true)) {
+            // Launch the Home Page when the app is opened
+            FragmentTransaction transaction = fm.beginTransaction();
+            transaction.replace(R.id.content, new SetupPage(), "First Time Setup");
+            transaction.addToBackStack(null);
+            transaction.commit();
+            preferences.edit().putBoolean("initialize", false).apply();
+        } else {
+            // Launch the Home Page when the app is opened
+            FragmentTransaction transaction = fm.beginTransaction();
+            transaction.replace(R.id.content, new HomePage(), "Home Page");
+            transaction.addToBackStack(null);
+            transaction.commit();
+        }
+
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

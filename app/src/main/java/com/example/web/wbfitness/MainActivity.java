@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
+
         // Determine if the app is being launched for the first time and display the appropriate page
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         System.out.println(preferences.getBoolean("initialize",false));
@@ -50,7 +51,6 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.content, new SetupPage(), "First Time Setup");
             transaction.addToBackStack(null);
             transaction.commit();
-            preferences.edit().putBoolean("initialize", false).apply();
         } else {
             // Launch the Home Page when the app is opened
             FragmentTransaction transaction = fm.beginTransaction();

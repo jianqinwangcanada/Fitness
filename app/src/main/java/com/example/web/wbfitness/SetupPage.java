@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import java.util.Locale;
 
@@ -51,7 +52,8 @@ public class SetupPage extends Fragment {
     EditText height;
     EditText weight;
     Button submit;
-
+    TextView heightTV;
+    TextView weightTV;
 
     // Declare the SharedPreferences file
     SharedPreferences preferences;
@@ -116,9 +118,11 @@ public class SetupPage extends Fragment {
         female = view.findViewById(R.id.femaleRadio);
         metric = view.findViewById(R.id.metricRadio);
         imperial = view.findViewById(R.id.imperialRadio);
-
+        measurement = view.findViewById(R.id.measurementGroup);
         height = view.findViewById(R.id.heightInput);
         weight = view.findViewById(R.id.weightInput);
+        weightTV = view.findViewById(R.id.weightTV);
+        heightTV = view.findViewById(R.id.heightTV);
         submit = view.findViewById(R.id.setupSubmitButton);
 
         // Determine if the device is already set to English or Mandarin and check the right box
@@ -143,6 +147,26 @@ public class SetupPage extends Fragment {
                 }
             }
         });
+
+        // Change the placeholder values and titles if the measurement system is changed
+        measurement.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(metric.isChecked()) {
+                    height.setText(getResources().getText(R.string.heightPlaceholderCentimeters));
+                    weight.setText(getResources().getText(R.string.weightPlaceholderKilograms));
+                    heightTV.setText(getResources().getText(R.string.heightCentimeters));
+                    weightTV.setText(getResources().getText(R.string.weightKG));
+
+                } else if (imperial.isChecked()) {
+                    height.setText(getResources().getText(R.string.heightPlaceholderInches));
+                    weight.setText(getResources().getText(R.string.weightPlaceholderPounds));
+                    heightTV.setText(getResources().getText(R.string.heightInches));
+                    weightTV.setText(getResources().getText(R.string.weightPounds));
+                }
+            }
+        });
+
 
         // Get the SharedPreferences file
         preferences = PreferenceManager.getDefaultSharedPreferences(getContext());

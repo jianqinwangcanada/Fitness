@@ -150,7 +150,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/height"
+                android:text="@string/heightInches"
                 android:textStyle="bold" />
 
             <TextView
@@ -159,7 +159,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/weight"
+                android:text="@string/weightPounds"
                 android:textStyle="bold" />
         </TableRow>
 
@@ -175,7 +175,7 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="number"
-                android:text="68" />
+                android:text="@string/heightPlaceholderInches" />
 
             <EditText
                 android:id="@+id/weightInput"
@@ -185,7 +185,7 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="number"
-                android:text="240" />
+                android:text="@string/weightPlaceholderPounds" />
         </TableRow>
 
     </TableLayout>

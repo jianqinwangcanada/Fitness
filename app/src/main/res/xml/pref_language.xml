@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <ListPreference
-        android:defaultValue="1"
+
+        android:defaultValue="@string/english"
         android:enabled="true"
         android:entries="@array/language_entries"
         android:entryValues="@array/language_values"
-
         android:icon="@drawable/ic_language_black_24dp"
-        android:key="chose_language"
+        android:key="@string/language"
         android:persistent="true"
         android:positiveButtonText="OK"
-        android:title="@string/pref_title_add_friends_to_messages" />
+        android:title="@string/language_title" />
+
 </PreferenceScreen>

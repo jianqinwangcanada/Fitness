@@ -95,6 +95,7 @@ public class HomePage extends Fragment {
         contactButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 FragmentTransaction transaction = fm.beginTransaction();
                 transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
                 transaction.replace(R.id.content, new ContactFragment());
@@ -102,6 +103,14 @@ public class HomePage extends Fragment {
                 transaction.commit();
             }
         });
+
+        bmiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
         return view;
 

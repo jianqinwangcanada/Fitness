@@ -121,7 +121,8 @@ public class SettingsActivity extends PreferenceActivity {
                 public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
 
 
-                    if (key.toString().equals(getResources().getString(R.string.language))) {
+//                    if (key.toString().equals(getResources().getString(R.string.language))) {
+                    if (key.toString().equals(getResources().getString(R.string.language_key))) {
                         String selectedLanguage = sharedPreferences.getString(key, "").toString();
                         if (selectedLanguage.equals(getResources().getString(R.string.english))) {
                             Locale myLocal = Locale.ENGLISH;
@@ -193,14 +194,17 @@ public class SettingsActivity extends PreferenceActivity {
 
             // Set the default value
 //
-//            Preference languagePreference = findPreference(getResources().getString(R.string.language));
+            Preference languagePreference = findPreference(getResources().getString(R.string.language_key));
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-//            languagePreference.setDefaultValue(sharedPreferences.getString(getResources().getString(R.string.language), ""));
+            languagePreference.setDefaultValue(sharedPreferences.getString(getResources().getString(R.string.language_key), ""));
             System.out.println(sharedPreferences.getAll());
 
 
             // Bind
-            bindPreferenceSummaryToValue(findPreference(getResources().getString(R.string.language)));
+            System.out.println("Debug: " + findPreference(getResources().getString(R.string.language_key)));
+//            sharedPreferences.
+            bindPreferenceSummaryToValue(findPreference(getResources().getString(R.string.language_key)));
+//            bindPreferenceSummaryToValue(sharedPreferences.getString(getResources().getString(R.string.language_key), ""));
             //  bindPreferenceSummaryToValue(findPreference("example_list"));`
         }
 

@@ -140,7 +140,8 @@
 <string name="bmi_summary">设置为开状态保存您的输入</string>
 
     <!--Stirng value for Language Listpreference-->
-<string name="language">语言</string>
+
+    <string name="language">英语</string>
     <string name="english">英语</string>
     <string name="mandarin">汉语</string>
 

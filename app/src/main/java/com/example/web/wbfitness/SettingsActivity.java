@@ -18,6 +18,7 @@ import android.app.ActionBar;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
@@ -59,6 +60,7 @@ public class SettingsActivity extends PreferenceActivity {
                         index >= 0
                                 ? listPreference.getEntries()[index]
                                 : null);
+
 
             } else {
                 // For all other preferences, set the summary to the value's
@@ -110,6 +112,10 @@ public class SettingsActivity extends PreferenceActivity {
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         preferences.registerOnSharedPreferenceChangeListener(settingsSaved);
+//        String changedValue;
+//        changedValue=preferences.getString(getResources().getString(R.string.language_key),"1");
+
+
 
     }
 
@@ -124,12 +130,12 @@ public class SettingsActivity extends PreferenceActivity {
 //                    if (key.toString().equals(getResources().getString(R.string.language))) {
                     if (key.toString().equals(getResources().getString(R.string.language_key))) {
                         String selectedLanguage = sharedPreferences.getString(key, "").toString();
-                        if (selectedLanguage.equals(getResources().getString(R.string.english))) {
+                        if (selectedLanguage.equals(getResources().getString(R.string.language_value_english))) {
                             Locale myLocal = Locale.ENGLISH;
                             setLocale(myLocal);
 
 
-                        } else if (selectedLanguage.equals(getResources().getString(R.string.mandarin))) {
+                        } else if (selectedLanguage.equals(getResources().getString(R.string.language_value_madarin))) {
                             Locale myLocal = Locale.SIMPLIFIED_CHINESE;
                             setLocale(myLocal);
                         }
@@ -196,16 +202,22 @@ public class SettingsActivity extends PreferenceActivity {
 //
             Preference languagePreference = findPreference(getResources().getString(R.string.language_key));
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+
             languagePreference.setDefaultValue(sharedPreferences.getString(getResources().getString(R.string.language_key), ""));
+
+
+
+
+
             System.out.println(sharedPreferences.getAll());
 
 
             // Bind
             System.out.println("Debug: " + findPreference(getResources().getString(R.string.language_key)));
+            System.out.println("Language_Setting "+sharedPreferences.getString(getResources().getString(R.string.language_key), ""));
 //            sharedPreferences.
             bindPreferenceSummaryToValue(findPreference(getResources().getString(R.string.language_key)));
-//            bindPreferenceSummaryToValue(sharedPreferences.getString(getResources().getString(R.string.language_key), ""));
-            //  bindPreferenceSummaryToValue(findPreference("example_list"));`
+
         }
 
         @Override
@@ -265,9 +277,13 @@ public class SettingsActivity extends PreferenceActivity {
         res.updateConfiguration(conf, dm);
         //Declare the intent
 
+
+
         Intent refresh = new Intent(this, MainActivity.class);
+
         //Refresh the mainActivity
         startActivity(refresh);
+
 
     }
 

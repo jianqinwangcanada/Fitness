@@ -16,12 +16,18 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--Drawer Menu style-->
     <style name="drawerMenu"  >
-        <item name="android:textSize">28dp</item>
+        <item name="android:textSize">24dp</item>
     </style>
+    <!--Application head style-->
     <style name="headTitle">
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">26sp</item>
         <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:fontFamily">lobster</item>
+
     </style>
 
      <!--Setting Text style-->

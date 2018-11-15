@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Locale;
 
 /**
+ * @author wang
  * A {@link PreferenceActivity} that presents a set of application settings. On
  * handset devices, settings are presented as a single list. On tablets,
  * settings are split by category, with category headers shown to the left of
@@ -37,6 +38,7 @@ import java.util.Locale;
  * href="http://developer.android.com/guide/topics/ui/settings.html">Settings
  * API Guide</a> for more information on developing a Settings UI.
  */
+
 public class SettingsActivity extends PreferenceActivity {
 
 
@@ -106,38 +108,9 @@ public class SettingsActivity extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         setupActionBar();
 
-
-
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        preferences.registerOnSharedPreferenceChangeListener(settingsSaved);
-
     }
 
-    // SETTINGS CHANGE EVENT HANDLER
 
-    SharedPreferences.OnSharedPreferenceChangeListener settingsSaved = new
-            SharedPreferences.OnSharedPreferenceChangeListener() {
-                @Override
-                public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-
-
-                    if (key.toString().equals(getResources().getString(R.string.language))) {
-                        String selectedLanguage = sharedPreferences.getString(key, "").toString();
-                        if (selectedLanguage.equals(getResources().getString(R.string.english))) {
-                            Locale myLocal = Locale.ENGLISH;
-                            setLocale(myLocal);
-
-
-                        } else if (selectedLanguage.equals(getResources().getString(R.string.mandarin))) {
-                            Locale myLocal = Locale.SIMPLIFIED_CHINESE;
-                            setLocale(myLocal);
-                        }
-
-                    }
-
-
-                }
-            };
 
     /**
      * Set up the {@link android.app.ActionBar}, if the API is available.
@@ -180,6 +153,11 @@ public class SettingsActivity extends PreferenceActivity {
 
     // LANGUAGE SETTINGS
 
+    /**
+     * @Description this class delcare a ListPreference, the corresponding resources is pref_language.xml
+     * there are dialog to choose language
+     *
+     */
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static class LanguagePreferenceFragment extends PreferenceFragment {
@@ -191,16 +169,9 @@ public class SettingsActivity extends PreferenceActivity {
             addPreferencesFromResource(R.xml.pref_language);
             setHasOptionsMenu(true);
 
-            // Set the default value
-//
-//            Preference languagePreference = findPreference(getResources().getString(R.string.language));
-            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-//            languagePreference.setDefaultValue(sharedPreferences.getString(getResources().getString(R.string.language), ""));
-            System.out.println(sharedPreferences.getAll());
 
-
-            // Bind
-            bindPreferenceSummaryToValue(findPreference(getResources().getString(R.string.language)));
+            // Bind sumarray
+            bindPreferenceSummaryToValue(findPreference(getResources().getString(R.string.language_key)));
             //  bindPreferenceSummaryToValue(findPreference("example_list"));`
         }
 
@@ -217,10 +188,11 @@ public class SettingsActivity extends PreferenceActivity {
 
     }
 
-
-    // BMI SETTINGS
-
-
+    /**
+     * @Description this class delcare a SwitchPreference, the corresponding resources is pref_bmi.xml
+     * there are toggle to choose whether to save bmi information
+     *
+     */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static class BMIPreferenceFragment extends PreferenceFragment {
         @Override
@@ -228,11 +200,6 @@ public class SettingsActivity extends PreferenceActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_bmi);
             setHasOptionsMenu(true);
-
-            // Bind the summaries of EditText/List/Dialog/Ringtone preferences
-            // to their values. When their values change, their summaries are
-            // updated to reflect the new value, per the Android Design
-            // guidelines.
 
         }
 
@@ -247,25 +214,7 @@ public class SettingsActivity extends PreferenceActivity {
         }
     }
 
-    // Change the language
-    public void setLocale(Locale myLocal) {
-        //Declare the resource
-        Resources res = getResources();
-        //Declare DisplayMetrics using resources
-        DisplayMetrics dm = res.getDisplayMetrics();
-        //Declare the conf
-        Configuration conf = res.getConfiguration();
-        //set the Configuration with myLocal
-        conf.locale = myLocal;
-        //Update configuration with resource
-        res.updateConfiguration(conf, dm);
-        //Declare the intent
 
-        Intent refresh = new Intent(this, MainActivity.class);
-        //Refresh the mainActivity
-        startActivity(refresh);
-
-    }
 
 
 }

@@ -156,9 +156,12 @@
     <string name="english">English</string>
     <string name="mandarin">Mandarin</string>
 
+    <string name="language_key">Language</string>
     <string name="language_menu_title">Language Settings</string>
     <string name="language_title">Chose Your Preferred Language</string>
     <string name="language_summary">You can choose English or Mandarin</string>
+
+
     <string-array name="language_entries">
         <item>@string/english</item>
         <item>@string/mandarin</item>
@@ -166,8 +169,8 @@
 
 
     <string-array name="language_values">
-        <item>@string/english</item>
-        <item>@string/mandarin</item>
+        <item>1</item>
+        <item>0</item>
     </string-array>
 
 

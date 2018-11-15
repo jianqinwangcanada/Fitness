@@ -7,7 +7,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="header_icon_size">26sp</dimen>
 
-    <dimen name="design_navigation_icon_size" tools:override="true">30dp</dimen>
+    <dimen name="design_navigation_icon_size" tools:override="true">25dp</dimen>
 
     <dimen name="headerFontSize">25dp</dimen>
 

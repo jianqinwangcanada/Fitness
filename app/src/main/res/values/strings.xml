@@ -151,7 +151,7 @@
     <string name="bmi_summary">Open toggle will save your BMI input</string>
 
     <!--Stirng value for Language Listpreference-->
-
+    <string name="language_key">language</string>
     <string name="language">Language</string>
     <string name="english">English</string>
     <string name="mandarin">Mandarin</string>

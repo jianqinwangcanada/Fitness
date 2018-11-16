@@ -1,9 +1,112 @@
 <resources>
-    <string name="app_name">wbfitness</string>
+    <string name="app_name">WB Fitness</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+<!--Content Description for the navigation-->
+    <string name="nav_header_name">Navigation</string>
+    <string name="nav_menu_title_home">Home</string>
+    <string name="nav_menu_title_BMI">BMI</string>
+    <string name="nav_menu_title_WorkoutPlan">Workout Plan</string>
+    <string name="nav_menu_title_WorkoutTips">Workout Tips</string>
+    <string name="nav_more_information">More Information</string>
+    <string name="nav_menu_tilte_Contact">Contact</string>
+    <string name="nav_menu_title_Credits">Credits</string>
+    <string name="nav_language_refresh">Refresh Language</string>
+    <!-- Content Descriptions for the Images in the Application -->
+    <string name="logoDescription">WB Fitness Logo</string>
+
+    <string name="bmiButtonDescription">BMI Calculator Page</string>
+    <string name="workoutPlanDescription">Workout Plan Page</string>
+    <string name="contactPageDescription">Contact Page</string>
+    <string name="workoutTipsDescription">Workout Tips Page</string>
+
+    <!-- Texts and Placeholders for Initialization Page -->
+    <string name="setupPageTitle">First Time Setup</string>
+    <string name="name">Name</string>
+    <string name="namePlaceholder">Obi-Wan Kenobi</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="age">Age</string>
+    <string name="height">Height</string>
+    <string name="heightInches">Height In Inches</string>
+    <string name="heightCentimeters">Height in Centimeters</string>
+    <string name="heightPlaceholderInches">72</string>
+    <string name="heightPlaceholderCentimeters">183</string>
+    <string name="weight">Weight</string>
+    <string name="weightPounds">Weight In Pounds</string>
+    <string name="weightKG">Weight In Kilograms</string>
+    <string name="weightPlaceholderPounds">240</string>
+    <string name="weightPlaceholderKilograms">109</string>
+    <string name="measurement">Measurement System</string>
+    <string name="metric">Metric(Meters, Kilograms)</string>
+    <string name="imperial">Imperial(Inches, Pounds)</string>
+    <string name="submit">Submit</string>
+
+
+
+    <!--Contact fragment information-->
+    <string name="contact_title">You can review our website, SMS and Tel us, or you can
+         Mail us and see our location
+    </string>
+    <string name="contact_email">
+        <![CDATA[<b>Send Us Email</b>  <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+    </string>
+    <string name="contact_tel">
+        <![CDATA[<b>Tel Us</b> <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+    </string>
+    <string name="contact_SMS">
+         <![CDATA[<b>Send Message</b> <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+    </string>
+    <string name="contact_website">
+       <![CDATA[<b>View Website</b>  <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+    </string>
+    <string name="contact_location">
+        <![CDATA[<b>View Location</b>  <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+    </string>
+    <!--View Website <![CDATA[<font color=\'#0000FF\'><u>Click!</u></font>]]>-->
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+     <!--String value for BMI Switch Preference-->
+    <string name="bmi_menu_title">BMI Save Setting</string>
+    <string name="bmi_title">Save Your BMI Input?</string>
+    <string name="bmi_summary">Open toggle will save your BMI input</string>
+
+    <!--Stirng value for Language Listpreference-->
+    <string name="language_key">language</string>
+    <string name="language_value_english">1</string>
+    <string name="language_value_madarin">0</string>
+
+
+    <string name="language">Language</string>
+    <string name="english">English</string>
+    <string name="mandarin">Mandarin</string>
+
+    <string name="language_menu_title">Language Settings</string>
+    <string name="language_title">Chose Your Preferred Language</string>
+    <string name="language_summary">You can choose English or Mandarin</string>
+
+
+
+
+    <string-array name="language_entries">
+        <item>@string/english</item>
+        <item>@string/mandarin</item>
+    </string-array>
+
+
+    <string-array name="language_values">
+        <item>@string/language_value_english</item>
+        <item>@string/language_value_madarin</item>
+    </string-array>
+
+
 </resources>

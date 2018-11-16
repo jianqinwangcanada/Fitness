@@ -1,11 +1,11 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/bmi_language</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -16,5 +16,29 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--Drawer Menu style-->
+    <style name="drawerMenu"  >
+        <item name="android:textSize">24dp</item>
+    </style>
+    <!--Application head style-->
+    <style name="headTitle">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:fontFamily">lobster</item>
+
+    </style>
+
+     <!--Setting Text style-->
+    <style name="setting_title">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FF0000</item>
+    </style>
+    <style name="setting_summary">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
 
 </resources>

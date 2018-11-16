@@ -1,5 +1,6 @@
 package com.example.web.wbfitness;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,15 +12,18 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import java.util.Locale;
 
@@ -54,6 +58,8 @@ public class SetupPage extends Fragment {
     Button submit;
     TextView heightTV;
     TextView weightTV;
+    Toolbar toolbar;
+    ActionBar action;
 
     // Declare the SharedPreferences file
     SharedPreferences preferences;
@@ -94,10 +100,14 @@ public class SetupPage extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+
+
     }
 
     @Override
@@ -125,6 +135,8 @@ public class SetupPage extends Fragment {
         heightTV = view.findViewById(R.id.heightTV);
         submit = view.findViewById(R.id.setupSubmitButton);
 
+
+
         // Determine if the device is already set to English or Mandarin and check the right box
         if(getResources().getConfiguration().locale.toString().contains("en")) {
             english.setChecked(true);
@@ -132,7 +144,7 @@ public class SetupPage extends Fragment {
             mandarin.setChecked(true);
         }
 
-        // Change the locale if the language radiogropu is changed
+        // Change the locale if the language radiogroup is changed
         languageGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {

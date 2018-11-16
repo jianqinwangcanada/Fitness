@@ -42,9 +42,12 @@
     <string name="weightKG">Weight In Kilograms</string>
     <string name="weightPlaceholderPounds">240</string>
     <string name="weightPlaceholderKilograms">109</string>
-    <string name="measurement">Measurement System</string>
-    <string name="metric">Metric(Meters, Kilograms)</string>
-    <string name="imperial">Imperial(Inches, Pounds)</string>
+    <string name="heightMeasurement">Height Measurement System</string>
+    <string name="weightMeasurement">Weight Measurement System</string>
+    <string name="pounds">Pounds</string>
+    <string name="kilograms">Kilograms</string>
+    <string name="inches">Inches</string>
+    <string name="centimeters">Centimeters</string>
     <string name="submit">Submit</string>
 
 

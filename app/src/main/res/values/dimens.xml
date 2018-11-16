@@ -9,7 +9,7 @@
           <!--Navigation Icon Size-->
     <dimen name="design_navigation_icon_size" tools:override="true">25dp</dimen>
 
-    <dimen name="headerFontSize">25dp</dimen>
+    <dimen name="headerFontSize">25sp</dimen>
 
     <dimen name="setting_title" tools:overrid="true">20sp</dimen>
 

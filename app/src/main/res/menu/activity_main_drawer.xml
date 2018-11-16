@@ -34,10 +34,6 @@
                 android:id="@+id/nav_credits"
                 android:icon="@drawable/ic_credit_black_24dp"
                 android:title="@string/nav_menu_title_Credits" />
-            <item
-                android:id="@+id/nav_refresh"
-                android:icon="@drawable/ic_sync_black_24dp"
-                android:title="@string/nav_language_refresh" />
         </menu>
     </item>
 

@@ -180,9 +180,16 @@ public class SetupPage extends Fragment {
 
                 // Language
                 if(english.isChecked()) {
-                    preferences.edit().putString(getResources().getString(R.string.language_key), english.getText().toString()).apply();
+                  //  preferences.edit().putString(getResources().getString(R.string.language_key), english.getText().toString()).apply();
+                  preferences.edit().putString(getResources().getString(R.string.language_key), getResources().getString(R.string.language_value_english)).apply();
+
+
+
                 } else if (mandarin.isChecked()) {
-                    preferences.edit().putString(getResources().getString(R.string.language_key), mandarin.getText().toString()).apply();
+                   // preferences.edit().putString(getResources().getString(R.string.language_key), mandarin.getText().toString()).apply();
+                    preferences.edit().putString(getResources().getString(R.string.language_key), getResources().getString(R.string.language_value_madarin)).apply();
+
+
                 }
 
                 // Name

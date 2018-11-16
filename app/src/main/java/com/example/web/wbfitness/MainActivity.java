@@ -10,6 +10,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        MainActivity.this.setTitle(getResources().getString(R.string.app_name));
 
         // Determine if the app is being launched for the first time and display the appropriate page
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.content, new HomePage(), "Home Page");
             transaction.addToBackStack(null);
             transaction.commit();
+
         }
 
 
@@ -153,13 +155,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_credits)
         {
 
-        }else if(id==R.id.nav_refresh){
-
-
         }
-
-
-
 
         //commit the transaction for all navigation drawer item selectd
         transaction.addToBackStack(null);

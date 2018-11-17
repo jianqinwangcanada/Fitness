@@ -4,25 +4,26 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
+
+import com.example.web.wbfitness.JavaBean.Workout;
+
+import java.util.ArrayList;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link HomePage.OnFragmentInteractionListener} interface
+ * {@link WorkoutPlan.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link HomePage#newInstance} factory method to
+ * Use the {@link WorkoutPlan#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomePage extends Fragment {
+public class WorkoutPlan extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -32,20 +33,9 @@ public class HomePage extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    // Declare the FragmentManager
-    FragmentManager fm;
-
-    // Declare the buttons that are on the page
-    ImageButton bmiButton;
-    ImageButton planButton;
-    ImageButton contactButton;
-    ImageButton tipsButton;
-
-
-
     private OnFragmentInteractionListener mListener;
 
-    public HomePage() {
+    public WorkoutPlan() {
         // Required empty public constructor
     }
 
@@ -55,11 +45,11 @@ public class HomePage extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment HomePage.
+     * @return A new instance of fragment WorkoutPlan.
      */
     // TODO: Rename and change types and number of parameters
-    public static HomePage newInstance(String param1, String param2) {
-        HomePage fragment = new HomePage();
+    public static WorkoutPlan newInstance(String param1, String param2) {
+        WorkoutPlan fragment = new WorkoutPlan();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -70,7 +60,6 @@ public class HomePage extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -81,53 +70,27 @@ public class HomePage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home_page, container, false);
-
-        fm = getActivity().getSupportFragmentManager();
-
-        // Grab the buttons from the layout
-
-        bmiButton = view.findViewById(R.id.bmiButton);
-        planButton = view.findViewById(R.id.workoutPlanButton);
-        contactButton = view.findViewById(R.id.contactButton);
-        tipsButton = view.findViewById(R.id.workoutTipsButton);
-
-        // Launch the appropriate page when a button is selected
-
-        contactButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                FragmentTransaction transaction = fm.beginTransaction();
-                transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
-                transaction.replace(R.id.content, new ContactFragment());
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-
-        planButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction transaction = fm.beginTransaction();
-                transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
-                transaction.replace(R.id.content, new WorkoutPlan());
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
+        View view = inflater.inflate(R.layout.fragment_workout_plan, container, false);
 
 
-        bmiButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        ArrayList<Workout> workouts = new ArrayList<>();
+        workouts.add(new Workout("Push-Up", "Move the earth."));
+        workouts.add(new Workout("Push-Up", "Move the earth."));
+        workouts.add(new Workout("Push-Up", "Move the earth."));
+        workouts.add(new Workout("Push-Up", "Move the earth."));
+        workouts.add(new Workout("Push-Up", "Move the earth."));
+        workouts.add(new Workout("Push-Up", "Move the earth."));
+        workouts.add(new Workout("Push-Up", "Move the earth."));
 
-            }
-        });
 
+        RecyclerView recyclerView = view.findViewById(R.id.workoutPlanRV);
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        manager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(manager);
 
+        WorkoutAdapter adapter = new WorkoutAdapter(workouts);
+        recyclerView.setAdapter(adapter);
         return view;
-
     }
 
     // TODO: Rename method, update argument and hook method into UI event

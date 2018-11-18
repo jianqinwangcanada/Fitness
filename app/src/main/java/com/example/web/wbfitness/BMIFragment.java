@@ -3,10 +3,19 @@ package com.example.web.wbfitness;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 
 /**
@@ -28,7 +37,14 @@ public class BMIFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+   //Define progress varialbes
+   private TextView txtProgress;
+    private ProgressBar progressBar;
+    private int pStatus = 0;
+    Thread runThread;
+    Button calculateButton;
 
+    private Handler handler = new Handler();
     public BMIFragment() {
         // Required empty public constructor
     }
@@ -64,7 +80,89 @@ public class BMIFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bmi, container, false);
+        View view=inflater.inflate(R.layout.fragment_bmi, container, false);
+        progressBar=(ProgressBar) view.findViewById(R.id.progressBar);
+
+       calculateButton=(Button)view.findViewById(R.id.bmiCalButton);
+
+//
+//         final ExecutorService executorService=Executors.newSingleThreadExecutor();
+//         final Runnable runTask=new Runnable() {
+//             int pStatus=0;
+//             @Override
+//             public void run() {
+//
+//                 while (pStatus <=20) {
+//                     handler.post(new Runnable() {
+//                         @Override
+//                         public void run() {
+//                             progressBar.setProgress(pStatus);
+//
+//                         }
+//                     });
+//                     try {
+//                         Thread.sleep(10);
+//                     } catch (InterruptedException e) {
+//                         e.printStackTrace();
+//                     }
+//                     pStatus++;
+//                 }
+//             }
+//         };
+//
+//      calculateButton.setOnClickListener(new View.OnClickListener() {
+//          @Override
+//          public void onClick(View v) {
+//              Future runFuture=executorService.submit(runTask);
+//
+//
+//             // runFuture.cancel(false);
+//          }
+//      });
+
+
+        progressBar = (ProgressBar)view.findViewById(R.id.progressBar);
+
+
+           calculateButton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   new Thread(new Runnable() {
+                       @Override
+                       public void run() {
+
+                           while (pStatus <= 20) {
+                               handler.post(new Runnable() {
+                                   @Override
+                                   public void run() {
+                                       progressBar.setProgress(pStatus);
+
+                                   }
+                               });
+                               try {
+                                   Thread.sleep(100);
+                               } catch (InterruptedException e) {
+                                   e.printStackTrace();
+                               }
+                               pStatus++;
+                           }
+                       }
+                   }).start();
+                 
+
+               }
+           });
+
+
+
+
+
+
+
+
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

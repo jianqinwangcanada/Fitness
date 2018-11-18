@@ -115,18 +115,13 @@
     <string name="weight_lable">Ponds</string>
     <string name="bmi_label">BMI Value</string>
     <string name="calcualte_button">Calculate</string>
-    <string name="bmi_evaluate">Your BMI IS:</string>
+    <string name="bmi_evaluate">Your BMI is:</string>
     <string name="value_underweight">Underweight</string>
     <string name="value_overweight">OverWeight</string>
     <string name="value_nomal">Normal Weight</string>
     <string name="value_obesity">Obesity</string>
 
-   <string name="bmi_category">BMI Categories:\n
-                               Underweight = &lt;18.5\n
-                               Normal weight = 18.5–24.9\n
-                               Overweight = 25–29.9\n
-                              Obesity = BMI of 30 or greater
-   </string>
+
 
 
 

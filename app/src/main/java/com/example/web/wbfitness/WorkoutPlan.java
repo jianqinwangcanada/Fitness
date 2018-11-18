@@ -24,6 +24,9 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class WorkoutPlan extends Fragment {
+
+    RecyclerView workoutRV;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -72,6 +75,7 @@ public class WorkoutPlan extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_workout_plan, container, false);
 
+        workoutRV = view.findViewById(R.id.workoutPlanRV);
 
         ArrayList<Workout> workouts = new ArrayList<>();
         workouts.add(new Workout("Push-Up", "Move the earth."));
@@ -83,15 +87,25 @@ public class WorkoutPlan extends Fragment {
         workouts.add(new Workout("Push-Up", "Move the earth."));
 
 
-        RecyclerView recyclerView = view.findViewById(R.id.workoutPlanRV);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(RecyclerView.VERTICAL);
-        recyclerView.setLayoutManager(manager);
+        workoutRV.setLayoutManager(manager);
+
+
+
 
         WorkoutAdapter adapter = new WorkoutAdapter(workouts);
-        recyclerView.setAdapter(adapter);
+        workoutRV.setAdapter(adapter);
+
+        // Workout item event handler
+        workoutRV = view.findViewById(R.id.workoutPlanRV);
+
+
+
         return view;
     }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

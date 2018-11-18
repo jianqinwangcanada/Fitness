@@ -6,7 +6,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-<!--Content Description for the navigation-->
+    <!--Content Description for the navigation-->
     <string name="nav_header_name">Navigation</string>
     <string name="nav_menu_title_home">Home</string>
     <string name="nav_menu_title_BMI">BMI</string>
@@ -51,7 +51,6 @@
     <string name="submit">Submit</string>
 
 
-
     <!--Contact fragment information-->
     <string name="contact_title">You can review our website, SMS and Tel us, or you can
          Mail us and see our location
@@ -78,7 +77,7 @@
 
     <!-- Strings related to Settings -->
 
-     <!--String value for BMI Switch Preference-->
+    <!--String value for BMI Switch Preference-->
     <string name="bmi_menu_title">BMI Save Setting</string>
     <string name="bmi_title">Save Your BMI Input?</string>
     <string name="bmi_summary">Open toggle will save your BMI input</string>
@@ -98,8 +97,6 @@
     <string name="language_summary">You can choose English or Mandarin</string>
 
 
-
-
     <string-array name="language_entries">
         <item>@string/english</item>
         <item>@string/mandarin</item>
@@ -110,6 +107,23 @@
         <item>@string/language_value_english</item>
         <item>@string/language_value_madarin</item>
     </string-array>
+
+<!--Calculate BMI -->
+
+    <string name="bmi_calcuate_title">Body Mass Index Calculator </string>
+    <string name="height_label">Inches</string>
+    <string name="weight_lable">Ponds</string>
+    <string name="bmi_label">BMI Value</string>
+    <string name="calcualte_button">Calculate</string>
+    <string name="bmi_evaluate">Your BMI is:</string>
+    <string name="value_underweight">Underweight</string>
+    <string name="value_overweight">OverWeight</string>
+    <string name="value_nomal">Normal Weight</string>
+    <string name="value_obesity">Obesity</string>
+
+
+
+
 
 
 </resources>

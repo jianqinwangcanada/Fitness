@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
                  ContactFragment.OnFragmentInteractionListener,
                  HomePage.OnFragmentInteractionListener,
-                SetupPage.OnFragmentInteractionListener{
+                SetupPage.OnFragmentInteractionListener,
+                BMIFragment.OnFragmentInteractionListener {
 
 
     //Declare FragmentManager to manage transaction
@@ -138,6 +139,14 @@ public class MainActivity extends AppCompatActivity
                 transaction.replace(R.id.content, selectedFragment);
             }
         } else if (id == R.id.nav_bmi) {
+            //Just whether it is visible or null , if invisilbe or null ,show it
+            selectedFragment=fm.findFragmentByTag("BMI");
+            if(selectedFragment == null)
+            {transaction.replace(R.id.content, new BMIFragment(),"BMI");
+            }
+            else if(!selectedFragment.isVisible()){
+                transaction.replace(R.id.content, selectedFragment);
+            }
 
         } else if (id == R.id.nav_workoutplan) {
 

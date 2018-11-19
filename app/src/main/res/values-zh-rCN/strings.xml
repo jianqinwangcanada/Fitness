@@ -44,19 +44,19 @@
 <string name="contact_title">你可以浏览我们网页, 发短信或者打电话，你也可以发电子有点和查看我们位置
     </string>
 <string name="contact_email">
-        <![CDATA[<b>发送邮件</b>  <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
+       发送邮件
     </string>
 <string name="contact_tel">
-        <![CDATA[<b>拨打电话</b> <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
-    </string>
+       拨打电话
+     </string>
 <string name="contact_SMS">
-         <![CDATA[<b>发送短信</b> <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
+       发送短信
     </string>
 <string name="contact_website">
-       <![CDATA[<b>浏览网站</b>  <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
+     浏览网站
     </string>
 <string name="contact_location">
-        <![CDATA[<b>查看位置</b>  <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
+      查看位置
     </string>
 
 <string name="hello_blank_fragment">空白打招呼</string>
@@ -94,4 +94,5 @@
     <item>@string/language_value_english</item>
     <item>@string/language_value_madarin</item>
 </string-array>
+
  </resources>

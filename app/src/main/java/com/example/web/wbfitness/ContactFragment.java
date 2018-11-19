@@ -91,7 +91,7 @@ public class ContactFragment extends Fragment {
        contactItems.add(new ContactItem(R.string.contact_SMS,R.drawable.sms));
        contactItems.add(new ContactItem(R.string.contact_email,R.drawable.email));
        contactItems.add(new ContactItem(R.string.contact_location,R.drawable.map));
-       contactItems.add(new ContactItem(R.string.contact_website,R.drawable.web));
+       contactItems.add(new ContactItem(R.string.contact_website,R.drawable.web));//
         //Declare a CustomerAdapter adapter
         CustomerAdapter adapter=new CustomerAdapter(getContext(),contactItems);
        //Bind the adapter to contactView
@@ -209,7 +209,9 @@ public class ContactFragment extends Fragment {
             }
             TextView itemName=convertView.findViewById(R.id.contact_item_text);
             ContactItem item=getItem(position);
-            itemName.setText(Html.fromHtml( getString(item.getItemTitle())));
+            itemName.setText( getString(item.getItemTitle()));
+
+
             ImageView imageView=convertView.findViewById(R.id.contact_item_iamge);
             imageView.setImageResource(item.getImageID());
 

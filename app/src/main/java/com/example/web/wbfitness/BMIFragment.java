@@ -38,10 +38,9 @@ public class BMIFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
    //Define progress varialbes
-   private TextView txtProgress;
+
     private ProgressBar progressBar;
-    private int pStatus = 0;
-    Thread runThread;
+
     Button calculateButton;
 
     private Handler handler = new Handler();
@@ -74,6 +73,7 @@ public class BMIFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -81,85 +81,19 @@ public class BMIFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_bmi, container, false);
+       //Declare two components
         progressBar=(ProgressBar) view.findViewById(R.id.progressBar);
-
        calculateButton=(Button)view.findViewById(R.id.bmiCalButton);
 
-//
-//         final ExecutorService executorService=Executors.newSingleThreadExecutor();
-//         final Runnable runTask=new Runnable() {
-//             int pStatus=0;
-//             @Override
-//             public void run() {
-//
-//                 while (pStatus <=20) {
-//                     handler.post(new Runnable() {
-//                         @Override
-//                         public void run() {
-//                             progressBar.setProgress(pStatus);
-//
-//                         }
-//                     });
-//                     try {
-//                         Thread.sleep(10);
-//                     } catch (InterruptedException e) {
-//                         e.printStackTrace();
-//                     }
-//                     pStatus++;
-//                 }
-//             }
-//         };
-//
-//      calculateButton.setOnClickListener(new View.OnClickListener() {
-//          @Override
-//          public void onClick(View v) {
-//              Future runFuture=executorService.submit(runTask);
-//
-//
-//             // runFuture.cancel(false);
-//          }
-//      });
-
-
         progressBar = (ProgressBar)view.findViewById(R.id.progressBar);
+       //Define the calculator button click action
+       calculateButton.setOnClickListener(new View.OnClickListener() {
+       @Override
+       public void onClick(View v) {
+           setProgressValue(20);
 
-
-           calculateButton.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View v) {
-                   new Thread(new Runnable() {
-                       @Override
-                       public void run() {
-
-                           while (pStatus <= 20) {
-                               handler.post(new Runnable() {
-                                   @Override
-                                   public void run() {
-                                       progressBar.setProgress(pStatus);
-
-                                   }
-                               });
-                               try {
-                                   Thread.sleep(100);
-                               } catch (InterruptedException e) {
-                                   e.printStackTrace();
-                               }
-                               pStatus++;
-                           }
-                       }
-                   }).start();
-                 
-
-               }
-           });
-
-
-
-
-
-
-
-
+       }
+   });
 
 
         return view;
@@ -203,4 +137,29 @@ public class BMIFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
+    //Declare a method to run progress bar
+    private void setProgressValue(final int pStatus){
+
+        // set the progress
+        progressBar.setProgress(0);
+        // thread is used to change the progress value
+        Thread thread = new Thread(new Runnable() {
+            int pvalue=0;
+            @Override
+            public void run() {
+                while(pvalue<=pStatus) {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    progressBar.setProgress(pvalue);
+                    pvalue++;
+                }
+            }//run
+        });
+        thread.start();
+    };
 }

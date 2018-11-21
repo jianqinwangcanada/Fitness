@@ -56,19 +56,19 @@
          Mail us and see our location
     </string>
     <string name="contact_email">
-        <![CDATA[<b>Send Us Email</b>  <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+       Send  Email
     </string>
     <string name="contact_tel">
-        <![CDATA[<b>Tel Us</b> <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+        Call telephone
     </string>
     <string name="contact_SMS">
-         <![CDATA[<b>Send Message</b> <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+        Send Message
     </string>
     <string name="contact_website">
-       <![CDATA[<b>View Website</b>  <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+      View Website
     </string>
     <string name="contact_location">
-        <![CDATA[<b>View Location</b>  <font color=\'#0000FF\'><small><i><u>Click!</u></i></small></font>]]>
+       View Location
     </string>
     <!--View Website <![CDATA[<font color=\'#0000FF\'><u>Click!</u></font>]]>-->
     <!-- TODO: Remove or change this placeholder text -->
@@ -125,6 +125,23 @@
         <item>@string/language_value_english</item>
         <item>@string/language_value_madarin</item>
     </string-array>
+
+<!--Calculate BMI -->
+
+    <string name="bmi_calcuate_title">Body Mass Index Calculator </string>
+    <string name="height_label">Inches</string>
+    <string name="weight_lable">Ponds</string>
+    <string name="bmi_label">BMI Value</string>
+    <string name="calcualte_button">Calculate</string>
+    <string name="bmi_evaluate">Your BMI is:</string>
+    <string name="value_underweight">Underweight</string>
+    <string name="value_overweight">OverWeight</string>
+    <string name="value_nomal">Normal Weight</string>
+    <string name="value_obesity">Obesity</string>
+
+
+
+
 
 
 </resources>

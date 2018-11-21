@@ -4,6 +4,7 @@ public class ContactItem {
     private int itemTitle;
     private int imageID;
 
+
     public ContactItem(int itemTitle, int imageID) {
         this.itemTitle = itemTitle;
         this.imageID = imageID;

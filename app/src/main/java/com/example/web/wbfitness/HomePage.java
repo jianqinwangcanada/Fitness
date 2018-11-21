@@ -100,7 +100,7 @@ public class HomePage extends Fragment {
 
                 FragmentTransaction transaction = fm.beginTransaction();
                 transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
-                transaction.replace(R.id.content, new ContactFragment());
+                transaction.replace(R.id.content, new ContactFragment(), "Contact");
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -111,7 +111,7 @@ public class HomePage extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction transaction = fm.beginTransaction();
                 transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
-                transaction.replace(R.id.content, new WorkoutPlan());
+                transaction.replace(R.id.content, new WorkoutPlan(), "Workout Plan");
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -121,7 +121,11 @@ public class HomePage extends Fragment {
         bmiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
+                transaction.replace(R.id.content, new BMIFragment(),"BMI");
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 

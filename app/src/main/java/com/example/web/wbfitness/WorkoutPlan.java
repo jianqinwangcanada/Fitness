@@ -82,42 +82,52 @@ public class WorkoutPlan extends Fragment {
         workoutRV = view.findViewById(R.id.workoutPlanRV);
 
         ArrayList<Workout> chest = new ArrayList<>();
-        chest.add(new Workout("Push-Up", "Move the earth."));
-        chest.add(new Workout("Push-Up", "Move the earth."));
-        chest.add(new Workout("Push-Up", "Move the earth."));
-        chest.add(new Workout("Push-Up", "Move the earth."));
-        chest.add(new Workout("Push-Up", "Move the earth."));
-        chest.add(new Workout("Push-Up", "Move the earth."));
-        chest.add(new Workout("Push-Up", "Move the earth."));
+        String[] chestTitle = getResources().getStringArray(R.array.chestWorkoutTitles);
+        String[] chestSteps = getResources().getStringArray(R.array.chestWorkoutSteps);
+
+        for(int i=0; i < chestTitle.length; i++) {
+            chest.add(new Workout(chestTitle[i], chestSteps[i]));
+        }
 
         ArrayList<Workout> legs = new ArrayList<>();
-        legs.add(new Workout("Squat", "Move the earth."));
-        legs.add(new Workout("Squat", "Move the earth."));
-        legs.add(new Workout("Squat", "Move the earth."));
-        legs.add(new Workout("Squat", "Move the earth."));
-        legs.add(new Workout("Squat", "Move the earth."));
-        legs.add(new Workout("Squat", "Move the earth."));
-        legs.add(new Workout("Squat", "Move the earth."));
+        String[] legsTitle = getResources().getStringArray(R.array.legsWorkoutTitles);
+        String[] legsSteps = getResources().getStringArray(R.array.legsWorkoutSteps);
+
+        for(int i=0; i < legsTitle.length; i++) {
+            legs.add(new Workout(legsTitle[i], legsSteps[i]));
+        }
 
         ArrayList<Workout> core = new ArrayList<>();
-        core.add(new Workout("Plank", "Move the earth."));
-        core.add(new Workout("Plank", "Move the earth."));
-        core.add(new Workout("Plank", "Move the earth."));
+        String[] coreTitle = getResources().getStringArray(R.array.coreWorkoutTitles);
+        String[] coreSteps = getResources().getStringArray(R.array.coreWorkoutSteps);
+
+        for(int i=0; i < coreTitle.length; i++) {
+            core.add(new Workout(coreTitle[i], coreSteps[i]));
+        }
 
         ArrayList<Workout> cardio = new ArrayList<>();
-        cardio.add(new Workout("Bike", "Move the earth."));
-        cardio.add(new Workout("Bike", "Move the earth."));
-        cardio.add(new Workout("Bike", "Move the earth."));
+        String[] cardioTitle = getResources().getStringArray(R.array.cardioWorkoutTitles);
+        String[] cardioSteps = getResources().getStringArray(R.array.cardioWorkoutSteps);
+
+        for(int i=0; i < cardioTitle.length; i++) {
+            cardio.add(new Workout(cardioTitle[i], cardioSteps[i]));
+        }
 
         ArrayList<Workout> back = new ArrayList<>();
-        back.add(new Workout("Lawnmower", "Move the earth."));
-        back.add(new Workout("Lawnmower", "Move the earth."));
-        back.add(new Workout("Lawnmower", "Move the earth."));
+        String[] backTitle = getResources().getStringArray(R.array.backWorkoutTitles);
+        String[] backSteps = getResources().getStringArray(R.array.backWorkoutSteps);
+
+        for(int i=0; i < backTitle.length; i++) {
+            back.add(new Workout(backTitle[i], backSteps[i]));
+        }
 
         ArrayList<Workout> arms = new ArrayList<>();
-        arms.add(new Workout("Curl", "Move the earth."));
-        arms.add(new Workout("Curl", "Move the earth."));
-        arms.add(new Workout("Curl", "Move the earth."));
+        String[] armsTitle = getResources().getStringArray(R.array.armsWorkoutTitles);
+        String[] armsSteps = getResources().getStringArray(R.array.armsWorkoutSteps);
+
+        for(int i=0; i < armsTitle.length; i++) {
+            arms.add(new Workout(armsTitle[i], armsSteps[i]));
+        }
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(RecyclerView.VERTICAL);

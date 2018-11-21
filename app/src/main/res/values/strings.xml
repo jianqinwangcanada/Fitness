@@ -140,6 +140,121 @@
     <string name="value_obesity">Obesity</string>
 
 
+<!--
+#############################################################################
+Workouts and Steps
+-->
+    <!-- Chest -->
+    <string-array name="chestWorkoutTitles">
+        <item>Chest Workout 1</item>
+        <item>Chest Workout 2</item>
+        <item>Chest Workout 3</item>
+        <item>Chest Workout 4</item>
+        <item>Chest Workout 5</item>
+    </string-array>
+
+    <string-array name="chestWorkoutSteps">
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+    </string-array>
+
+    <!-- Core -->
+    <string-array name="coreWorkoutTitles">
+        <item>Core Workout 1</item>
+        <item>Core Workout 2</item>
+        <item>Core Workout 3</item>
+        <item>Core Workout 4</item>
+        <item>Core Workout 5</item>
+    </string-array>
+
+    <string-array name="coreWorkoutSteps">
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+    </string-array>
+
+    <!-- Arms -->
+    <string-array name="armsWorkoutTitles">
+        <item>Arms Workout 1</item>
+        <item>Arms Workout 2</item>
+        <item>Arms Workout 3</item>
+        <item>Arms Workout 4</item>
+        <item>Arms Workout 5</item>
+    </string-array>
+
+    <string-array name="armsWorkoutSteps">
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+    </string-array>
+
+    <!-- Legs -->
+    <string-array name="legsWorkoutTitles">
+        <item>Back Workout 1</item>
+        <item>Back Workout 2</item>
+        <item>Back Workout 3</item>
+        <item>Back Workout 4</item>
+        <item>Back Workout 5</item>
+    </string-array>
+
+    <string-array name="legsWorkoutSteps">
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+    </string-array>
+
+    <!-- Cardio -->
+    <string-array name="cardioWorkoutTitles">
+        <item>Back Workout 1</item>
+        <item>Back Workout 2</item>
+        <item>Back Workout 3</item>
+        <item>Back Workout 4</item>
+        <item>Back Workout 5</item>
+    </string-array>
+
+    <string-array name="cardioWorkoutSteps">
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+    </string-array>
+
+    <!-- Back -->
+    <string-array name="backWorkoutTitles">
+        <item>Back Workout 1</item>
+        <item>Back Workout 2</item>
+        <item>Back Workout 3</item>
+        <item>Back Workout 4</item>
+        <item>Back Workout 5</item>
+    </string-array>
+
+    <string-array name="backWorkoutSteps">
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+        <item>This is how you do the workout</item>
+    </string-array>
+
+
+
+
+
+
+
+
+
+
 
 
 

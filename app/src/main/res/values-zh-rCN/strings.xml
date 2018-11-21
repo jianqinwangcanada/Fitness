@@ -95,4 +95,20 @@
     <item>@string/language_value_madarin</item>
 </string-array>
 
- </resources>
+
+    <!--Calculate BMI -->
+
+    <string name="bmi_calcuate_title">体重指数计算器</string>
+    <string name="height_label">英寸</string>
+    <string name="weight_lable">英镑</string>
+    <string name="bmi_label">BMI 值</string>
+    <string name="calcualte_button">计算</string>
+    <string name="bmi_evaluate">您的 BMI:</string>
+    <string name="value_underweight">体重过轻</string>
+    <string name="value_overweight">体重超重</string>
+    <string name="value_nomal">正常体重</string>
+    <string name="value_obesity">肥胖</string>
+
+
+
+</resources>

@@ -154,6 +154,7 @@
             android:ems="10"
             android:gravity="center"
             android:inputType="number"
+
             android:text="0" />
 
     </LinearLayout>
@@ -235,7 +236,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/bmiOutput2"
+            android:id="@+id/bmiOutputResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

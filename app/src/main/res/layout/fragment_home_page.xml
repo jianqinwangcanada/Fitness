@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:contentDescription="@string/logoDescription"
-        android:src="@mipmap/test_logo_round" />
+        android:padding="5dp"
+        android:src="@drawable/logo" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -31,10 +32,11 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:background="@null"
                 android:contentDescription="@string/bmiButtonDescription"
-                android:elevation="0dp"
+                android:elevation="24dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_body_mass_index" />
+                android:src="@mipmap/ic_bmi_foreground" />
 
             <ImageButton
                 android:id="@+id/workoutPlanButton"
@@ -42,9 +44,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:background="@null"
                 android:contentDescription="@string/workoutPlanDescription"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_plan_black_24dp" />
+                android:src="@mipmap/ic_plan_foreground" />
         </TableRow>
 
         <TableRow
@@ -58,9 +61,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:background="@null"
                 android:contentDescription="@string/contactPageDescription"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_contact__black_24dp" />
+                android:src="@mipmap/ic_contact_foreground" />
 
             <ImageButton
                 android:id="@+id/workoutTipsButton"
@@ -68,9 +72,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:background="@null"
                 android:contentDescription="@string/workoutTipsDescription"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_error_outline_black_24dp" />
+                android:src="@mipmap/ic_tips_foreground" />
         </TableRow>
 
     </TableLayout>

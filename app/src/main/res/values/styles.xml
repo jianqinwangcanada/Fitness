@@ -26,7 +26,7 @@
         <item name="android:textSize">26sp</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:fontFamily">lobster</item>
+        <item name="android:fontFamily"></item>
 
     </style>
 

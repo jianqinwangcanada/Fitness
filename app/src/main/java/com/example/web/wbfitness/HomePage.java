@@ -129,6 +129,17 @@ public class HomePage extends Fragment {
             }
         });
 
+        tipsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
+                transaction.replace(R.id.content, new WorkoutTips(),"Workout Tips");
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
 
         return view;
 

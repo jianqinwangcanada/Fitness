@@ -126,7 +126,7 @@
         <item>@string/language_value_madarin</item>
     </string-array>
 
-<!--Calculate BMI -->
+    <!--Calculate BMI -->
 
     <string name="bmi_calcuate_title">Body Mass Index Calculator </string>
     <string name="height_label">Inches</string>
@@ -140,13 +140,13 @@
     <string name="value_obesity">Obesity</string>
 
 
-<!--
+    <!--
 #############################################################################
 Workouts and Steps
 -->
     <!-- Chest -->
     <string-array name="chestWorkoutTitles">
-        <item>Chest Workout 1</item>
+        <item>Pushups</item>
         <item>Chest Workout 2</item>
         <item>Chest Workout 3</item>
         <item>Chest Workout 4</item>
@@ -154,7 +154,15 @@ Workouts and Steps
     </string-array>
 
     <string-array name="chestWorkoutSteps">
-        <item>This is how you do the workout</item>
+        <item>
+    Lie on the floor face down and place your hands about 36 inches apart while holding your torso up at arms length.
+            \n
+            Next, lower yourself downward until your chest almost touches the floor as you inhale.
+    \n
+            Now breathe out and press your upper body back up to the starting position while squeezing your chest.
+   \n
+            After a brief pause at the top contracted position, you can begin to lower yourself downward again for as many repetitions as needed.
+        </item>
         <item>This is how you do the workout</item>
         <item>This is how you do the workout</item>
         <item>This is how you do the workout</item>
@@ -245,18 +253,6 @@ Workouts and Steps
         <item>This is how you do the workout</item>
         <item>This is how you do the workout</item>
     </string-array>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </resources>

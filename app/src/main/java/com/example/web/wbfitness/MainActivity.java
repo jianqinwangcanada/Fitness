@@ -27,7 +27,9 @@ public class MainActivity extends AppCompatActivity
                  HomePage.OnFragmentInteractionListener,
                 SetupPage.OnFragmentInteractionListener,
                 WorkoutPlan.OnFragmentInteractionListener,
-                BMIFragment.OnFragmentInteractionListener {
+                BMIFragment.OnFragmentInteractionListener,
+                WorkoutTips.OnFragmentInteractionListener,
+                TipsFragment.OnFragmentInteractionListener{
 
 
 
@@ -159,7 +161,13 @@ public class MainActivity extends AppCompatActivity
                 transaction.replace(R.id.content, selectedFragment);
             }
         } else if (id == R.id.nav_tips) {
-
+            selectedFragment=fm.findFragmentByTag("Workout Tips");
+            if(selectedFragment == null)
+            {transaction.replace(R.id.content, new WorkoutTips(),"Workout Tips");
+            }
+            else if(!selectedFragment.isVisible()){
+                transaction.replace(R.id.content, selectedFragment);
+            }
         } else if (id == R.id.nav_contact) {
            //Just whether it is visible or null , if invisilbe or null ,show it
             selectedFragment=fm.findFragmentByTag("Contact");

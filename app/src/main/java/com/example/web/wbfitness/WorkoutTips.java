@@ -163,6 +163,7 @@ public class WorkoutTips extends Fragment {
         private ArrayList<Workout> workouts;
         private String[] titles;
         private String[] steps;
+        private String[] sources;
 
         public CustomAdapter(FragmentManager fm, String muscle) {
             super(fm);
@@ -171,21 +172,27 @@ public class WorkoutTips extends Fragment {
                 this.workouts = new ArrayList<>();
                 this.titles = getResources().getStringArray(R.array.chestWorkoutTitles);
                 this.steps = getResources().getStringArray(R.array.chestWorkoutSteps);
+                this.sources = getResources().getStringArray(R.array.chestWorkoutSources);
             } else if (muscle.equals(getResources().getString(R.string.arms))) {
                 this.titles = getResources().getStringArray(R.array.armsWorkoutTitles);
                 this.steps = getResources().getStringArray(R.array.armsWorkoutSteps);
+                this.sources = getResources().getStringArray(R.array.armsWorkoutSources);
             } else if (muscle.equals(getResources().getString(R.string.cardio))) {
                 this.titles = getResources().getStringArray(R.array.cardioWorkoutTitles);
                 this.steps = getResources().getStringArray(R.array.cardioWorkoutSteps);
+                this.sources = getResources().getStringArray(R.array.cardioWorkoutSources);
             } else if (muscle.equals(getResources().getString(R.string.core))) {
                 this.titles = getResources().getStringArray(R.array.coreWorkoutTitles);
                 this.steps = getResources().getStringArray(R.array.coreWorkoutSteps);
+                this.sources = getResources().getStringArray(R.array.coreWorkoutSources);
             } else if (muscle.equals(getResources().getString(R.string.legs))) {
                 this.titles = getResources().getStringArray(R.array.legsWorkoutTitles);
                 this.steps = getResources().getStringArray(R.array.legsWorkoutSteps);
+                this.sources = getResources().getStringArray(R.array.legsWorkoutSources);
             } else if (muscle.equals(getResources().getString(R.string.back))) {
                 this.titles = getResources().getStringArray(R.array.backWorkoutTitles);
                 this.steps = getResources().getStringArray(R.array.backWorkoutSteps);
+                this.sources = getResources().getStringArray(R.array.backWorkoutSources);
             }
 
 
@@ -199,7 +206,7 @@ public class WorkoutTips extends Fragment {
 
         @Override
         public Fragment getItem(int i) {
-            return TipsFragment.newInstance(this.titles[i], this.steps[i]);
+            return TipsFragment.newInstance(this.titles[i], this.steps[i], this.sources[i]);
         }
 
         @Override

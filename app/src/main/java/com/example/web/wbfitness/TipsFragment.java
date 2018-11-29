@@ -1,6 +1,7 @@
 package com.example.web.wbfitness;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -9,7 +10,9 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -25,10 +28,12 @@ public class TipsFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_TITLE = "Title";
     private static final String ARG_STEPS = "Steps";
+    private static final String ARG_SOURCES = "Sources";
 
 
     private String mTitle;
     private String mSteps;
+    private String mSource;
 
     private OnFragmentInteractionListener mListener;
 
@@ -45,11 +50,12 @@ public class TipsFragment extends Fragment {
      * @return A new instance of fragment TipsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TipsFragment newInstance(String title, String steps) {
+    public static TipsFragment newInstance(String title, String steps, String sources) {
         TipsFragment fragment = new TipsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_TITLE, title);
         args.putString(ARG_STEPS, steps);
+        args.putString(ARG_SOURCES, sources);
         fragment.setArguments(args);
         return fragment;
     }
@@ -60,6 +66,7 @@ public class TipsFragment extends Fragment {
         if (getArguments() != null) {
             mTitle = getArguments().getString(ARG_TITLE);
             mSteps = getArguments().getString(ARG_STEPS);
+            mSource = getArguments().getString(ARG_SOURCES);
         }
     }
 
@@ -71,6 +78,7 @@ public class TipsFragment extends Fragment {
 
         TextView tipTitle = view.findViewById(R.id.tipTitle);
         TextView tipSteps = view.findViewById(R.id.tipSteps);
+        Button sourceButton = view.findViewById(R.id.sourceButton);
 
         if(mTitle != null) {
             tipTitle.setText(mTitle);
@@ -78,6 +86,26 @@ public class TipsFragment extends Fragment {
         if(mSteps != null) {
             tipSteps.setText(Html.fromHtml(mSteps));
         }
+        if(mSource != null) {
+            sourceButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Declare the intent and set data with website
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(mSource));
+                    // //Decide whether the user's phone has related software to run this functionality
+                    if(intent.resolveActivity(getActivity().getPackageManager()) != null){
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(getContext(),
+                                "You do not have the correct software.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+
         return view;
     }
 

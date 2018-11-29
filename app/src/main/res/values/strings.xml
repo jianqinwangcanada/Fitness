@@ -155,6 +155,14 @@ Workouts and Steps
         <item>Standing Cable \n Chest Press</item>
     </string-array>
 
+    <string-array name="chestWorkoutSets">
+        <item>3 Sets \n 15 Repetitions</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
     <string-array name="chestWorkoutSources">
         <item>https://www.bodybuilding.com/exercises/pushups</item>
         <item>https://www.bodybuilding.com/exercises/dips-chest-version</item>
@@ -256,6 +264,14 @@ Workouts and Steps
         <item>Cross-Body Crunch</item>
         <item>Cable Crunch</item>
         <item>Barbell Side Bend</item>
+    </string-array>
+
+    <string-array name="coreWorkoutSets">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
     </string-array>
 
     <string-array name="coreWorkoutSources">
@@ -362,6 +378,15 @@ Workouts and Steps
         <item>Triceps Pushdown</item>
         <item>Bench Dips</item>
     </string-array>
+
+    <string-array name="armsWorkoutSets">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
 
     <string-array name="armsWorkoutSources">
         <item>https://www.bodybuilding.com/exercises/ez-bar-curl</item>
@@ -475,6 +500,14 @@ Workouts and Steps
         <item>Barbell Deadlift</item>
     </string-array>
 
+    <string-array name="legsWorkoutSets">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
     <string-array name="legsWorkoutSources">
         <item>https://www.bodybuilding.com/exercises/barbell-squat</item>
         <item>https://www.bodybuilding.com/exercises/dumbbell-lunges</item>
@@ -582,6 +615,14 @@ Workouts and Steps
         <item>Elliptical</item>
     </string-array>
 
+    <string-array name="cardioWorkoutSets">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
     <string-array name="cardioWorkoutSources">
         <item>https://www.bodybuilding.com/exercises/jogging-treadmill</item>
         <item>https://www.bodybuilding.com/exercises/rope-jumping</item>
@@ -667,6 +708,15 @@ Workouts and Steps
         <item>One-Arm Dumbell Row</item>
         <item>Hyperextensions</item>
     </string-array>
+
+    <string-array name="backWorkoutSets">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
 
     <string-array name="backWorkoutSources">
         <item>https://www.bodybuilding.com/exercises/seated-cable-rows</item>

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.example.web.wbfitness.JavaBean.Workout;
@@ -84,49 +85,55 @@ public class WorkoutPlan extends Fragment {
         ArrayList<Workout> chest = new ArrayList<>();
         String[] chestTitle = getResources().getStringArray(R.array.chestWorkoutTitles);
         String[] chestSteps = getResources().getStringArray(R.array.chestWorkoutSteps);
+        String[] chestSets = getResources().getStringArray(R.array.chestWorkoutSets);
 
         for(int i=0; i < chestTitle.length; i++) {
-            chest.add(new Workout(chestTitle[i], chestSteps[i]));
+            chest.add(new Workout(chestTitle[i], chestSets[i]));
         }
 
         ArrayList<Workout> legs = new ArrayList<>();
         String[] legsTitle = getResources().getStringArray(R.array.legsWorkoutTitles);
         String[] legsSteps = getResources().getStringArray(R.array.legsWorkoutSteps);
+        String[] legsSets = getResources().getStringArray(R.array.chestWorkoutSets);
 
         for(int i=0; i < legsTitle.length; i++) {
-            legs.add(new Workout(legsTitle[i], legsSteps[i]));
+            legs.add(new Workout(legsTitle[i], legsSets[i]));
         }
 
         ArrayList<Workout> core = new ArrayList<>();
         String[] coreTitle = getResources().getStringArray(R.array.coreWorkoutTitles);
         String[] coreSteps = getResources().getStringArray(R.array.coreWorkoutSteps);
+        String[] coreSets = getResources().getStringArray(R.array.chestWorkoutSets);
 
         for(int i=0; i < coreTitle.length; i++) {
-            core.add(new Workout(coreTitle[i], coreSteps[i]));
+            core.add(new Workout(coreTitle[i], coreSets[i]));
         }
 
         ArrayList<Workout> cardio = new ArrayList<>();
         String[] cardioTitle = getResources().getStringArray(R.array.cardioWorkoutTitles);
         String[] cardioSteps = getResources().getStringArray(R.array.cardioWorkoutSteps);
+        String[] cardioSets = getResources().getStringArray(R.array.chestWorkoutSets);
 
         for(int i=0; i < cardioTitle.length; i++) {
-            cardio.add(new Workout(cardioTitle[i], cardioSteps[i]));
+            cardio.add(new Workout(cardioTitle[i], cardioSets[i]));
         }
 
         ArrayList<Workout> back = new ArrayList<>();
         String[] backTitle = getResources().getStringArray(R.array.backWorkoutTitles);
         String[] backSteps = getResources().getStringArray(R.array.backWorkoutSteps);
+        String[] backSets = getResources().getStringArray(R.array.chestWorkoutSets);
 
         for(int i=0; i < backTitle.length; i++) {
-            back.add(new Workout(backTitle[i], backSteps[i]));
+            back.add(new Workout(backTitle[i], backSets[i]));
         }
 
         ArrayList<Workout> arms = new ArrayList<>();
         String[] armsTitle = getResources().getStringArray(R.array.armsWorkoutTitles);
         String[] armsSteps = getResources().getStringArray(R.array.armsWorkoutSteps);
+        String[] armsSets = getResources().getStringArray(R.array.chestWorkoutSets);
 
         for(int i=0; i < armsTitle.length; i++) {
-            arms.add(new Workout(armsTitle[i], armsSteps[i]));
+            arms.add(new Workout(armsTitle[i], armsSets[i]));
         }
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
@@ -149,7 +156,15 @@ public class WorkoutPlan extends Fragment {
 
 
         // Spinner events
-        workoutSpinner = view.findViewById(R.id.muscleGroupsSpinner);
+        workoutSpinner = view.findViewById(R.id.planMuscleGroupsSpinner);
+
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(getContext(), R.array.muscleGroups, R.layout.spinner_item);
+
+        spinnerAdapter.setDropDownViewResource(R.layout.spinner_item);
+
+        workoutSpinner.setAdapter(spinnerAdapter);
+
+
         workoutSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

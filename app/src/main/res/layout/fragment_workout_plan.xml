@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/workoutPlanTitle"
+        android:id="@+id/workoutTipsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -30,7 +30,7 @@
         app:layout_constraintBottom_toTopOf="@+id/workoutPlanRV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workoutPlanTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/workoutTipsTitle" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/workoutPlanRV"

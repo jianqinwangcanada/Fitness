@@ -155,13 +155,19 @@ Workouts and Steps
 
     <string-array name="chestWorkoutSteps">
         <item>
-    Lie on the floor face down and place your hands about 36 inches apart while holding your torso up at arms length.
-            \n
-            Next, lower yourself downward until your chest almost touches the floor as you inhale.
-    \n
-            Now breathe out and press your upper body back up to the starting position while squeezing your chest.
-   \n
-            After a brief pause at the top contracted position, you can begin to lower yourself downward again for as many repetitions as needed.
+            <![CDATA[
+                Lie on the floor face down and place your hands about 36 inches apart while holding your torso up at arms length.
+                <br/>
+                <br/>
+                Next, lower yourself downward until your chest almost touches the floor as you inhale.
+                <br/>
+                <br/>
+                Now breathe out and press your upper body back up to the starting position while squeezing your chest.
+                <br/>
+                <br/>
+                After a brief pause at the top contracted position, you can begin to lower yourself downward again for as many repetitions as needed.
+
+            ]]>
         </item>
         <item>This is how you do the workout</item>
         <item>This is how you do the workout</item>

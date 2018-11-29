@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,8 +40,8 @@ public class TipsFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+     * @param title Parameter 1.
+     * @param steps Parameter 2.
      * @return A new instance of fragment TipsFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -75,7 +76,7 @@ public class TipsFragment extends Fragment {
             tipTitle.setText(mTitle);
         }
         if(mSteps != null) {
-            tipSteps.setText(mSteps);
+            tipSteps.setText(Html.fromHtml(mSteps));
         }
         return view;
     }

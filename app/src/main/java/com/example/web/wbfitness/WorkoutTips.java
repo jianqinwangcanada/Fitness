@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.example.web.wbfitness.JavaBean.Workout;
@@ -85,31 +86,38 @@ public class WorkoutTips extends Fragment {
         View view = inflater.inflate(R.layout.fragment_workout_tips, container, false);
         viewPager = view.findViewById(R.id.workoutTipsVP);
 
-        // Spinner events
+        // Spinner
         tipsWorkoutSpinner = view.findViewById(R.id.tipsMuscleGroupsSpinner);
+
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(getContext(), R.array.muscleGroups, R.layout.spinner_item);
+
+        spinnerAdapter.setDropDownViewResource(R.layout.spinner_item);
+
+        tipsWorkoutSpinner.setAdapter(spinnerAdapter);
+
+
         tipsWorkoutSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selection = tipsWorkoutSpinner.getSelectedItem().toString();
                 adapter = new CustomAdapter(getChildFragmentManager(), selection);
                 viewPager.setAdapter(adapter);
-                System.out.println(selection);
+                viewPager.setPageTransformer(true, new TipAnimation());
 
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 adapter = new CustomAdapter(getChildFragmentManager(), "Chest");
 //                viewPager.setAdapter(null);
                 viewPager.setAdapter(adapter);
+                viewPager.setPageTransformer(true, new TipAnimation());
             }
         });
 
 
-
         return view;
     }
-
-
 
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -159,23 +167,23 @@ public class WorkoutTips extends Fragment {
         public CustomAdapter(FragmentManager fm, String muscle) {
             super(fm);
 
-            if(muscle.equals(getResources().getString(R.string.chest))){
+            if (muscle.equals(getResources().getString(R.string.chest))) {
                 this.workouts = new ArrayList<>();
                 this.titles = getResources().getStringArray(R.array.chestWorkoutTitles);
                 this.steps = getResources().getStringArray(R.array.chestWorkoutSteps);
-            } else if(muscle.equals(getResources().getString(R.string.arms))){
+            } else if (muscle.equals(getResources().getString(R.string.arms))) {
                 this.titles = getResources().getStringArray(R.array.armsWorkoutTitles);
                 this.steps = getResources().getStringArray(R.array.armsWorkoutSteps);
-            } else if(muscle.equals(getResources().getString(R.string.cardio))){
+            } else if (muscle.equals(getResources().getString(R.string.cardio))) {
                 this.titles = getResources().getStringArray(R.array.cardioWorkoutTitles);
                 this.steps = getResources().getStringArray(R.array.cardioWorkoutSteps);
-            } else if(muscle.equals(getResources().getString(R.string.core))){
+            } else if (muscle.equals(getResources().getString(R.string.core))) {
                 this.titles = getResources().getStringArray(R.array.coreWorkoutTitles);
                 this.steps = getResources().getStringArray(R.array.coreWorkoutSteps);
-            } else if(muscle.equals(getResources().getString(R.string.legs))){
+            } else if (muscle.equals(getResources().getString(R.string.legs))) {
                 this.titles = getResources().getStringArray(R.array.legsWorkoutTitles);
                 this.steps = getResources().getStringArray(R.array.legsWorkoutSteps);
-            } else if(muscle.equals(getResources().getString(R.string.back))){
+            } else if (muscle.equals(getResources().getString(R.string.back))) {
                 this.titles = getResources().getStringArray(R.array.backWorkoutTitles);
                 this.steps = getResources().getStringArray(R.array.backWorkoutSteps);
             }
@@ -191,7 +199,7 @@ public class WorkoutTips extends Fragment {
 
         @Override
         public Fragment getItem(int i) {
-                return TipsFragment.newInstance(this.titles[i], this.steps[i]);
+            return TipsFragment.newInstance(this.titles[i], this.steps[i]);
         }
 
         @Override
@@ -200,6 +208,31 @@ public class WorkoutTips extends Fragment {
         }
     }
 
+    public class TipAnimation implements ViewPager.PageTransformer {
+        private static final float MIN_SCALE = 0.75f;
+
+        public void transformPage(View view, float v) {
+            int pageWidth = view.getWidth();
+
+            if (v < -1) {
+                view.setAlpha(0f);
+            } else if (v <= 0) {
+                view.setAlpha(1 - v);
+
+
+            } else if (v <= 1) {
+                view.setAlpha(1 - v);
+
+                view.setTranslationX(pageWidth * -v);
+
+                float scaleFactor = MIN_SCALE + (1 - MIN_SCALE) * (1 - Math.abs(v));
+                view.setScaleX(scaleFactor);
+                view.setScaleY(scaleFactor);
+            } else {
+                view.setAlpha(0f);
+            }
+        }
+    }
 
 
 }

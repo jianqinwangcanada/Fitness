@@ -51,6 +51,7 @@
     <string name="submit">Submit</string>
 
     <string name="source">Source</string>
+    <string name="complete">Complete</string>
 
 
     <!--Contact fragment information-->
@@ -157,10 +158,10 @@ Workouts and Steps
 
     <string-array name="chestWorkoutSets">
         <item>3 Sets \n 15 Repetitions</item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>3 Sets \n 10 Repetitions</item>
+        <item>3 Sets \n 8 Repetitions</item>
+        <item>3 Sets \n 8 Repetitions</item>
+        <item>3 Sets \n 8 Repetitions</item>
     </string-array>
 
     <string-array name="chestWorkoutSources">
@@ -267,11 +268,11 @@ Workouts and Steps
     </string-array>
 
     <string-array name="coreWorkoutSets">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>3 Sets \n 30 Seconds \n 45 Seconds \n 60 Seconds</item>
+        <item>3 Sets \n 10 Repetitions</item>
+        <item>3 Sets \n 15 Repetitions</item>
+        <item>3 Sets \n 15 Repetitions</item>
+        <item>3 Sets \n 8 Repetitions</item>
     </string-array>
 
     <string-array name="coreWorkoutSources">
@@ -380,11 +381,11 @@ Workouts and Steps
     </string-array>
 
     <string-array name="armsWorkoutSets">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>3 Sets \n 8 Repetitions</item>
+        <item>3 Sets \n 8 Repetitions</item>
+        <item>3 Sets \n 8 Repetitions</item>
+        <item>3 Sets \n 10 Repetitions</item>
+        <item>3 Sets \n 15 Repetitions</item>
     </string-array>
 
 
@@ -501,11 +502,11 @@ Workouts and Steps
     </string-array>
 
     <string-array name="legsWorkoutSets">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>3 Sets \n 8 Repetitions</item>
+        <item>3 Sets \n 10 Repetitions</item>
+        <item>3 Sets \n 8 Repetitions</item>
+        <item>3 Sets \n 10 Repetitions</item>
+        <item>3 Sets \n 8 Repetitions</item>
     </string-array>
 
     <string-array name="legsWorkoutSources">
@@ -616,11 +617,11 @@ Workouts and Steps
     </string-array>
 
     <string-array name="cardioWorkoutSets">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>1 Minute Walk \n 10 Minute Jog \n 1 Minute Sprint \n 1 Minute Walk</item>
+        <item>15 Minutes</item>
+        <item>3 Sets \n 25 Repetitions</item>
+        <item>15 Minutes</item>
+        <item>15 Minutes</item>
     </string-array>
 
     <string-array name="cardioWorkoutSources">
@@ -710,11 +711,11 @@ Workouts and Steps
     </string-array>
 
     <string-array name="backWorkoutSets">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>3 Sets \n 10 Repetitions</item>
+        <item>3 Sets \n 12 Repetitions</item>
+        <item>3 Sets \n 10 Repetitions</item>
+        <item>3 Sets \n 10 Repetitions</item>
+        <item>3 Sets \n 10 Repetitions</item>
     </string-array>
 
 

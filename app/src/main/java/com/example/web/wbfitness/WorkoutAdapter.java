@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.web.wbfitness.JavaBean.Workout;
-import com.example.web.wbfitness.R;
 
 import java.util.ArrayList;
 
@@ -35,7 +34,6 @@ public class WorkoutAdapter extends Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         Workout workout = workouts.get(position);
         ((CustomViewHolder) holder).name.setText(workout.getName());
-//        ((CustomViewHolder) holder).description.setText(workout.getDescription());
         ((CustomViewHolder) holder).plan.setText(workout.getPlan());
     }
 
@@ -55,7 +53,7 @@ public class WorkoutAdapter extends Adapter {
         public CustomViewHolder(View view){
             super(view);
             this.name = view.findViewById(R.id.workoutTitle);
-            this.plan = view.findViewById(R.id.workoutDesc);
+            this.plan = view.findViewById(R.id.workoutSets);
         }
     }
 

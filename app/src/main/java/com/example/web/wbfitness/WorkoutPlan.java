@@ -84,7 +84,6 @@ public class WorkoutPlan extends Fragment {
 
         ArrayList<Workout> chest = new ArrayList<>();
         String[] chestTitle = getResources().getStringArray(R.array.chestWorkoutTitles);
-        String[] chestSteps = getResources().getStringArray(R.array.chestWorkoutSteps);
         String[] chestSets = getResources().getStringArray(R.array.chestWorkoutSets);
 
         for(int i=0; i < chestTitle.length; i++) {
@@ -93,8 +92,7 @@ public class WorkoutPlan extends Fragment {
 
         ArrayList<Workout> legs = new ArrayList<>();
         String[] legsTitle = getResources().getStringArray(R.array.legsWorkoutTitles);
-        String[] legsSteps = getResources().getStringArray(R.array.legsWorkoutSteps);
-        String[] legsSets = getResources().getStringArray(R.array.chestWorkoutSets);
+        String[] legsSets = getResources().getStringArray(R.array.legsWorkoutSets);
 
         for(int i=0; i < legsTitle.length; i++) {
             legs.add(new Workout(legsTitle[i], legsSets[i]));
@@ -102,8 +100,7 @@ public class WorkoutPlan extends Fragment {
 
         ArrayList<Workout> core = new ArrayList<>();
         String[] coreTitle = getResources().getStringArray(R.array.coreWorkoutTitles);
-        String[] coreSteps = getResources().getStringArray(R.array.coreWorkoutSteps);
-        String[] coreSets = getResources().getStringArray(R.array.chestWorkoutSets);
+        String[] coreSets = getResources().getStringArray(R.array.coreWorkoutSets);
 
         for(int i=0; i < coreTitle.length; i++) {
             core.add(new Workout(coreTitle[i], coreSets[i]));
@@ -111,8 +108,7 @@ public class WorkoutPlan extends Fragment {
 
         ArrayList<Workout> cardio = new ArrayList<>();
         String[] cardioTitle = getResources().getStringArray(R.array.cardioWorkoutTitles);
-        String[] cardioSteps = getResources().getStringArray(R.array.cardioWorkoutSteps);
-        String[] cardioSets = getResources().getStringArray(R.array.chestWorkoutSets);
+        String[] cardioSets = getResources().getStringArray(R.array.cardioWorkoutSets);
 
         for(int i=0; i < cardioTitle.length; i++) {
             cardio.add(new Workout(cardioTitle[i], cardioSets[i]));
@@ -120,8 +116,7 @@ public class WorkoutPlan extends Fragment {
 
         ArrayList<Workout> back = new ArrayList<>();
         String[] backTitle = getResources().getStringArray(R.array.backWorkoutTitles);
-        String[] backSteps = getResources().getStringArray(R.array.backWorkoutSteps);
-        String[] backSets = getResources().getStringArray(R.array.chestWorkoutSets);
+        String[] backSets = getResources().getStringArray(R.array.backWorkoutSets);
 
         for(int i=0; i < backTitle.length; i++) {
             back.add(new Workout(backTitle[i], backSets[i]));
@@ -129,8 +124,7 @@ public class WorkoutPlan extends Fragment {
 
         ArrayList<Workout> arms = new ArrayList<>();
         String[] armsTitle = getResources().getStringArray(R.array.armsWorkoutTitles);
-        String[] armsSteps = getResources().getStringArray(R.array.armsWorkoutSteps);
-        String[] armsSets = getResources().getStringArray(R.array.chestWorkoutSets);
+        String[] armsSets = getResources().getStringArray(R.array.armsWorkoutSets);
 
         for(int i=0; i < armsTitle.length; i++) {
             arms.add(new Workout(armsTitle[i], armsSets[i]));

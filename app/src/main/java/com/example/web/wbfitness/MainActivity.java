@@ -29,7 +29,9 @@ public class MainActivity extends AppCompatActivity
                 WorkoutPlan.OnFragmentInteractionListener,
                 BMIFragment.OnFragmentInteractionListener,
                 WorkoutTips.OnFragmentInteractionListener,
-                TipsFragment.OnFragmentInteractionListener{
+                TipsFragment.OnFragmentInteractionListener,
+                CreditsFragment.OnFragmentInteractionListener,
+                Credit_CardViewFragment.OnFragmentInteractionListener {
 
 
 
@@ -180,7 +182,14 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_credits)
         {
-
+            //Just whether it is visible or null , if invisilbe or null ,show it
+            selectedFragment=fm.findFragmentByTag("Credit");
+            if(selectedFragment == null)
+            {transaction.replace(R.id.content, new CreditsFragment(),"Credits");
+            }
+            else if(!selectedFragment.isVisible()){
+                transaction.replace(R.id.content, selectedFragment);
+            }
         }
 
         //commit the transaction for all navigation drawer item selectd

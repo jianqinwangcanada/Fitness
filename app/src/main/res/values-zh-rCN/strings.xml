@@ -109,6 +109,10 @@
     <string name="value_nomal">正常体重</string>
     <string name="value_obesity">肥胖</string>
 
-
+    <!--
+#############################################################################
+ Credits
+-->
+    <string name="credits_title">Credits</string>
 
 </resources>

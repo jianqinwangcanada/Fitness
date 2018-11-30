@@ -3,10 +3,18 @@ package com.example.web.wbfitness;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.example.web.wbfitness.JavaBean.Credits;
+
+import java.util.ArrayList;
 
 
 /**
@@ -26,6 +34,7 @@ public class CreditsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    ArrayList<Credits> creditsList;
 
     private OnFragmentInteractionListener mListener;
 
@@ -63,8 +72,74 @@ public class CreditsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_credits, container, false);
+     View view=inflater.inflate(R.layout.fragment_credits, container, false);
+//        TextView header=view.findViewById(R.id.creditHeader);
+//        TextView description=view.findViewById(R.id.description);
+        ViewPager creditViewPager=view.findViewById(R.id.credits_viewpager);
+        CustomAdpter adpter=new CustomAdpter(getChildFragmentManager());
+        creditViewPager.setAdapter(adpter);
+        creditViewPager.setPageTransformer(true,new DepthPageTransformer());
+
+        return view;
+    }
+
+    public class CustomAdpter extends FragmentPagerAdapter {
+
+        public CustomAdpter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+             switch (position){
+                 case 0: return Credit_CardViewFragment.newInstance(getString(R.string.credits_header_logo),getString(R.string.credits_logo_description));
+                 case 1: return Credit_CardViewFragment.newInstance(getString(R.string.credits_header_resources),getString(R.string.credits_resources_description));
+                 default:return Credit_CardViewFragment.newInstance(getString(R.string.credits_header_company),getString(R.string.credits_company_description));
+
+             }
+
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
+    }
+    public class DepthPageTransformer implements ViewPager.PageTransformer {
+        private static final float MIN_SCALE = 0.75f;
+
+        public void transformPage(View view, float position) {
+            int pageWidth = view.getWidth();
+
+            if (position < -1) { // [-Infinity,-1)
+                // This page is way off-screen to the left.
+                view.setAlpha(0f);
+
+            } else if (position <= 0) { // [-1,0]
+                // Use the default slide transition when moving to the left page
+                view.setAlpha(1f);
+                view.setTranslationX(0f);
+                view.setScaleX(1f);
+                view.setScaleY(1f);
+
+            } else if (position <= 1) { // (0,1]
+                // Fade the page out.
+                view.setAlpha(1 - position);
+
+                // Counteract the default slide transition
+                view.setTranslationX(pageWidth * -position);
+
+                // Scale the page down (between MIN_SCALE and 1)
+                float scaleFactor = MIN_SCALE
+                        + (1 - MIN_SCALE) * (1 - Math.abs(position));
+                view.setScaleX(scaleFactor);
+                view.setScaleY(scaleFactor);
+
+            } else { // (1,+Infinity]
+                // This page is way off-screen to the right.
+                view.setAlpha(0f);
+            }
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event

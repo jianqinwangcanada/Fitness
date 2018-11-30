@@ -3,10 +3,12 @@ package com.example.web.wbfitness;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -64,7 +66,13 @@ public class Credit_CardViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_credit__card_view, container, false);
+        View view=inflater.inflate(R.layout.fragment_credit__card_view, container, false);
+        TextView header=view.findViewById(R.id.creditHeader);
+        TextView description=view.findViewById(R.id.description);
+        if(mParam1!=null){header.setText(mParam1);}
+        if(mParam2!=null){description.setText(Html.fromHtml(mParam2));}
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

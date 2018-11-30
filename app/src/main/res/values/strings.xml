@@ -792,5 +792,41 @@ Workouts and Steps
         </item>
     </string-array>
 
+    <!--
+#############################################################################
+Credits
+-->
+
+    <string name="credits_title">Credits</string>
+    <string name="credits_header_logo">Logo Design</string>
+    <string name="credits_logo_description">
+        Thanks for Jonnys girlfriend who is a student
+    </string>
+    <string name="credits_header_resources">Website Resources</string>
+    <string name="credits_resources_description">
+         <![CDATA[
+                <b>Free Image Vectors</b>
+                 <br/ ><br/>
+                https://pixabay.com/en
+                 <br/>
+                https://www.flaticon.com/
+                <br/>
+                <b>Developer Technology</b>
+                <br/ >
+                <br/ >
+               https://developer.android.com/
+                <br/>
+                https://stackoverflow.com/
+                <br/>
+                 <b>Body Building</b>
+                 <br/ >
+                https://www.bodybuilding.com/
+
+            ]]>
+    </string>
+    <string name="credits_header_company">Fitness Company</string>
+    <string name="credits_company_description">
+       Thanks for fitness company ...
+    </string>
 
 </resources>

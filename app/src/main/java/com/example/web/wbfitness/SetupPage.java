@@ -1,6 +1,5 @@
 package com.example.web.wbfitness;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,7 +11,6 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +20,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import java.util.Locale;
 
@@ -49,19 +46,14 @@ public class SetupPage extends Fragment {
     RadioGroup gender;
     RadioButton male;
     RadioButton female;
-    RadioGroup heightGroup;
-    RadioGroup weightGroup;
-    RadioButton inches;
-    RadioButton centimeters;
-    RadioButton pounds;
-    RadioButton kilograms;
+    RadioGroup measurement;
+    RadioButton metric;
+    RadioButton imperial;
     EditText height;
     EditText weight;
     Button submit;
     TextView heightTV;
     TextView weightTV;
-    Toolbar toolbar;
-    ActionBar action;
 
     // Declare the SharedPreferences file
     SharedPreferences preferences;
@@ -102,14 +94,10 @@ public class SetupPage extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
-
-
     }
 
     @Override
@@ -128,23 +116,14 @@ public class SetupPage extends Fragment {
         name = view.findViewById(R.id.nameInput);
         male = view.findViewById(R.id.maleRadio);
         female = view.findViewById(R.id.femaleRadio);
-
-        heightGroup = view.findViewById(R.id.heightGroup);
-        inches = view.findViewById(R.id.inchesRadio);
-        centimeters = view.findViewById(R.id.centimetersRadio);
-
-        weightGroup = view.findViewById(R.id.weightGroup);
-        kilograms = view.findViewById(R.id.kgRadio);
-        pounds = view.findViewById(R.id.poundsRadio);
-
-
+        metric = view.findViewById(R.id.metricRadio);
+        imperial = view.findViewById(R.id.imperialRadio);
+        measurement = view.findViewById(R.id.measurementGroup);
         height = view.findViewById(R.id.heightInput);
         weight = view.findViewById(R.id.weightInput);
         weightTV = view.findViewById(R.id.weightTV);
         heightTV = view.findViewById(R.id.heightTV);
         submit = view.findViewById(R.id.setupSubmitButton);
-
-
 
         // Determine if the device is already set to English or Mandarin and check the right box
         if(getResources().getConfiguration().locale.toString().contains("en")) {
@@ -153,7 +132,7 @@ public class SetupPage extends Fragment {
             mandarin.setChecked(true);
         }
 
-        // Change the locale if the language radiogroup is changed
+        // Change the locale if the language radiogropu is changed
         languageGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -170,31 +149,20 @@ public class SetupPage extends Fragment {
         });
 
         // Change the placeholder values and titles if the measurement system is changed
-        weightGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        measurement.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(kilograms.isChecked()) {
+                if(metric.isChecked()) {
+                    height.setText(getResources().getText(R.string.heightPlaceholderCentimeters));
                     weight.setText(getResources().getText(R.string.weightPlaceholderKilograms));
+                    heightTV.setText(getResources().getText(R.string.heightCentimeters));
                     weightTV.setText(getResources().getText(R.string.weightKG));
 
-                } else if (pounds.isChecked()) {
-                    weight.setText(getResources().getText(R.string.weightPlaceholderPounds));
-                    weightTV.setText(getResources().getText(R.string.weightPounds));
-                }
-            }
-        });
-
-        // Change the placeholder values and titles if the measurement system is changed
-        heightGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(inches.isChecked()) {
+                } else if (imperial.isChecked()) {
                     height.setText(getResources().getText(R.string.heightPlaceholderInches));
+                    weight.setText(getResources().getText(R.string.weightPlaceholderPounds));
                     heightTV.setText(getResources().getText(R.string.heightInches));
-
-                } else if (centimeters.isChecked()) {
-                    height.setText(getResources().getText(R.string.heightPlaceholderCentimeters));
-                    heightTV.setText(getResources().getText(R.string.heightCentimeters));
+                    weightTV.setText(getResources().getText(R.string.weightPounds));
                 }
             }
         });
@@ -235,14 +203,10 @@ public class SetupPage extends Fragment {
                 }
 
                 // Measurement System
-                if(inches.isChecked()) {
-                    preferences.edit().putString(getResources().getString(R.string.heightMeasurement), inches.getText().toString()).apply();
-                } else if (centimeters.isChecked()) {
-                    preferences.edit().putString(getResources().getString(R.string.heightMeasurement), centimeters.getText().toString()).apply();
-                } else if (pounds.isChecked()) {
-                    preferences.edit().putString(getResources().getString(R.string.weightMeasurement), pounds.getText().toString()).apply();
-                } else if (kilograms.isChecked()) {
-                    preferences.edit().putString(getResources().getString(R.string.weightMeasurement), kilograms.getText().toString()).apply();
+                if(metric.isChecked()) {
+                    preferences.edit().putString(getResources().getString(R.string.measurement), metric.getText().toString()).apply();
+                } else if (imperial.isChecked()) {
+                    preferences.edit().putString(getResources().getString(R.string.measurement), imperial.getText().toString()).apply();
                 }
 
                 // Height

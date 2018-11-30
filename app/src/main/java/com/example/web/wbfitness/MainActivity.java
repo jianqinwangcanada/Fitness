@@ -25,12 +25,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
                  ContactFragment.OnFragmentInteractionListener,
                  HomePage.OnFragmentInteractionListener,
-                SetupPage.OnFragmentInteractionListener,
-                WorkoutPlan.OnFragmentInteractionListener,
-                BMIFragment.OnFragmentInteractionListener,
-                WorkoutTips.OnFragmentInteractionListener,
-                TipsFragment.OnFragmentInteractionListener{
-
+                SetupPage.OnFragmentInteractionListener{
 
 
     //Declare FragmentManager to manage transaction
@@ -69,15 +64,14 @@ public class MainActivity extends AppCompatActivity
 
 
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -143,31 +137,11 @@ public class MainActivity extends AppCompatActivity
                 transaction.replace(R.id.content, selectedFragment);
             }
         } else if (id == R.id.nav_bmi) {
-            //Just whether it is visible or null , if invisilbe or null ,show it
-            selectedFragment=fm.findFragmentByTag("BMI");
-            if(selectedFragment == null)
-            {transaction.replace(R.id.content, new BMIFragment(),"BMI");
-            }
-            else if(!selectedFragment.isVisible()){
-                transaction.replace(R.id.content, selectedFragment);
-            }
 
         } else if (id == R.id.nav_workoutplan) {
-            selectedFragment=fm.findFragmentByTag("Workout Plan");
-            if(selectedFragment == null)
-            {transaction.replace(R.id.content, new WorkoutPlan(),"Workout Plan");
-            }
-            else if(!selectedFragment.isVisible()){
-                transaction.replace(R.id.content, selectedFragment);
-            }
+
         } else if (id == R.id.nav_tips) {
-            selectedFragment=fm.findFragmentByTag("Workout Tips");
-            if(selectedFragment == null)
-            {transaction.replace(R.id.content, new WorkoutTips(),"Workout Tips");
-            }
-            else if(!selectedFragment.isVisible()){
-                transaction.replace(R.id.content, selectedFragment);
-            }
+
         } else if (id == R.id.nav_contact) {
            //Just whether it is visible or null , if invisilbe or null ,show it
             selectedFragment=fm.findFragmentByTag("Contact");

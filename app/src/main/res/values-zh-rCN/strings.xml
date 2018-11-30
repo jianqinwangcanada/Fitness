@@ -44,19 +44,19 @@
 <string name="contact_title">你可以浏览我们网页, 发短信或者打电话，你也可以发电子有点和查看我们位置
     </string>
 <string name="contact_email">
-       发送邮件
+        <![CDATA[<b>发送邮件</b>  <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
     </string>
 <string name="contact_tel">
-       拨打电话
-     </string>
+        <![CDATA[<b>拨打电话</b> <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
+    </string>
 <string name="contact_SMS">
-       发送短信
+         <![CDATA[<b>发送短信</b> <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
     </string>
 <string name="contact_website">
-     浏览网站
+       <![CDATA[<b>浏览网站</b>  <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
     </string>
 <string name="contact_location">
-      查看位置
+        <![CDATA[<b>查看位置</b>  <font color=\'#0000FF\'><small><i><u>点击!</u></i></small></font>]]>
     </string>
 
 <string name="hello_blank_fragment">空白打招呼</string>
@@ -94,21 +94,4 @@
     <item>@string/language_value_english</item>
     <item>@string/language_value_madarin</item>
 </string-array>
-
-
-    <!--Calculate BMI -->
-
-    <string name="bmi_calcuate_title">体重指数计算器</string>
-    <string name="height_label">英寸</string>
-    <string name="weight_lable">英镑</string>
-    <string name="bmi_label">BMI 值</string>
-    <string name="calcualte_button">计算</string>
-    <string name="bmi_evaluate">您的 BMI:</string>
-    <string name="value_underweight">体重过轻</string>
-    <string name="value_overweight">体重超重</string>
-    <string name="value_nomal">正常体重</string>
-    <string name="value_obesity">肥胖</string>
-
-
-
-</resources>
+ </resources>

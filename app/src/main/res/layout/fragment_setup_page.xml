@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="@string/app_name"
+        android:text="@string/nav_header_name"
         android:textSize="@dimen/headerFontSize" />
 
     <TextView
@@ -105,62 +105,32 @@
     </RadioGroup>
 
     <RadioGroup
-        android:id="@+id/heightGroup"
-        android:layout_width="match_parent"
+        android:id="@+id/measurementGroup"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:checkedButton="@+id/inchesRadio"
+        android:checkedButton="@+id/imperialRadio"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <RadioButton
-            android:id="@+id/inchesRadio"
+            android:id="@+id/imperialRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:layout_weight="0"
+            android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/inches" />
+            android:text="@string/imperial" />
 
         <RadioButton
-            android:id="@+id/centimetersRadio"
+            android:id="@+id/metricRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:layout_weight="0"
+            android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/centimeters" />
-
-    </RadioGroup>
-
-    <RadioGroup
-        android:id="@+id/weightGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:checkedButton="@+id/poundsRadio"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/poundsRadio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_weight="0"
-            android:gravity="center"
-            android:text="@string/pounds" />
-
-        <RadioButton
-            android:id="@+id/kgRadio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_weight="0"
-            android:gravity="center"
-            android:text="@string/kilograms" />
+            android:text="@string/metric" />
 
     </RadioGroup>
 

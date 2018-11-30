@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -82,7 +83,7 @@ public class WorkoutPlan extends Fragment {
 
         workoutRV = view.findViewById(R.id.workoutPlanRV);
 
-        ArrayList<Workout> chest = new ArrayList<>();
+        final ArrayList<Workout> chest = new ArrayList<>();
         String[] chestTitle = getResources().getStringArray(R.array.chestWorkoutTitles);
         String[] chestSets = getResources().getStringArray(R.array.chestWorkoutSets);
 
@@ -90,7 +91,7 @@ public class WorkoutPlan extends Fragment {
             chest.add(new Workout(chestTitle[i], chestSets[i]));
         }
 
-        ArrayList<Workout> legs = new ArrayList<>();
+        final ArrayList<Workout> legs = new ArrayList<>();
         String[] legsTitle = getResources().getStringArray(R.array.legsWorkoutTitles);
         String[] legsSets = getResources().getStringArray(R.array.legsWorkoutSets);
 
@@ -98,7 +99,7 @@ public class WorkoutPlan extends Fragment {
             legs.add(new Workout(legsTitle[i], legsSets[i]));
         }
 
-        ArrayList<Workout> core = new ArrayList<>();
+        final ArrayList<Workout> core = new ArrayList<>();
         String[] coreTitle = getResources().getStringArray(R.array.coreWorkoutTitles);
         String[] coreSets = getResources().getStringArray(R.array.coreWorkoutSets);
 
@@ -106,7 +107,7 @@ public class WorkoutPlan extends Fragment {
             core.add(new Workout(coreTitle[i], coreSets[i]));
         }
 
-        ArrayList<Workout> cardio = new ArrayList<>();
+        final ArrayList<Workout> cardio = new ArrayList<>();
         String[] cardioTitle = getResources().getStringArray(R.array.cardioWorkoutTitles);
         String[] cardioSets = getResources().getStringArray(R.array.cardioWorkoutSets);
 
@@ -114,7 +115,7 @@ public class WorkoutPlan extends Fragment {
             cardio.add(new Workout(cardioTitle[i], cardioSets[i]));
         }
 
-        ArrayList<Workout> back = new ArrayList<>();
+        final ArrayList<Workout> back = new ArrayList<>();
         String[] backTitle = getResources().getStringArray(R.array.backWorkoutTitles);
         String[] backSets = getResources().getStringArray(R.array.backWorkoutSets);
 
@@ -122,7 +123,7 @@ public class WorkoutPlan extends Fragment {
             back.add(new Workout(backTitle[i], backSets[i]));
         }
 
-        ArrayList<Workout> arms = new ArrayList<>();
+        final ArrayList<Workout> arms = new ArrayList<>();
         String[] armsTitle = getResources().getStringArray(R.array.armsWorkoutTitles);
         String[] armsSets = getResources().getStringArray(R.array.armsWorkoutSets);
 
@@ -137,12 +138,12 @@ public class WorkoutPlan extends Fragment {
 
 
 
-        final WorkoutAdapter chestAdapter = new WorkoutAdapter(chest);
-        final WorkoutAdapter armsAdapter = new WorkoutAdapter(arms);
-        final WorkoutAdapter backAdapter = new WorkoutAdapter(back);
-        final WorkoutAdapter coreAdapter = new WorkoutAdapter(core);
-        final WorkoutAdapter legsAdapter = new WorkoutAdapter(legs);
-        final WorkoutAdapter cardioAdapter = new WorkoutAdapter(cardio);
+//        final WorkoutAdapter chestAdapter = new WorkoutAdapter(chest);
+//        final WorkoutAdapter armsAdapter = new WorkoutAdapter(arms);
+//        final WorkoutAdapter backAdapter = new WorkoutAdapter(back);
+//        final WorkoutAdapter coreAdapter = new WorkoutAdapter(core);
+//        final WorkoutAdapter legsAdapter = new WorkoutAdapter(legs);
+//        final WorkoutAdapter cardioAdapter = new WorkoutAdapter(cardio);
 
 
         // Workout item event handler
@@ -159,32 +160,38 @@ public class WorkoutPlan extends Fragment {
         workoutSpinner.setAdapter(spinnerAdapter);
 
 
+
+
+
         workoutSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selection = workoutSpinner.getSelectedItem().toString();
 
                 if(selection.equals(getResources().getString(R.string.chest))){
-                    workoutRV.setAdapter(chestAdapter);
+                    workoutRV.setAdapter(new WorkoutAdapter(chest, position));
                 } else if(selection.equals(getResources().getString(R.string.arms))){
-                    workoutRV.setAdapter(armsAdapter);
+                    workoutRV.setAdapter(new WorkoutAdapter(arms, position));
                 } else if(selection.equals(getResources().getString(R.string.cardio))){
-                    workoutRV.setAdapter(cardioAdapter);
+                    workoutRV.setAdapter(new WorkoutAdapter(cardio, position));
                 } else if(selection.equals(getResources().getString(R.string.core))){
-                    workoutRV.setAdapter(coreAdapter);
+                    workoutRV.setAdapter(new WorkoutAdapter(core, position));
                 } else if(selection.equals(getResources().getString(R.string.legs))){
-                    workoutRV.setAdapter(legsAdapter);
+                    workoutRV.setAdapter(new WorkoutAdapter(legs, position));
                 } else if(selection.equals(getResources().getString(R.string.back))){
-                    workoutRV.setAdapter(backAdapter);
+                    workoutRV.setAdapter(new WorkoutAdapter(back, position));
                 }
 
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                workoutRV.setAdapter(chestAdapter);
+//                workoutRV.setAdapter(chestAdapter);
             }
         });
+
+
+
 
         return view;
     }

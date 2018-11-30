@@ -76,4 +76,19 @@
         app:layout_constraintTop_toBottomOf="@+id/tipsMuscleGroupsSpinner"
         app:layout_constraintVertical_bias="0.0" />
 
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:ci_drawable="@drawable/ic_radio_button_checked_black_24dp"
+        app:ci_drawable_unselected="@drawable/ic_unselected"
+        app:ci_height="10dp"
+        app:ci_width="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workoutTipsVP" />
+
 </android.support.constraint.ConstraintLayout>

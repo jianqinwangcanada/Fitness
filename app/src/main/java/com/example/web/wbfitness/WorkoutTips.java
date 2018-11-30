@@ -21,6 +21,8 @@ import com.example.web.wbfitness.JavaBean.Workout;
 
 import java.util.ArrayList;
 
+import me.relex.circleindicator.CircleIndicator;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,6 +37,7 @@ public class WorkoutTips extends Fragment {
     private CustomAdapter adapter;
     Spinner tipsWorkoutSpinner;
     ViewPager viewPager;
+    CircleIndicator indicator;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -92,6 +95,8 @@ public class WorkoutTips extends Fragment {
             tipsWorkoutSpinner.setSelection(mMuscle);
         }
 
+        indicator = view.findViewById(R.id.indicator);
+
 
         tipsWorkoutSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -100,10 +105,12 @@ public class WorkoutTips extends Fragment {
                     String selection = tipsWorkoutSpinner.getSelectedItem().toString();
                     adapter = new CustomAdapter(getChildFragmentManager(), selection);
                     viewPager.setAdapter(adapter);
+                    indicator.setViewPager(viewPager);
                     viewPager.setPageTransformer(true, new TipAnimation());
                 } else {
                     adapter = new CustomAdapter(getChildFragmentManager(), tipsWorkoutSpinner.getSelectedItem().toString());
                     viewPager.setAdapter(adapter);
+                    indicator.setViewPager(viewPager);
                     viewPager.setPageTransformer(true, new TipAnimation());
                     viewPager.setCurrentItem(mPosition);
                 }
@@ -197,6 +204,7 @@ public class WorkoutTips extends Fragment {
 
 
         }
+
 
 
         @Override

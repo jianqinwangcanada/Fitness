@@ -140,6 +140,10 @@ public class SettingsActivity extends PreferenceActivity {
                             setLocale(myLocal);
                         }
 
+                    }else if(key.toString().equals("save_bmi")){
+                        //call the method to refresh Mainactivity, otherwise the bmiFragment value doesnot change
+                        refreshAfterBmiChanged();
+
                     }
 
 
@@ -205,17 +209,10 @@ public class SettingsActivity extends PreferenceActivity {
 
             languagePreference.setDefaultValue(sharedPreferences.getString(getResources().getString(R.string.language_key), ""));
 
-
-
-
-
             System.out.println(sharedPreferences.getAll());
 
 
-            // Bind
-            System.out.println("Debug: " + findPreference(getResources().getString(R.string.language_key)));
-            System.out.println("Language_Setting "+sharedPreferences.getString(getResources().getString(R.string.language_key), ""));
-//            sharedPreferences.
+            // Bind  sharedPreferences.
             bindPreferenceSummaryToValue(findPreference(getResources().getString(R.string.language_key)));
 
         }
@@ -285,6 +282,11 @@ public class SettingsActivity extends PreferenceActivity {
         startActivity(refresh);
 
 
+    }
+    public void refreshAfterBmiChanged(){
+        Intent refresh = new Intent(this, MainActivity.class);
+        //Refresh the mainActivity
+        startActivity(refresh);
     }
 
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,6 +70,7 @@ public class HomePage extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -98,16 +100,43 @@ public class HomePage extends Fragment {
 
                 FragmentTransaction transaction = fm.beginTransaction();
                 transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
-                transaction.replace(R.id.content, new ContactFragment());
+                transaction.replace(R.id.content, new ContactFragment(), "Contact");
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
 
+        planButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
+                transaction.replace(R.id.content, new WorkoutPlan(), "Workout Plan");
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+
         bmiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
+                transaction.replace(R.id.content, new BMIFragment(),"BMI");
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
 
+        tipsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
+                transaction.replace(R.id.content, new WorkoutTips(),"Workout Tips");
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 

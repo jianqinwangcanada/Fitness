@@ -6,20 +6,24 @@ public class Workout {
 
     private String name;
     private String description;
-    private ArrayList<String> steps;
+    private String plan;
+    private Boolean complete;
 
-    public Workout(String name, String description, ArrayList<String> steps) {
+
+    public Workout(String name, String plan) {
         this.name = name;
-        this.description = description;
-        this.steps = steps;
+        this.description = null;
+        this.plan = plan;
+        this.complete = false;
     }
 
-    public Workout(String name, String description) {
-        this.name = name;
-        this.description = description;
-        this.steps = null;
+    public String getPlan() {
+        return plan;
     }
 
+    public void setPlan(String plan) {
+        this.plan = plan;
+    }
 
     public String getName() {
         return name;
@@ -37,11 +41,11 @@ public class Workout {
         this.description = description;
     }
 
-    public ArrayList<String> getSteps() {
-        return steps;
+    public Boolean getComplete() {
+        return complete;
     }
 
-    public void setSteps(ArrayList<String> steps) {
-        this.steps = steps;
+    public void setComplete(Boolean complete) {
+        this.complete = complete;
     }
 }

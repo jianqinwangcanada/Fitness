@@ -38,12 +38,12 @@ public class WorkoutTips extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_POSITION = "position";
+    private static final String ARG_MUSCLE = "muscle";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private int mPosition;
+    private int mMuscle;
 
     private OnFragmentInteractionListener mListener;
 
@@ -51,20 +51,13 @@ public class WorkoutTips extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment WorkoutPlan.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static WorkoutTips newInstance(String param1, String param2) {
+
+
+    public static WorkoutTips newInstance(int position, int muscle) {
         WorkoutTips fragment = new WorkoutTips();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putInt(ARG_POSITION, position);
+        args.putInt(ARG_MUSCLE, muscle);
         fragment.setArguments(args);
         return fragment;
     }
@@ -73,8 +66,8 @@ public class WorkoutTips extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            mPosition = getArguments().getInt(ARG_POSITION);
+            mMuscle = getArguments().getInt(ARG_MUSCLE);
         }
 
     }
@@ -95,23 +88,30 @@ public class WorkoutTips extends Fragment {
 
         tipsWorkoutSpinner.setAdapter(spinnerAdapter);
 
+        if(getArguments() != null) {
+            tipsWorkoutSpinner.setSelection(mMuscle);
+        }
+
 
         tipsWorkoutSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selection = tipsWorkoutSpinner.getSelectedItem().toString();
-                adapter = new CustomAdapter(getChildFragmentManager(), selection);
-                viewPager.setAdapter(adapter);
-                viewPager.setPageTransformer(true, new TipAnimation());
+                if(position != mMuscle) {
+                    String selection = tipsWorkoutSpinner.getSelectedItem().toString();
+                    adapter = new CustomAdapter(getChildFragmentManager(), selection);
+                    viewPager.setAdapter(adapter);
+                    viewPager.setPageTransformer(true, new TipAnimation());
+                } else {
+                    adapter = new CustomAdapter(getChildFragmentManager(), tipsWorkoutSpinner.getSelectedItem().toString());
+                    viewPager.setAdapter(adapter);
+                    viewPager.setPageTransformer(true, new TipAnimation());
+                    viewPager.setCurrentItem(mPosition);
+                }
 
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                adapter = new CustomAdapter(getChildFragmentManager(), "Chest");
-//                viewPager.setAdapter(null);
-                viewPager.setAdapter(adapter);
-                viewPager.setPageTransformer(true, new TipAnimation());
             }
         });
 
@@ -197,11 +197,6 @@ public class WorkoutTips extends Fragment {
 
 
         }
-
-
-//        ArrayList<Workout> chest = new ArrayList<>();
-//        String[] chestTitle = getResources().getStringArray(R.array.chestWorkoutTitles);
-//        String[] chestSteps = getResources().getStringArray(R.array.chestWorkoutSteps);
 
 
         @Override

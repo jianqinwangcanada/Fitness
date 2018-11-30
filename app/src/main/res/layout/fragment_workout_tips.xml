@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/tipsLogoIV"
         android:layout_width="wrap_content"
         android:layout_height="102dp"
         android:layout_marginStart="8dp"
@@ -45,7 +45,7 @@
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/tipsLogoIV" />
 
     <Spinner
         android:id="@+id/tipsMuscleGroupsSpinner"

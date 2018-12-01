@@ -87,11 +87,11 @@ public class ContactFragment extends Fragment {
         contactListView=(ListView)view.findViewById(R.id.contact_listView);
         //Declare a arraylist to store the list of the items
        final ArrayList<ContactItem>  contactItems=new ArrayList<>();
-       contactItems.add(new ContactItem(R.string.contact_tel,R.drawable.call));
-       contactItems.add(new ContactItem(R.string.contact_SMS,R.drawable.sms));
-       contactItems.add(new ContactItem(R.string.contact_email,R.drawable.email));
-       contactItems.add(new ContactItem(R.string.contact_location,R.drawable.map));
-       contactItems.add(new ContactItem(R.string.contact_website,R.drawable.web));//
+       contactItems.add(new ContactItem(R.string.contact_tel,R.drawable.ic_phone_contact_24dp));
+       contactItems.add(new ContactItem(R.string.contact_SMS,R.drawable.ic_message_contact_24dp));
+       contactItems.add(new ContactItem(R.string.contact_email,R.drawable.ic_email_contact_24dp));
+       contactItems.add(new ContactItem(R.string.contact_location,R.drawable.ic_location_contact_24dp));
+       contactItems.add(new ContactItem(R.string.contact_website,R.drawable.ic_web_contact_24dp));//
         //Declare a CustomerAdapter adapter
         CustomerAdapter adapter=new CustomerAdapter(getContext(),contactItems);
        //Bind the adapter to contactView

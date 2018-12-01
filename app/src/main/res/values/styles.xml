@@ -19,7 +19,9 @@
 
     <!--Drawer Menu style-->
     <style name="drawerMenu"  >
-        <item name="android:textSize">24dp</item>
+        <item name="android:textSize">21sp</item>
+        <item name="android:fontFamily">@font/bungee</item>
+        <item name="android:textColor">@color/logo_orange</item>
     </style>
     <!--Application head style-->
     <style name="headTitle">

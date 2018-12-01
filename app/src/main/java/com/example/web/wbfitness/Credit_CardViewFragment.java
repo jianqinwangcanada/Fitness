@@ -66,7 +66,7 @@ public class Credit_CardViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_credit__card_view, container, false);
+        View view=inflater.inflate(R.layout.fragment_credit_card_view, container, false);
         TextView header=view.findViewById(R.id.creditHeader);
         TextView description=view.findViewById(R.id.description);
         if(mParam1!=null){header.setText(mParam1);}

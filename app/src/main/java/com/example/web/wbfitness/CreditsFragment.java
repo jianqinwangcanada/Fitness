@@ -1,12 +1,15 @@
 package com.example.web.wbfitness;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,8 +76,7 @@ public class CreditsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
      View view=inflater.inflate(R.layout.fragment_credits, container, false);
-//        TextView header=view.findViewById(R.id.creditHeader);
-//        TextView description=view.findViewById(R.id.description);
+
         ViewPager creditViewPager=view.findViewById(R.id.credits_viewpager);
         CustomAdpter adpter=new CustomAdpter(getChildFragmentManager());
         creditViewPager.setAdapter(adpter);

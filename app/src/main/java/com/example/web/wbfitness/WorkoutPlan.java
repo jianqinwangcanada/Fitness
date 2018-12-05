@@ -1,6 +1,7 @@
 package com.example.web.wbfitness;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.example.web.wbfitness.JavaBean.Workout;
@@ -31,6 +33,7 @@ public class WorkoutPlan extends Fragment {
 
     RecyclerView workoutRV;
     Spinner workoutSpinner;
+    View view;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -79,7 +82,7 @@ public class WorkoutPlan extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_workout_plan, container, false);
+        view = inflater.inflate(R.layout.fragment_workout_plan, container, false);
 
         workoutRV = view.findViewById(R.id.workoutPlanRV);
 
@@ -134,17 +137,6 @@ public class WorkoutPlan extends Fragment {
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(RecyclerView.VERTICAL);
         workoutRV.setLayoutManager(manager);
-
-
-
-
-//        final WorkoutAdapter chestAdapter = new WorkoutAdapter(chest);
-//        final WorkoutAdapter armsAdapter = new WorkoutAdapter(arms);
-//        final WorkoutAdapter backAdapter = new WorkoutAdapter(back);
-//        final WorkoutAdapter coreAdapter = new WorkoutAdapter(core);
-//        final WorkoutAdapter legsAdapter = new WorkoutAdapter(legs);
-//        final WorkoutAdapter cardioAdapter = new WorkoutAdapter(cardio);
-
 
         // Workout item event handler
         workoutRV = view.findViewById(R.id.workoutPlanRV);
@@ -220,6 +212,18 @@ public class WorkoutPlan extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        ImageView iv = view.findViewById(R.id.planLogoIV);
+        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            iv.setVisibility(View.GONE);
+        } else {
+            iv.setVisibility(View.VISIBLE);
+        }
+
     }
 
     /**

@@ -28,7 +28,7 @@
             android:padding="5dp">
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/setupAppName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/bungee"
@@ -55,7 +55,7 @@
                 android:orientation="horizontal"
                 android:paddingTop="5dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10">
+                app:layout_constraintTop_toBottomOf="@+id/setupAppName">
 
                 <RadioButton
                     android:id="@+id/bmiinchesRadio"

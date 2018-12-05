@@ -148,6 +148,16 @@
 #############################################################################
 Workouts and Steps
 -->
+
+    <string name="chest">胸部</string>
+    <string name="core">心脏</string>
+    <string name="arms">臂</string>
+    <string name="legs">腿</string>
+    <string name="back">背部</string>
+    <string name="cardio">有氧运动</string>
+
+
+
     <!-- Chest -->
     <string-array name="chestWorkoutTitles">
         <item>俯卧撑</item>

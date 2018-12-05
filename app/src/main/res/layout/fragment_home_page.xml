@@ -25,89 +25,107 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.support.constraint.ConstraintLayout
+
+    <ScrollView
+        android:id="@+id/homescrow"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/homePageLogo">
 
-        <ImageButton
-            android:id="@+id/bmiButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:layout_weight="1"
-            android:background="@null"
-            android:contentDescription="@string/bmiButtonDescription"
-            android:scaleType="fitCenter"
-            android:src="@mipmap/ic_bmi_foreground"
-            app:layout_constraintEnd_toStartOf="@+id/workoutPlanButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/workoutPlanButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="24dp"
-            android:layout_weight="1"
-            android:background="@null"
-            android:contentDescription="@string/workoutPlanDescription"
-            android:scaleType="fitCenter"
-            android:src="@mipmap/ic_plan_foreground"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/bmiButton"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/contactButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:background="@null"
-            android:contentDescription="@string/contactPageDescription"
-            android:scaleType="fitCenter"
-            android:src="@mipmap/ic_contact_foreground"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/workoutTipsButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bmiButton" />
 
-        <ImageButton
-            android:id="@+id/workoutTipsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:background="@null"
-            android:contentDescription="@string/workoutTipsDescription"
-            android:scaleType="fitCenter"
-            android:src="@mipmap/ic_tips_foreground"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/contactButton"
-            app:layout_constraintStart_toEndOf="@+id/contactButton"
-            app:layout_constraintTop_toBottomOf="@+id/workoutPlanButton" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
-    </android.support.constraint.ConstraintLayout>
+                <ImageButton
+                    android:id="@+id/bmiButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:contentDescription="@string/bmiButtonDescription"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/ic_bmi_foreground"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/homescrow" />
+
+                <ImageButton
+                    android:id="@+id/workoutPlanButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:contentDescription="@string/workoutPlanDescription"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/ic_plan_foreground" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/contactButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:contentDescription="@string/contactPageDescription"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/ic_contact_foreground" />
+
+                <ImageButton
+                    android:id="@+id/workoutTipsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:contentDescription="@string/workoutTipsDescription"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/ic_tips_foreground" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
 
 
 </android.support.constraint.ConstraintLayout>

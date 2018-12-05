@@ -1,6 +1,7 @@
 package com.example.web.wbfitness;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.example.web.wbfitness.JavaBean.Workout;
@@ -38,6 +40,7 @@ public class WorkoutTips extends Fragment {
     Spinner tipsWorkoutSpinner;
     ViewPager viewPager;
     CircleIndicator indicator;
+    View view;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -79,7 +82,7 @@ public class WorkoutTips extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_workout_tips, container, false);
+        view = inflater.inflate(R.layout.fragment_workout_tips, container, false);
         viewPager = view.findViewById(R.id.workoutTipsVP);
 
         // Spinner
@@ -126,6 +129,16 @@ public class WorkoutTips extends Fragment {
         return view;
     }
 
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        ImageView iv = view.findViewById(R.id.tipsLogoIV);
+        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            iv.setVisibility(View.GONE);
+        } else {
+            iv.setVisibility(View.VISIBLE);
+        }
+
+    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

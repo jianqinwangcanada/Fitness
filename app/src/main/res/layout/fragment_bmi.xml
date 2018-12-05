@@ -177,7 +177,7 @@
                         android:fontFamily="@font/jockey_one"
                         android:gravity="center"
                         android:inputType="number"
-                        android:text="0"
+                        android:text="@string/bmi_defaultheight"
                         android:textColor="@android:color/black" />
 
                     <EditText
@@ -189,7 +189,7 @@
                         android:fontFamily="@font/jockey_one"
                         android:gravity="center"
                         android:inputType="number"
-                        android:text="0"
+                        android:text="@string/bmi_defaultweight"
                         android:textColor="@android:color/black" />
                 </TableRow>
 
@@ -228,7 +228,7 @@
 
                     android:gravity="center"
                     android:inputType="number"
-                    android:text="0" />
+                    android:text="@string/bmi_defaultvalue" />
 
             </LinearLayout>
 
@@ -268,7 +268,7 @@
                     android:layout_marginTop="100dp"
                     android:layout_marginEnd="-30dp"
                     android:layout_toStartOf="@+id/textView3"
-                    android:text="10"
+                    android:text="@string/value10"
                     android:textColor="@color/colorAccent" />
 
                 <TextView
@@ -278,7 +278,7 @@
                     android:layout_alignStart="@+id/progressBar"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="23dp"
-                    android:text="20"
+                    android:text="@string/value20"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
@@ -290,7 +290,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="31dp"
                     android:layout_marginEnd="128dp"
-                    android:text="30"
+                    android:text="@string/value30"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
@@ -301,7 +301,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="95dp"
-                    android:text="0"
+                    android:text="@string/value0"
                     android:textColor="@color/colorAccent" />
 
             </RelativeLayout>
@@ -338,7 +338,7 @@
                     android:gravity="center"
                     android:inputType="text"
 
-                    android:text="Normal"
+                    android:text="@string/textfieldbottom"
                     android:textColor="@android:color/black"
                     android:textSize="14sp" />
             </LinearLayout>

@@ -33,12 +33,30 @@
 <string name="male">男</string>
 <string name="female">女</string>
 <string name="age">年龄</string>
-<string name="height">身高</string>
-<string name="weight">体重</string>
-<string name="measurement">测量系统</string>
-<string name="metric">公制(米, 公斤)</string>
-<string name="imperial">英制(英寸，英镑)</string>
+<string name="height">Height</string>
+<string name="weight">Weight</string>
+<!--<string name="measurement">测量系统</string>-->
+<!--<string name="metric">公制(米, 公斤)</string>-->
+<!--<string name="imperial">英制(英寸，英镑)</string>-->
+    <string name="heightInches">英寸高度</string>
+    <string name="heightCentimeters">厘米高度</string>
+    <string name="heightPlaceholderInches">72</string>
+    <string name="heightPlaceholderCentimeters">183</string>
 
+    <string name="weightPounds">重量磅</string>
+    <string name="weightKG">重量公斤</string>
+    <string name="weightPlaceholderPounds">240</string>
+    <string name="weightPlaceholderKilograms">109</string>
+    <string name="heightMeasurement">Height Measurement System</string>
+    <string name="weightMeasurement">Weight Measurement System</string>
+    <string name="pounds">英镑</string>
+    <string name="kilograms">公斤</string>
+    <string name="inches">英寸</string>
+    <string name="centimeters">厘米</string>
+    <string name="submit">提交</string>
+
+    <string name="source">资源</string>
+    <string name="complete">完成</string>
 
     <!--Contact fragment information-->
 <string name="contact_title">你可以浏览我们网页, 发短信或者打电话，你也可以发电子有点和查看我们位置
@@ -109,10 +127,716 @@
     <string name="value_nomal">正常体重</string>
     <string name="value_obesity">肥胖</string>
 
+    <string name="bmi_defaultheight">0</string>
+    <string name="bmi_defaultweight">0</string>
+    <string name="bmi_defaultvalue">0</string>
+    <string name="button_text">计算</string>
+    <string name="value0">0</string>
+    <string name="value10">10</string>
+    <string name="value20">20</string>
+    <string name="value30">30</string>
+
+    <string name="textfieldbottom">请计算</string>
+
     <!--
 #############################################################################
  Credits
 -->
-    <string name="credits_title">Credits</string>
+    <string name="credits_title">感谢</string>
+
+    <!--
+#############################################################################
+Workouts and Steps
+-->
+    <!-- Chest -->
+    <string-array name="chestWorkoutTitles">
+        <item>俯卧撑</item>
+        <item>仰卧起坐</item>
+        <item>哑铃卧推</item>
+        <item>哑铃悬挂</item>
+        <item>站立式\ n胸部按压</item>
+    </string-array>
+
+    <string-array name="chestWorkoutSets">
+                 <item> 3设置\n 15重复</item>
+                 <item> 3设置\n 10重复</item>
+                 <item> 3设置\n 8重复</item>
+                 <item> 3设置\n 8重复</item>
+                 <item> 3设置\n 8重复</item>
+    </string-array>
+
+    <string-array name="chestWorkoutSources">
+        <item>https://www.bodybuilding.com/exercises/pushups</item>
+        <item>https://www.bodybuilding.com/exercises/dips-chest-version</item>
+        <item>https://www.bodybuilding.com/exercises/dumbbell-bench-press</item>
+        <item>https://www.bodybuilding.com/exercises/dumbbell-flyes</item>
+        <item>https://www.bodybuilding.com/exercises/standing-cable-chest-press</item>
+    </string-array>
+
+    <string-array name="chestWorkoutSteps">
+        <item>
+            <![CDATA[
+               躺在地板上面朝下，双手相距约36英寸，同时将躯干向上伸展。
+                <BR/>
+                <BR/>
+                 接下来，向下降低自己，直到你吸气时胸部几乎接触地板。
+                <BR/>
+                <BR/>
+                 现在呼气，挤压胸部，将上半身按回到起始位置。
+                <BR/>
+                <BR/>
+                 在最上面的收缩位置短暂停顿后，您可以开始再次向下降低自己，以便根据需要重复多次。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+                在本练习中，您需要访问双杠。为了让自己进入起始位置，将身体保持在手臂长度（手臂锁定）上方。
+                <BR/>
+                <BR/>
+                 在呼吸时，慢慢降低自己，躯干向前倾斜约30度左右你的肘部略微向外张开，直到你感到胸部有轻微的伸展。
+                <BR/>
+                <BR/>
+                 一旦感觉伸展，在呼气时，用胸部将身体带回起始位置。
+                 提示：记得挤压机芯顶部的胸部一秒钟。
+                <BR/>
+                <BR/>
+                 重复运动达到规定的重复次数。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+               躺在平凳上，每只手放在你的大腿上，用哑铃。双手掌心相互对峙。
+                <BR/>
+                <BR/>
+                 然后，使用你的大腿帮助举起哑铃，一次举起一个哑铃，这样你就可以在肩膀宽度处抓住它们。
+                <BR/>
+                <BR/>
+                一旦处于肩宽，向前旋转您的手腕，使您的手掌远离您。哑铃应位于胸部两侧，上臂和前臂形成90度角。务必始终保持对哑铃的完全控制。这将是你的起始位置。
+                <BR/>
+                <BR/>
+                然后，当你呼气时，用你的胸部推动哑铃。将手臂锁定在升降机顶部并挤压胸部，保持一秒钟，然后慢慢开始下降。提示：理想情况下，降低体重应该是提高体重的两倍。
+                <BR/>
+                <BR/>
+                重复运动，按照规定的重复次数进行训练。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+                躺在平板凳上，每只手放在你的大腿上，用哑铃。你的手掌会相互对峙。
+                <BR/>
+                <BR/>
+                然后用你的大腿帮助举起哑铃，一次举起一个哑铃，这样你就可以把手掌握在肩膀宽度，手掌朝向对方。像你按下它们一样抬起哑铃，但在锁定之前停下来按住。这将是你的起始位置。
+                <BR/>
+                <BR/>
+                肘部略微弯曲，以防止二头肌肌腱的压力，在两侧以宽弧形放下手臂，直到感觉到胸部伸展为止。在执行此部分运动时呼吸。提示：请记住，在整个运动过程中，手臂应保持静止;运动应该只发生在肩关节处。
+                <BR/>
+                <BR/>
+                当您挤压胸部肌肉并呼气时，将手臂放回起始位置。提示：确保使用相同的运动弧来降低重量。
+                <BR/>
+                <BR/>
+                在收缩位置保持一秒钟，并按规定的重复次数重复移动。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+               将双滑轮定位到胸部高度并选择合适的重量。 在电缆前面站立一两英尺，每只手握一个。 你可以错开你的立场以获得更好的稳定性。
+                <BR/>
+                <BR/>
+                 将上臂与肩胛骨放在一起成90度角。 这将是你的起始位置。
+                <BR/>
+                <BR/>
+                 保持身体的其余部分静止，伸展到肘部，向前按压手柄，将它们拉到你面前。
+                <BR/>
+                <BR/>
+                 暂停在动作的顶部，然后返回起始位置。
+                <BR/>
+                <BR/>
+                 重复建议的重复次数。
+            ]]>
+        </item>
+    </string-array>
+
+    <!-- Core -->
+    <string-array name="coreWorkoutTitles">
+        <item>铺板</item>
+        <item>盘扭</item>
+        <item>跨体紧缩</item>
+        <item>铁索紧缩</item>
+        <item>杠铃侧弯</item>
+    </string-array>
+
+    <string-array name="coreWorkoutSets">
+        <item> 3套 n 30秒 n 45秒\n 60秒</item>
+                 <item> 3设置 \n 10重复</item>
+                 <item> 3设置\n 15重复</item>
+                 <item> 3设置\n 15重复</item>
+                 <item> 3设置\n 8重复</item>
+    </string-array>
+
+    <string-array name="coreWorkoutSources">
+        <item>https://www.bodybuilding.com/exercises/plank</item>
+        <item>https://www.bodybuilding.com/exercises/plate-twist</item>
+        <item>https://www.bodybuilding.com/exercises/cross-body-crunch</item>
+        <item>https://www.bodybuilding.com/exercises/cable-crunch</item>
+        <item>https://www.bodybuilding.com/exercises/barbell-side-bend</item>
+    </string-array>
+
+    <string-array name="coreWorkoutSteps">
+        <item>
+            <![CDATA[
+               进入地板俯卧位，支撑脚趾和前臂的重量。你的手臂弯曲并直接在肩膀下方。
+                <BR/>
+                <BR/>
+                 始终保持身体平直，并尽可能长时间保持这个姿势。为了增加难度，可以抬起手臂或腿。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+                躺在地板上或运动垫上，双腿完全伸展，上半身挺直。双臂在腹部前方用双手轻轻弯曲，双手抓住盘子。
+                <BR/>
+                <BR/>
+                 慢慢地穿过脚踝附近的腿，将它们抬离地面。 你的膝盖也应该稍微弯曲。
+                 注意：稍微向上移动上半身以帮助保持平衡，从而锻炼身体。 这是起始位置。
+                <BR/>
+                <BR/>
+                 将板移到左侧并用它触摸地板。 在进行这种运动时呼吸。
+                <BR/>
+                <BR/>
+                 当你呼吸时回到起始位置，然后重复运动，但这次是在身体的右侧。
+                 提示：始终使用缓慢控制的运动。 急动可能会伤到背部。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+               平放在你的背上，弯曲膝盖约60度。
+                <BR/>
+                <BR/>
+                 将双脚平放在地板上，双手松松地放在头后。 这将是你的起始位置。
+                <BR/>
+                <BR/>
+                 现在蜷缩起来，让你的右肘和肩膀穿过你的身体，同时让你的左膝盖向左肩。
+                 用肘部伸直并试着触摸膝盖。 在进行此动作时呼气。
+                <BR/>
+                <BR/>
+                 现在，当你吸气时，回到起始位置，并用左肘和右膝重复。
+                <BR/>
+                <BR/>
+                 以这种方式继续交替，直到完成所有规定的重复。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+               跪在包含绳索附件的高滑轮下方。
+                <BR/>
+                <BR/>
+                抓住绳索绳附件并放下绳子，直到双手放在脸旁。
+                <BR/>
+                <BR/>
+                稍微弯曲你的臀部，让重量超过腰部。这将是你的起始位置。
+                <BR/>
+                <BR/>
+                臀部固定后，在收缩腹肌时弯曲腰部，使肘部向大腿中间行进。在执行此部分运动时呼气并保持收缩一秒钟。
+                <BR/>
+                <BR/>
+                吸气时慢慢回到起始位置。提示：确保在整个运动过程中保持腹肌的持续张力。
+                此外，不要选择如此重的重量，以使下背处理工作的冲击。
+                <BR/>
+                <BR/>
+                重复建议的重复次数。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+                站立，同时握住肩膀后面的杠铃（略低于颈部）。你的脚应该与肩同宽。 这将是你的起始位置。
+                <BR/>
+                <BR/>
+                 在保持背部挺直和抬起头的同时，尽可能向右弯腰。 弯曲到一边时呼吸。
+                 然后保持一秒钟，然后在呼气时回到起始位置。 提示：保持身体的其余部分静止不动。
+                <BR/>
+                <BR/>
+                  现在重复运动，但向左弯曲。 等一下，然后回到起始位置。
+                <BR/>
+                <BR/>
+                 重复建议的重复次数。
+                <BR/>
+                <BR/>
+                 <b>注意：</ b>如果您有腰背部问题，请小心使用，或完全避免这种做法。
+            ]]>
+        </item>
+    </string-array>
+
+    <!-- Arms -->
+    <string-array name="armsWorkoutTitles">
+        <item> EZ-Bar卷曲 </item>
+        <item> 卷曲身体 \n Hammer Curl </item>
+         <item>杠铃卷曲</item>
+         <item>三头肌下推</item>
+         <item> 条凳倾角 </item>
+    </string-array>
+
+    <string-array name="armsWorkoutSets">
+                 <item> 3设置\n 8重复</item>
+                 <item> 3设置\n 8重复</item>
+                 <item> 3设置\n 8重复</item>
+                 <item> 3设置\n 10重复</item>
+                 <item> 3设置\n 15重复</item>
+    </string-array>
+
+
+    <string-array name="armsWorkoutSources">
+        <item>https://www.bodybuilding.com/exercises/ez-bar-curl</item>
+        <item>https://www.bodybuilding.com/exercises/cross-body-hammer-curl</item>
+        <item>https://www.bodybuilding.com/exercises/barbell-curl</item>
+        <item>https://www.bodybuilding.com/exercises/triceps-pushdown</item>
+        <item>https://www.bodybuilding.com/exercises/bench-dips</item>
+    </string-array>
+
+    <string-array name="armsWorkoutSteps">
+        <item>
+            <![CDATA[
+                在宽阔的外部手柄处握住EZ卷曲杆时，站直。 由于杆的形状，手掌应朝前并略微向内倾斜。保持肘部靠近躯干。 这将是你的起始位置。
+                <BR/>
+                <BR/>
+                 现在，在保持上臂静止的同时，在收缩二头肌的同时向前呼气和卷曲重物.专注于只移动你的前臂。
+                <BR/>
+                <BR/>
+                  继续增加体重，直到你的二头肌完全收缩，并且杆处于肩部水平。保持顶部收缩位置片刻并挤压二头肌。
+                <BR/>
+                <BR/>
+                 然后吸气并慢慢将杆降低到起始位置。
+                <BR/>
+                <BR/>
+                 重复建议的重复次数。
+
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+                每只手用哑铃挺直站立。 你的手应朝下，手掌朝下。
+                <BR/>
+                <BR/>
+                 在保持手掌朝向并且不扭动手臂的同时，在呼气时将右臂的哑铃向上弯曲到左肩。将哑铃顶部触碰到肩部并保持收缩一秒钟。
+                <BR/>
+                <BR/>
+                 沿着与吸气相同的路径缓慢降低哑铃，然后为左臂重复相同的动作。
+                <BR/>
+                <BR/>
+                 以这种方式继续交替，直到为每只手臂执行建议的重复量。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+                站立，躯干直立，同时握住肩宽握持杠铃。双手应朝前，肘部应靠近躯干。 这将是你的起始位置。
+                <BR/>
+                <BR/>
+                 在保持上臂静止的同时，向前卷曲重物，同时在呼气时收缩二头肌。提示：只有前臂才能移动。
+                <BR/>
+                <BR/>
+                 继续运动，直到您的二头肌完全收缩并且杆处于肩部水平。保持收缩位置一秒钟，并用力挤压二头肌。
+                <BR/>
+                <BR/>
+                 当你呼吸时，慢慢开始将酒吧带回到起始位置。
+                <BR/>
+                <BR/>
+                 重复建议的重复次数。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+               将直的或成角度的杆连接到高滑轮上，并用肩部宽度的上手柄（手掌朝下）抓住。
+                <BR/>
+                <BR/>
+                 直立，躯干笔直，前倾非常小，将上臂靠近身体并垂直于地板。前臂应该指向滑轮，因为它们握住杆。这是你的起始位置。
+                <BR/>
+                <BR/>
+                 使用三头肌，将杆向下拉，直到它接触到大腿前部，并且手臂完全垂直于地板延伸。上臂应始终保持固定在躯干旁边，只有前臂应该移动。在进行此动作时呼气。
+                <BR/>
+                <BR/>
+                在收缩位置第二次保持后，将杆慢慢抬起至起点。在执行此步骤时呼吸。
+                <BR/>
+                <BR/>
+                重复建议的重复次数。
+
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+               在这项练习中，您需要在背后放一条长凳。当工作台垂直于您的身体，并且远离它时，请握住其边缘的长凳，双手完全伸展，肩宽分开。腿向前伸展，在腰部弯曲并垂直于躯干。这将是你的起始位置。
+                <BR/>
+                <BR/>
+                通过弯曲肘部吸气，慢慢降低身体，直到你将自己降低到足够远到上臂和前臂之间的角度略小于90度的位置。
+                提示：在整个运动过程中保持肘部尽可能靠近。前臂应始终指向下方。
+                <BR/>
+                <BR/>
+                用你的三头肌再次抬起你的躯干，抬起自己回到起始位置。
+                <BR/>
+                <BR/>
+                重复建议的重复次数。
+            ]]>
+        </item>
+    </string-array>
+
+    <!-- Legs -->
+    <string-array name="legsWorkoutTitles">
+        <item>杠铃深蹲</item>
+         <item> 哑铃弓步 </item>
+          <item>腿部按</item>
+          <item>腿部扩展</item>
+          <item> 杠铃硬拉 </item>
+    </string-array>
+
+    <string-array name="legsWorkoutSets">
+        <item> 3设置\n 8重复</item>
+                 <item> 3设置\n 10重复</item>
+                 <item> 3设置\n 8重复</item>
+                 <item> 3设置\n 10重复</item>
+                 <item> 3设置\n 8重复</item>
+    </string-array>
+
+    <string-array name="legsWorkoutSources">
+        <item>https://www.bodybuilding.com/exercises/barbell-squat</item>
+        <item>https://www.bodybuilding.com/exercises/dumbbell-lunges</item>
+        <item>https://www.bodybuilding.com/exercises/leg-press</item>
+        <item>https://www.bodybuilding.com/exercises/leg-extensions</item>
+        <item>https://www.bodybuilding.com/exercises/barbell-deadlift</item>
+    </string-array>
+
+    <string-array name="legsWorkoutSteps">
+        <item>
+            <![CDATA[
+               从陷阱顶部支撑的杠铃开始。胸部朝上，头部朝前。 采用臀宽姿势，根据需要将脚伸出。
+                <BR/>
+                <BR/>
+                 通过弯曲膝盖下降，尽可能避免臀部向后移动。这需要膝盖向前行进。 确保它们与脚保持对齐。 目标是尽可能保持躯干直立。
+                <BR/>
+                <BR/>
+                 一直向下，保持脚跟前部的重量。此时，上腿与下腿接触，使运动反向，向上推动重物。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+               站立时，你的躯干直立，双手握住两个哑铃。这将是你的起始位置。
+                <BR/>
+                <BR/>
+                向前走，右脚大约2英尺左右，从脚后面静止不动，向下放下身体，同时保持躯干直立并保持平衡。你走的时候吸气。注意：和其他练习一样，当你下来时，不要让膝盖向前伸出脚趾，因为这会对膝关节施加过度的压力。
+                确保你的前胫骨垂直于地面。
+                <BR/>
+                <BR/>
+                主要使用脚后跟，向上推，并在呼气时回到起始位置。
+                <BR/>
+                <BR/>
+                重复移动以获得建议的重复次数，然后使用左腿进行。
+                <BR/>
+                <BR/>
+                <b>注意：</ b>这是一项需要大量平衡的动作，所以如果您遇到平衡问题，您可能希望避免它，或者只是在抓住固定物体时使用自己的体重。如果您遇到平衡问题，绝对不会在背后用杠铃表演。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+                使用压腿机，坐在机器上，将腿放在平台上，中间（肩宽）脚站立。
+                <BR/>
+                <BR/>
+                降低将加重平台固定到位的安全杆，并将平台一直向上按，直到您的腿完全伸展到您的前方。提示：确保不要锁定膝盖。你的躯干和腿部应该成90度角。这将是你的起始位置。
+                <BR/>
+                <BR/>
+                当您吸气时，慢慢放下平台，直到您的上下腿呈90度角。
+                <BR/>
+                <BR/>
+                主要用脚后跟推动并使用股四头肌在呼气时回到起始位置。
+                <BR/>
+                <BR/>
+                重复建议的重复次数，并确保在完成后正确锁定安全销。你不希望那个平台落在你的满载上。
+                <BR/>
+                <BR/>
+                <b>注意：</b>请务必检查以确保重新安装重物时平台已牢固锁定。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+               在本练习中，您将需要使用腿部伸展机器。 首先选择你的体重并坐在机器上，双腿放在垫子下方（脚向前指），双手握住侧杆。这将是你的起始位置。
+                <BR/>
+                <BR/>
+                 使用股四头肌，在呼气时将双腿伸展到最大。确保身体的其余部分保持静止在座位上。 暂停合同位置的第二个。
+                <BR/>
+                <BR/>
+                 在吸气时慢慢将重量降低到原始位置，确保不超过90度角限制。
+                <BR/>
+                <BR/>
+                 重复建议的次数。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+                接近杆，使其在您的脚上居中。 你的脚应该分开臀宽。 弯曲臀部以抓住肩宽，让肩胛骨伸展。通常，您将使用交替握把。
+                <BR/>
+                <BR/>
+                 用你的脚和你的手柄设置，大口呼气，然后放下臀部，弯曲膝盖，直到你的小腿接触到酒吧。 期待着你的头脑。保持胸部向上，背部拱起，并开始穿过高跟鞋向上移动重量。
+                <BR/>
+                <BR/>
+                 在酒吧经过膝盖之后，积极地将杠杆向后拉，在将臀部向前推入杆中时将肩胛骨拉到一起。
+                <BR/>
+                <BR/>
+                 通过在臀部弯曲并将其引导到地板来降低杆。
+            ]]>
+        </item>
+    </string-array>
+
+    <!-- Cardio -->
+    <string-array name="cardioWorkoutTitles">
+        <item>慢跑</item>>
+        <item>楼梯慢跑</item>
+         <item>跳绳</item>
+         <item>固定式自行车</item>
+         <item>椭圆</item>
+    </string-array>
+
+    <string-array name="cardioWorkoutSets">
+        <item> 1分钟步行\n 10分钟慢跑\n 1分钟短跑\n 1分钟步行</item>
+                 <item> 15分钟</item>
+                 <item> 3设置\n 25个重复</item>
+                 <item> 15分钟</item>
+                 <item> 15分钟</item>
+    </string-array>
+
+    <string-array name="cardioWorkoutSources">
+        <item>https://www.bodybuilding.com/exercises/jogging-treadmill</item>
+        <item>https://www.bodybuilding.com/exercises/rope-jumping</item>
+        <item>https://www.bodybuilding.com/exercises/stairmaster</item>
+        <item>https://www.bodybuilding.com/exercises/bicycling-stationary</item>
+        <item>https://www.bodybuilding.com/exercises/elliptical-trainer</item>
+    </string-array>
+
+    <string-array name="cardioWorkoutSteps">
+        <item>
+            <![CDATA[
+               首先，踏上跑步机并从菜单中选择所需的选项。 大多数跑步机都有手动设置，或者您可以选择要运行的程序。 通常，您可以输入您的年龄和体重来估计运动时燃烧的卡路里量。可以调整高度以改变锻炼的强度。
+                <BR/>
+                <BR/>
+                 跑步机提供方便，心血管的好处，通常比外面慢跑的影响小。一个150磅的人将燃烧近250卡路里的热量，持续30分钟，而运行的热量超过450卡路里。 在慢跑时保持适当的姿势，并且只在必要时握住手柄，例如在拆卸或检查心率时。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+                首先，踏上阶梯，然后从菜单中选择所需的选项。 您可以选择手动设置，也可以选择要运行的程序。通常，您可以输入您的年龄和体重来估计运动时燃烧的卡路里量。
+                <BR/>
+                <BR/>
+                 以既定的节奏上下抽腿，将踏板向下推，但不要一直到地面。 建议您保持握在手柄上，这样就不会摔倒。手柄可用于监测您的心率，以帮助您保持适当的强度。
+                <BR/>
+                <BR/>
+                 Stairmasters提供方便，心血管的好处，并且通常比在外面跑步的影响小。 它们通常比其他有氧健身器材硬得多。一个150磅的人通常在30分钟内燃烧超过300卡路里的热量，相比之下，大约175卡路里的热量。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+                每只手握住绳子的一端。 将绳子放在地面上。 抬起你的手臂，将绳子转过头，将它放在你面前。 当它到达地面时，跳过它。
+                 找到一个可以保持良好的转弯速度。 可以使用不同的速度和技术来引入变化。
+                <BR/>
+                <BR/>
+                 跳绳是令人兴奋的，挑战你的协调，需要很多精力。
+                 一个150磅的人将燃烧约350卡路里的跳绳30分钟，而运行的卡路里则超过450卡路里。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+               首先，将自己安置在自行车上并根据您的身高调整座椅。
+                <BR/>
+                <BR/>
+                 从菜单中选择所需的选项。 您可能必须开始踩踏板才能打开它。 您可以使用手动设置，也可以选择要使用的程序。 通常，您可以输入您的年龄和体重来估计运动时燃烧的卡路里量。 在整个训练过程中可以改变阻力水平。
+                 手柄可用于监测您的心率，以帮助您保持适当的强度。
+                <BR/>
+                <BR/>
+                 固定式自行车提供便利，心血管方面的好处，并且比其他活动的影响更小。一个150磅的人将以适中的速度骑行约230卡路里的热量，持续30分钟，相比之下，450卡路里或更多的热量。
+
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+               首先，踏上椭圆机并从菜单中选择所需的选项。 大多数椭圆机都有手动设置，或者您可以选择要运行的程序。 通常，您可以输入您的年龄和体重来估计运动时燃烧的卡路里量。可以调整高度以改变锻炼的强度。
+                <BR/>
+                <BR/>
+                 手柄可用于监测您的心率，以帮助您保持适当的强度。
+                <BR/>
+                <BR/>
+                 椭圆机提供了便利性，心血管效益，并且对接头的影响远远小于地面有氧运动，如跑步。 一个150磅的人在30分钟内平均燃烧387卡路里，而超过450-700卡路里的热量。如果你的椭圆形有它们，建议你使用椭圆形上的手臂来创造更多的运动。
+                <BR/>
+                <BR/>
+
+            ]]>
+        </item>
+    </string-array>
+
+    <!-- Back -->
+    <string-array name="backWorkoutTitles">
+        <item>坐式电缆排</item>
+        <item>哑铃耸肩</item>
+        <item>宽握式拉杆下拉</item>
+        <item>单臂哑铃排</item>
+        <item>超伸展</item>
+    </string-array>
+
+    <string-array name="backWorkoutSets">
+        <item> 3设置\n 10重复</item>
+                 <item> 3设置\n 12重复</item>
+                 <item> 3设置\n 10重复</item>
+                 <item> 3设置\n 10重复</item>
+                 <item> 3设置\n 10重复</item>
+    </string-array>
+
+
+    <string-array name="backWorkoutSources">
+        <item>https://www.bodybuilding.com/exercises/seated-cable-rows</item>
+        <item>https://www.bodybuilding.com/exercises/dumbbell-shrug</item>
+        <item>https://www.bodybuilding.com/exercises/wide-grip-lat-pulldown</item>
+        <item>https://www.bodybuilding.com/exercises/one-arm-dumbbell-row</item>
+        <item>https://www.bodybuilding.com/exercises/hyperextensions-back-extensions</item>
+    </string-array>
+
+    <string-array name="backWorkoutSteps">
+        <item>
+            <![CDATA[
+                在本练习中，您需要使用带V型杆的低滑轮排机。注意：V形杆可让您在手掌彼此面对的地方握住中性手柄。要进入起始位置，首先坐在机器上，将脚放在前平台或横杆上，确保膝盖稍微弯曲而不是锁定。
+                <BR/>
+                <BR/>
+                当您保持背部的自然对齐并抓住V形杆手柄时，倾斜。
+                <BR/>
+                <BR/>
+                 双臂向后伸直，直到你的躯干与腿部呈90度角。你的背部应该略微拱起，你的胸部应该伸出来。当你拿着酒吧在你面前时，你应该感觉舒适。这是练习的起始位置。
+                <BR/>
+                <BR/>
+                保持躯干静止，将手柄向后拉向躯干，同时保持手臂靠近它，直到你触摸腹部。在进行这种运动时呼吸。那时你应该用力挤压你的背部肌肉。保持收缩一秒钟，然后在呼吸时慢慢回到原来的位置。
+                <BR/>
+                <BR/>
+                重复建议的重复次数。
+                <BR/>
+                <BR/>
+                <b>注意：</b>避免来回摆动躯干，因为这样会导致腰部受伤。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+               每只手握哑铃直立（手掌朝向你的躯干），双臂伸展。
+                <BR/>
+                <BR/>
+                 在呼气时尽可能提高肩膀，抬起哑铃。 将收缩保持在顶部一秒钟。 提示：手臂应始终保持伸展状态。不要使用二头肌来帮助举哑铃。 只有肩膀应该上下移动。
+                <BR/>
+                <BR/>
+                 将哑铃降低到原始位置。
+                <BR/>
+                <BR/>
+                 重复建议的重复次数。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+                坐在下拉机上，顶部滑轮上有一个宽条。确保调整机器的护膝以适合您的身高。这些垫子可以防止身体被杆上的阻力抬高。
+                <BR/>
+                <BR/>
+                使用规定的手柄抓住手掌向前的手掌。握把注意事项：对于宽握，您的双手需要以比肩宽更宽的距离间隔开。 对于中等抓地力，您的双手需要以与肩宽相等的距离间隔开，并且在小于肩宽的距离处进行紧密抓握。
+                <BR/>
+                <BR/>
+                当你的双臂伸展在你面前时，按住所选的握把宽度，将你的躯干拉回大约30度左右同时在你的下背上创造一个弯曲，并将你的胸部伸出。这是你的起始位置。
+                <BR/>
+                <BR/>
+                当你呼气时，通过向下和向后拉动肩膀和上臂，将杆向下拉直到它触及你的上胸部。提示：一旦达到完全收缩位置，集中精力挤压背部肌肉。上部躯干应保持静止，只有手臂才能移动。除了拿着酒吧外，前臂不应做任何其他工作;所以不要试图用前臂拉下杆。
+                <BR/>
+                <BR/>
+                在收缩位置压缩肩胛骨一秒后，慢慢将杆抬高到起始位置当你的手臂完全伸展并且拉伤完全拉伸时。在这部分运动中吸气。
+                <BR/>
+                <BR/>
+                重复此动作达到规定的重复次数。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+             选择一个平凳，并在其两侧放置哑铃。
+                <BR/>
+                <BR/>
+                将右腿放在板凳末端的顶部，从腰部向前弯曲你的躯干，直到你的上半身与地板平行，并将右手放在板凳的另一端以获得支撑。
+                <BR/>
+                <BR/>
+                用左手拿起地板上的哑铃并保持重量，同时保持下背部挺直。手掌应朝向你的躯干。这将是你的起始位置。
+                <BR/>
+                <BR/>
+                将阻力直接拉到胸部侧面，保持上臂靠近身体并保持躯干静止不动。执行此步骤时呼吸。提示：一旦达到完全收缩位置，集中精力挤压背部肌肉。另外，确保用背部肌肉而不是手臂进行力量。最后，上半身应该保持静止，只有手臂应该移动。
+                除了握哑铃外，前臂不应做任何其他工作;所以不要试图用前臂拉起哑铃。
+                <BR/>
+                <BR/>
+                将电阻直接降低到起始位置。在执行此步骤时呼吸。
+                <BR/>
+                <BR/>
+                重复指定重复次数的移动。
+                <BR/>
+                <BR/>
+                切换侧面并再次用另一只手臂重复。
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+               躺在一个超伸展的长凳上，将脚踝牢固地塞在脚垫下面。
+                <BR/>
+                <BR/>
+                尽可能调整上垫，使大腿上部平放在宽垫上，留出足够的空间让你在没有任何限制的情况下弯腰。
+                <BR/>
+                <BR/>
+                随着你的身体笔直，在你面前（我的偏好）或在你的头后面交叉双臂。这将是你的起始位置。
+                提示：您还可以在交叉双臂下方握住重量板以增加阻力。
+                <BR/>
+                <BR/>
+                尽可能在腰部慢慢向前弯曲，同时保持背部平坦。在你进行这项运动时吸气。继续前进，直到你在腿筋上感觉舒适，并且如果没有背部的圆角，你就不能继续前进。提示：执行此练习时，切勿绕过背部。
+                此外，有些人可以走得更远。关键是你尽可能远离你的身体而不会使背部变圆。
+                <BR/>
+                <BR/>
+                当你吸气时，慢慢将你的躯干抬回到初始位置。提示：避免将背部弯曲成直线的诱惑。此外，不要随时摆动躯干以保护背部免受伤害。
+                <BR/>
+                <BR/>
+                重复建议的重复次数。
+
+            ]]>
+        </item>
+    </string-array>
+
+    <!--
+#############################################################################
+Credits
+-->
+
+
+    <string name="credits_header_logo">标志设计</string>
+    <string name="credits_logo_description">
+       感谢Jonnys的女朋友，她是圣克莱尔学院的学生，她设计了所有的标志和图片并做得非常好。 我们感谢她。
+    </string>
+    <string name="credits_header_resources">网站资源</string>
+    <string name="credits_resources_description">
+         <![CDATA[
+               <b>免费图像矢量</b>
+                 <br/ ><br/>
+                https://pixabay.com/en
+                 <br/>
+                https://www.flaticon.com/
+                <br/>
+                <b>开发技术</b>
+                <br/ >
+                <br/ >
+               https://developer.android.com/
+                <br/>
+                https://stackoverflow.com/
+                <br/>
+                 <b>健美运动</b>
+                 <br/ >
+                https://www.bodybuilding.com/
+
+            ]]>
+    </string>
+    <string name="credits_header_company">健身公司</string>
+    <string name="credits_company_description">
+      感谢健身公司，他们允许我们使用他们如何进行适当锻炼的内容。他们也为我们的移动应用程序提供了很好的建议。
+    </string>
 
 </resources>
+
+
+
+
+
+
+

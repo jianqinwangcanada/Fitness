@@ -142,6 +142,18 @@
     <string name="value_nomal">Normal Weight</string>
     <string name="value_obesity">Obesity</string>
 
+    <string name="bmi_defaultheight">0</string>
+    <string name="bmi_defaultweight">0</string>
+    <string name="bmi_defaultvalue">0</string>
+    <string name="button_text">Calculate</string>
+    <string name="value0">0</string>
+    <string name="value10">10</string>
+    <string name="value20">20</string>
+    <string name="value30">30</string>
+
+
+
+    <string name="textfieldbottom">Please Calculate</string>
 
     <!--
 #############################################################################
@@ -851,7 +863,8 @@ Credits
     <string name="credits_title">Credits</string>
     <string name="credits_header_logo">Logo Design</string>
     <string name="credits_logo_description">
-        Thanks for Jonnys girlfriend who is a student
+        Thanks for Jonnys girlfriend who is a student in S.tclarecollege.She design Logos and give us good suggestion for font color,background color.
+
     </string>
     <string name="credits_header_resources">Website Resources</string>
     <string name="credits_resources_description">
@@ -877,7 +890,8 @@ Credits
     </string>
     <string name="credits_header_company">Fitness Company</string>
     <string name="credits_company_description">
-       Thanks for fitness company ...
+        Thanks for fitness company , they allow us to use their content of how to do proper exercise.
+        They also give us good suggestion for our mobile application. ...
     </string>
 
 </resources>

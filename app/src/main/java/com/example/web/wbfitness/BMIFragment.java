@@ -203,7 +203,7 @@ public class BMIFragment extends Fragment {
         bmiOutput.setFocusable(false);
 
         bmiOutputResult=view.findViewById(R.id.bmiOutputResult);
-        bmiOutputResult.setText("Please Calculate");
+        //bmiOutputResult.setText("Please Calculate");
         bmiOutputResult.setFocusable(false);
 
 

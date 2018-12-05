@@ -137,7 +137,7 @@
     <string name="value30">30</string>
 
     <string name="textfieldbottom">请计算</string>
-
+    <string name="bmi_inputinvalid">输入无效</string>
     <!--
 #############################################################################
  Credits

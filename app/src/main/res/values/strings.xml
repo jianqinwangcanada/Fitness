@@ -102,6 +102,9 @@
     <string name="bmi_menu_title">BMI Save Setting</string>
     <string name="bmi_title">Save Your BMI Input?</string>
     <string name="bmi_summary">Open toggle will save your BMI input</string>
+    <string name="bmi_inputinvalid">Input invalid</string>
+
+
 
     <!--Stirng value for Language Listpreference-->
     <string name="language_key">language</string>

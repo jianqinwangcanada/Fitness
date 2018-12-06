@@ -13,6 +13,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.web.wbfitness.JavaBean.Credits;
@@ -33,6 +34,8 @@ public class CreditsFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    View view;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -75,7 +78,7 @@ public class CreditsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-     View view=inflater.inflate(R.layout.fragment_credits, container, false);
+     view=inflater.inflate(R.layout.fragment_credits, container, false);
 
         ViewPager creditViewPager=view.findViewById(R.id.credits_viewpager);
         CustomAdpter adpter=new CustomAdpter(getChildFragmentManager());
@@ -96,7 +99,7 @@ public class CreditsFragment extends Fragment {
              switch (position){
                  case 0: return Credit_CardViewFragment.newInstance(getString(R.string.credits_header_logo),getString(R.string.credits_logo_description));
                  case 1: return Credit_CardViewFragment.newInstance(getString(R.string.credits_header_resources),getString(R.string.credits_resources_description));
-                 default:return Credit_CardViewFragment.newInstance(getString(R.string.credits_header_company),getString(R.string.credits_company_description));
+                 default:return Credit_CardViewFragment.newInstance(getString(R.string.credits_indicator),getString(R.string.credits_indicator_description));
 
              }
 
@@ -160,6 +163,17 @@ public class CreditsFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+    }
+
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        ImageView iv = view.findViewById(R.id.creditsIV);
+        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            iv.setVisibility(View.GONE);
+        } else {
+            iv.setVisibility(View.VISIBLE);
+        }
+
     }
 
     @Override

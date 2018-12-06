@@ -14,14 +14,14 @@ The application will ask you for some information during your first launch of th
 
 ## Mockup
 
-![Setup]()
-![Home Page]()
+![Setup](https://github.com/jonathonbauer/wbfitness/blob/readMe/images/setup.png)
+![Home Page](https://github.com/jonathonbauer/wbfitness/blob/readMe/images/home.png)
 <br/>
-![Body Mass Index]()
-![Contact]()
+![Body Mass Index](https://github.com/jonathonbauer/wbfitness/blob/readMe/images/bmi.png)
+![Contact](https://github.com/jonathonbauer/wbfitness/blob/readMe/images/contact.png)
 <br/>
-![Workout Plan]()
-![Workout Tips]()
+![Workout Plan](https://github.com/jonathonbauer/wbfitness/blob/readMe/images/plan.png)
+![Workout Tips](https://github.com/jonathonbauer/wbfitness/blob/readMe/images/tips.png)
 
 ## Authors
 

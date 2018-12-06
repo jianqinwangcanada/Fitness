@@ -7,20 +7,20 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_home_black_24dp"
+            android:icon="@drawable/home_icon"
             android:title="@string/nav_menu_title_home"/>
 
         <item
             android:id="@+id/nav_bmi"
-            android:icon="@drawable/ic_bmi_black_24dp"
+            android:icon="@drawable/bmi_icon"
             android:title="@string/nav_menu_title_BMI" />
         <item
             android:id="@+id/nav_workoutplan"
-            android:icon="@drawable/ic_plan_black_24dp"
+            android:icon="@drawable/workout_plan_icon"
             android:title="@string/nav_menu_title_WorkoutPlan" />
         <item
             android:id="@+id/nav_tips"
-            android:icon="@drawable/ic_walk_black_24dp"
+            android:icon="@drawable/workout_tips_icon"
             android:title="@string/nav_menu_title_WorkoutTips" />
     </group>
 
@@ -28,11 +28,11 @@
         <menu>
             <item
                 android:id="@+id/nav_contact"
-                android:icon="@drawable/ic_contact__black_24dp"
+                android:icon="@drawable/contact_icon"
                 android:title="@string/nav_menu_tilte_Contact" />
             <item
                 android:id="@+id/nav_credits"
-                android:icon="@drawable/ic_credit_black_24dp"
+                android:icon="@drawable/credits_icon"
                 android:title="@string/nav_menu_title_Credits" />
         </menu>
     </item>

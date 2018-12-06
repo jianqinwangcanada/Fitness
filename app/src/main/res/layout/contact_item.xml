@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="left"
     android:orientation="horizontal"
-    android:padding="20dp">
+    android:paddingTop="10dp">
 
 
     <ImageView
         android:id="@+id/contact_item_iamge"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_weight="1" />
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="3" />
 
     <TextView
         android:id="@+id/contact_item_text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_weight="3"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/textviewround"
+
+        android:fontFamily="@font/bungee"
+        android:gravity="left"
+        android:paddingLeft="10dp"
         android:textAllCaps="false"
-        android:textSize="24sp" />
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        />
 </LinearLayout>

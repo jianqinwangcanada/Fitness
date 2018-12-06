@@ -102,6 +102,9 @@
     <string name="bmi_menu_title">BMI Save Setting</string>
     <string name="bmi_title">Save Your BMI Input?</string>
     <string name="bmi_summary">Open toggle will save your BMI input</string>
+    <string name="bmi_inputinvalid">Input invalid</string>
+
+
 
     <!--Stirng value for Language Listpreference-->
     <string name="language_key">language</string>
@@ -142,6 +145,18 @@
     <string name="value_nomal">Normal Weight</string>
     <string name="value_obesity">Obesity</string>
 
+    <string name="bmi_defaultheight">0</string>
+    <string name="bmi_defaultweight">0</string>
+    <string name="bmi_defaultvalue">0</string>
+    <string name="button_text">Calculate</string>
+    <string name="value0">0</string>
+    <string name="value10">10</string>
+    <string name="value20">20</string>
+    <string name="value30">30</string>
+
+
+
+    <string name="textfieldbottom">Please Calculate</string>
 
     <!--
 #############################################################################
@@ -843,5 +858,53 @@ Workouts and Steps
         </item>
     </string-array>
 
+    <!--
+#############################################################################
+Credits
+-->
 
+    <string name="credits_title">Credits</string>
+    <string name="credits_header_logo">Logo &amp; Background Image</string>
+    <string name="credits_logo_description">
+        <![CDATA[
+            Stephanie Markert
+            <br/>
+            <br/>
+            Graphic Design Student
+            <br/>
+            <br/>
+            stephaniemarkert@hotmail.com
+        ]]>
+    </string>
+    <string name="credits_header_resources">Website Resources</string>
+    <string name="credits_resources_description">
+         <![CDATA[
+                <b>Free Image Vectors</b>
+                 <br/ ><br/>
+                 <br/ >
+                https://pixabay.com/en
+                 <br/>
+                 <br/>
+                https://www.flaticon.com/
+                <br/>
+                <br/>
+                <b>Developer Technology</b>
+                <br/ >
+                <br/ >
+                <br/ >
+               https://developer.android.com/
+                <br/>
+                <br/>
+                https://stackoverflow.com/
+                <br/>
+                <br/>
+                 <b>Workout Content</b>
+                 <br/ >
+                 <br/ >
+                https://www.bodybuilding.com/
+
+            ]]>
+    </string>
+    <string name="credits_indicator">Circle Indicator by ongakuer</string>
+    <string name="credits_indicator_description">https://github.com/ongakuer/CircleIndicator</string>
 </resources>

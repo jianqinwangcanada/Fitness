@@ -1,6 +1,7 @@
 package com.example.web.wbfitness;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 
 /**
@@ -41,6 +43,7 @@ public class HomePage extends Fragment {
     ImageButton contactButton;
     ImageButton tipsButton;
 
+    View view;
 
 
     private OnFragmentInteractionListener mListener;
@@ -81,7 +84,7 @@ public class HomePage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home_page, container, false);
+        view = inflater.inflate(R.layout.fragment_home_page, container, false);
 
         fm = getActivity().getSupportFragmentManager();
 
@@ -100,16 +103,43 @@ public class HomePage extends Fragment {
 
                 FragmentTransaction transaction = fm.beginTransaction();
                 transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
-                transaction.replace(R.id.content, new ContactFragment());
+                transaction.replace(R.id.content, new ContactFragment(), "Contact");
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
 
+        planButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
+                transaction.replace(R.id.content, new WorkoutPlan(), "Workout Plan");
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+
         bmiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
+                transaction.replace(R.id.content, new BMIFragment(),"BMI");
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
 
+        tipsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.setCustomAnimations(R.anim.shrinkfade_out, R.anim.shrinkfade_in, R.anim.shrinkfade_back_out, R.anim.shrinkfade_back_in);
+                transaction.replace(R.id.content, new WorkoutTips(),"Workout Tips");
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 
@@ -140,6 +170,18 @@ public class HomePage extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        ImageView iv = view.findViewById(R.id.homePageLogo);
+        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            iv.setVisibility(View.GONE);
+        } else {
+            iv.setVisibility(View.VISIBLE);
+        }
+
     }
 
     /**

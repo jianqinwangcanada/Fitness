@@ -26,7 +26,13 @@ public class MainActivity extends AppCompatActivity
                  ContactFragment.OnFragmentInteractionListener,
                  HomePage.OnFragmentInteractionListener,
                 SetupPage.OnFragmentInteractionListener,
-                BMIFragment.OnFragmentInteractionListener {
+                WorkoutPlan.OnFragmentInteractionListener,
+                BMIFragment.OnFragmentInteractionListener,
+                WorkoutTips.OnFragmentInteractionListener,
+                TipsFragment.OnFragmentInteractionListener,
+                CreditsFragment.OnFragmentInteractionListener,
+                Credit_CardViewFragment.OnFragmentInteractionListener {
+
 
 
     //Declare FragmentManager to manage transaction
@@ -149,9 +155,21 @@ public class MainActivity extends AppCompatActivity
             }
 
         } else if (id == R.id.nav_workoutplan) {
-
+            selectedFragment=fm.findFragmentByTag("Workout Plan");
+            if(selectedFragment == null)
+            {transaction.replace(R.id.content, new WorkoutPlan(),"Workout Plan");
+            }
+            else if(!selectedFragment.isVisible()){
+                transaction.replace(R.id.content, selectedFragment);
+            }
         } else if (id == R.id.nav_tips) {
-
+            selectedFragment=fm.findFragmentByTag("Workout Tips");
+            if(selectedFragment == null)
+            {transaction.replace(R.id.content, new WorkoutTips(),"Workout Tips");
+            }
+            else if(!selectedFragment.isVisible()){
+                transaction.replace(R.id.content, selectedFragment);
+            }
         } else if (id == R.id.nav_contact) {
            //Just whether it is visible or null , if invisilbe or null ,show it
             selectedFragment=fm.findFragmentByTag("Contact");
@@ -164,7 +182,14 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_credits)
         {
-
+            //Just whether it is visible or null , if invisilbe or null ,show it
+            selectedFragment=fm.findFragmentByTag("Credit");
+            if(selectedFragment == null)
+            {transaction.replace(R.id.content, new CreditsFragment(),"Credits");
+            }
+            else if(!selectedFragment.isVisible()){
+                transaction.replace(R.id.content, selectedFragment);
+            }
         }
 
         //commit the transaction for all navigation drawer item selectd

@@ -1,13 +1,19 @@
 package com.example.web.wbfitness;
 
+import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +28,7 @@ import android.widget.Toast;
 import com.example.web.wbfitness.JavaBean.ContactItem;
 
 import java.lang.reflect.Array;
+import java.security.Permission;
 import java.util.ArrayList;
 
 
@@ -38,7 +45,8 @@ public class ContactFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    public static final int PERMISSION_SEND_SMS = 1;
+    public static final int PERMISSION_CALL_PHONE = 1;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -87,11 +95,11 @@ public class ContactFragment extends Fragment {
         contactListView=(ListView)view.findViewById(R.id.contact_listView);
         //Declare a arraylist to store the list of the items
        final ArrayList<ContactItem>  contactItems=new ArrayList<>();
-       contactItems.add(new ContactItem(R.string.contact_tel,R.drawable.call));
-       contactItems.add(new ContactItem(R.string.contact_SMS,R.drawable.sms));
-       contactItems.add(new ContactItem(R.string.contact_email,R.drawable.email));
-       contactItems.add(new ContactItem(R.string.contact_location,R.drawable.map));
-       contactItems.add(new ContactItem(R.string.contact_website,R.drawable.web));//
+       contactItems.add(new ContactItem(R.string.contact_tel,R.drawable.ic_phone_contact_24dp));
+       contactItems.add(new ContactItem(R.string.contact_SMS,R.drawable.ic_message_contact_24dp));
+       contactItems.add(new ContactItem(R.string.contact_email,R.drawable.ic_email_contact_24dp));
+       contactItems.add(new ContactItem(R.string.contact_location,R.drawable.ic_location_contact_24dp));
+       contactItems.add(new ContactItem(R.string.contact_website,R.drawable.ic_web_contact_24dp));//
         //Declare a CustomerAdapter adapter
         CustomerAdapter adapter=new CustomerAdapter(getContext(),contactItems);
        //Bind the adapter to contactView
@@ -105,37 +113,119 @@ public class ContactFragment extends Fragment {
                 switch (position){
                     //Telephone Intent
                     case 0:{
-                        //declare intent
-                        Intent intent = new Intent(Intent.ACTION_VIEW);
-                        //set intent with telephone number
-                        intent.setData(Uri.parse("tel:5199974000"));
-                        //Decide whether the user's phone has related software to run this functionality
-                        if(intent.resolveActivity(getActivity().getPackageManager()) != null){
-                            startActivity(intent);
+                        //Check to see if we have the permission
+                        if(ContextCompat.checkSelfPermission(getActivity(),
+                                Manifest.permission.CALL_PHONE) !=
+                                PackageManager.PERMISSION_GRANTED){
+                            //if we do not have the permission
+                            //have we already asked them for permission?
+                            //if so should we show a rationale?
+                            if(ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
+                                    Manifest.permission.CALL_PHONE)){
+                                //I should show you a reason as to why I want the permission
+                                final AlertDialog alertDialog =
+                                        new AlertDialog.Builder(getContext()).create();
+                                alertDialog.setTitle("Call phone Permission");
+                                alertDialog.setMessage("We need access to phone" +
+                                        "to be able to call phone");
+                                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL,
+                                        "OK", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                alertDialog.dismiss();
+                                                //Request for the permission again
+                                                ActivityCompat.requestPermissions(getActivity(),
+                                                        new String[]{Manifest.permission.CALL_PHONE},
+                                                        PERMISSION_CALL_PHONE);
+                                            }
+                                        });
+                                alertDialog.show();
+                            }
+                            else{
+                                //if this is the first time asking for the permission
+                                //Then ask for permission
+                                ActivityCompat.requestPermissions(getActivity(),
+                                        new String[]{Manifest.permission.CALL_PHONE},
+                                        PERMISSION_CALL_PHONE);
+                            }
+                           return;
                         }
-                        else{
-                            Toast.makeText(getContext(),"You do not have the correct software",Toast.LENGTH_SHORT).show();
+                        else {
+                            //declare intent
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            //set intent with telephone number
+                            intent.setData(Uri.parse("tel:5199974000"));
+                            //Decide whether the user's phone has related software to run this functionality
+                            if(intent.resolveActivity(getActivity().getPackageManager()) != null){
+                                startActivity(intent);
+                            }
+                            else{
+                                Toast.makeText(getContext(),"You do not have the correct software",Toast.LENGTH_SHORT).show();
+                            }
+                            break;
+
                         }
-                       break;
+
                     }
                     //SMS
                     case 1:{
-                        //Declare intent and set data with the telephone number
-                        Intent intent = new Intent(Intent.ACTION_SENDTO);
-                        intent.setData(Uri.parse("smsto:5199974000"));
-                        //Decide whether the user's phone has related software to run this functionality
-                        if(intent.resolveActivity(getActivity().getPackageManager()) != null){
-                            startActivity(intent);
+                        //Check to see if we have the permission
+                        if(ContextCompat.checkSelfPermission(getActivity(),
+                                Manifest.permission.SEND_SMS) !=
+                                PackageManager.PERMISSION_GRANTED){
+                            //if we do not have the permission
+                            //have we already asked them for permission?
+                            //if so should we show a rationale?
+                            if(ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
+                                    Manifest.permission.SEND_SMS)){
+                                //I should show you a reason as to why I want the permission
+                                final AlertDialog alertDialog =
+                                        new AlertDialog.Builder(getContext()).create();
+                                alertDialog.setTitle("SMS Permission");
+                                alertDialog.setMessage("We need access to your SMS" +
+                                        "to be able to send a SMS message");
+                                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL,
+                                        "OK", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                alertDialog.dismiss();
+                                                //Request for the permission again
+                                                ActivityCompat.requestPermissions(getActivity(),
+                                                        new String[]{Manifest.permission.SEND_SMS},
+                                                        PERMISSION_SEND_SMS);
+                                            }
+                                        });
+                                alertDialog.show();
+                            }
+                            else{
+                                //if this is the first time asking for the permission
+                                //Then ask for permission
+                                ActivityCompat.requestPermissions(getActivity(),
+                                        new String[]{Manifest.permission.SEND_SMS},
+                                        PERMISSION_SEND_SMS);
+                            }
                         }
                         else{
-                            Toast.makeText(getContext(),
-                                    "You do not have the correct software",
-                                    Toast.LENGTH_SHORT).show();
+                            //Declare intent and set data with the telephone number
+                            Intent intent = new Intent(Intent.ACTION_SENDTO);
+                            intent.setData(Uri.parse("smsto:5199974000"));
+                            //Decide whether the user's phone has related software to run this functionality
+                            if(intent.resolveActivity(getActivity().getPackageManager()) != null){
+                                startActivity(intent);
+                            }
+                            else{
+                                Toast.makeText(getContext(),
+                                        "You do not have the correct software",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                            break;
                         }
-                        break;
+
+
                     }
                     //send email
                     case 2:{
+
                         //declare a intent bind the email address
                         Intent intent = new Intent(Intent.ACTION_SENDTO);
                         intent.setData(Uri.parse("mailto:jianqin.wang01@stclairconnect.ca"));

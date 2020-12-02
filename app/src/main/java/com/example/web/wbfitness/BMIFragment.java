@@ -2,6 +2,7 @@ package com.example.web.wbfitness;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -113,9 +114,12 @@ public class BMIFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       //this.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
        //Initializing the SharedPreference, this will used for grad all setting and stored information
         bmiPreValueSetting=PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -199,7 +203,7 @@ public class BMIFragment extends Fragment {
         bmiOutput.setFocusable(false);
 
         bmiOutputResult=view.findViewById(R.id.bmiOutputResult);
-        bmiOutputResult.setText("Please Calculate");
+        //bmiOutputResult.setText("Please Calculate");
         bmiOutputResult.setFocusable(false);
 
 
